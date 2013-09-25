@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>Choose the artist you wish to edit</h1>
+
+<ul>
+	{% for artist in artists %}
+	<li><a href="/music/artist/update/{{artist.id}}/">{{artist.name}}</a></li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

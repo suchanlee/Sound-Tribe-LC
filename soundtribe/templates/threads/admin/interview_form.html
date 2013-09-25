@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">
+{% endblock %}
+
+{% block content %}
+<h1>CREATE INTERVIEW</h1>
+<form enctype="multipart/form-data" method="POST">
+	{% csrf_token %}
+	{{form.errors}}
+	<p class="form-label">Slideshow</p>
+	{{form.slideshow}}
+	<p class="form-label">Slideshow image</p>
+	{{form.slideshow_image}}
+	<p class="form-label">Title</p>
+	{{form.title}}
+	<p class="form-label">Subtitle</p>
+	{{form.subtitle}}
+	<p class="form-label">Author</p>
+	{{form.author}}
+	<p class="form-label">main_image</p>
+	{{form.main_image}}
+	<p class="form-label">content</p>
+	{{form.content}}
+	<p class="form-label">tags <span>separate with commas</span></p>
+	{{form.tags}}
+	<p class="form-label">artist name</p>
+	{{form.artist_name}}
+	<p class="form-label">artist occupation</p>
+	{{form.artist_occupation}}
+	<p class="form-label">artist description</p>
+	{{form.artist_description}}
+	<p class="form-label">artist genre</p>
+	{{form.artist_genre}}
+	<p class="form-label">soundcloud links</p>
+	{{form.soundcloud_links}}
+	<p class="form-label">youtube links</p>
+	{{form.youtube_links}}
+	<p class="form-label">artist website</p>
+	{{form.website}}
+	<p class="form-label">artist facebook</p>
+	{{form.facebook}}
+	<p class="form-label">artist twitter</p>
+	{{form.twitter}}
+	<p class="form-label">artist tumblr</p>
+	{{form.tumblr}}
+	<p class="form-label">artist bandcamp</p>
+	{{form.bandcamp}}
+	<p class="form-label">artist soundcloud</p>
+	{{form.soundcloud}}
+	<p class="form-label">artist youtube</p>
+	{{form.youtube}}
+	<p class="form-label">published</p>
+	{{form.published}}
+	<div style="display: none">
+		{{form.thread_type}}
+		{{form.likes}}
+		{{form.views}}
+	</div>
+	<p><input type="submit" value="SUBMIT"></p>
+</form>
+
+{% endblock %}
+
+{% block js %}
+{{block.super}}
+<script src="{% static "redactor/jquery.min.js" %}"></script>
+<script src="{% static "redactor/jquery-migrate.min.js" %}"></script>
+<script src="{% static "redactor/langs/en.js" %}"></script>
+<script src="{% static "redactor/redactor.js" %}"></script>
+<script src="{% static "redactor/toolbars/default.js" %}"></script>
+{% endblock %}

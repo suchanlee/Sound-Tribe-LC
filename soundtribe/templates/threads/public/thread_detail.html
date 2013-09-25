@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{single_thread.title|upper}}{% endblock %}
+{% block styles %}
+	{{block.super}}
+	<link rel="stylesheet" href="{% static "css/tipsy.min.css" %}">
+{% endblock %}
+
+{% block content %}
+
+<div id="thread-menu">
+	<div style="max-width: 640px; margin: 0 auto; position: relative; background-color: white;">
+	<a href="/"><img src="{% static "img/logo.png" %}" alt="logo" id="thread-logo"></a>
+	<a href="/"><img src="{% static "img/x-button.png" %}" alt="thread close button" id="thread-close-button"></a>
+	</div>
+</div>
+
+	<div class="endless_page_template">
+	    {% include page_template %}
+	</div>
+
+
+	{% block js %}
+		{{ block.super }}
+		<script src="{% static "js/waypoint.min.js" %}"></script>
+		<script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+		<script>
+		$.endlessPaginate({
+			paginateOnScroll: true,
+			paginateOnScrollMargin: 150
+		});
+		</script>
+		<script src="{% static "js/jquery.tipsy.min.js" %}"></script>
+		<script>
+		$(function() {
+			$('a.share').tipsy({
+				live: true,
+				fade: true,
+				gravity: 's',
+			});
+		});
+		</script>
+		<script>
+		$('.thread-anchors').waypoint(function() {
+			console.log('waypoint');
+		});
+		</script>
+	{% endblock %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Sound Tribe admin login{% endblock %}
+
+{% block content %}
+
+	<div id="login-form">
+	<h1>SOUND TRIBE ADMIN LOGIN</h1>
+	<form method="post" action="{% url "django.contrib.auth.views.login" %}">
+		{% csrf_token %}
+		<p>{{ form.username }}</p>
+		<p>{{ form.password }}</p>
+		
+		<input type="submit" value="login" id="login-submit-button">
+		<input type="hidden" name="next" value="{% url "admin_view" %}" />
+	</form>
+	</div>
+
+	{% if form.errors %}
+		<div class="form-errors">
+			<p>{{form.non_field_errors.as_text}}</p>
+		</div>
+	{% endif %}
+
+</span>
+</div>
+{% endblock %}

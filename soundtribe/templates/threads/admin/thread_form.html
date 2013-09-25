@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">
+{% endblock %}
+
+{% block content %}
+<h1>CREATE THREAD</h1>
+<form enctype="multipart/form-data" method="POST">
+	{% csrf_token %}
+	{{form.errors}}
+	<p class="form-label">Slideshow</p>
+	{{form.slideshow}}
+	<p class="form-label">Slideshow image</p>
+	{{form.slideshow_image}}
+	<p class="form-label">Thread Type</p>
+	{{form.thread_type}}
+	<p class="form-label">Title</p>
+	{{form.title}}
+	<p class="form-label">Subtitle</p>
+	{{form.subtitle}}
+	<p class="form-label">Author</p>
+	{{form.author}}
+	<p class="form-label">main_image</p>
+	{{form.main_image}}
+	<p class="form-label">content</p>
+	{{form.content}}
+	<p class="form-label">tags <span>separate with commas</span></p>
+	{{form.tags}}
+	<p class="form-label">published</p>
+	{{form.published}}
+	<div style="display: none">
+		{{form.likes}}
+		{{form.views}}
+	</div>
+	<p><input type="submit" value="SUBMIT"></p>
+</form>
+
+{% endblock %}
+
+{% block js %}
+{{block.super}}
+<script src="{% static "redactor/jquery.min.js" %}"></script>
+<script src="{% static "redactor/jquery-migrate.min.js" %}"></script>
+<script src="{% static "redactor/langs/en.js" %}"></script>
+<script src="{% static "redactor/redactor.js" %}"></script>
+<script src="{% static "redactor/toolbars/mini.js" %}"></script>
+{% endblock %}

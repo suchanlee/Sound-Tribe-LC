@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">
+{% endblock %}
+
+{% block content %}
+<h1>{{form_title}}</h1>
+<form enctype="multipart/form-data" method="POST">
+	{% csrf_token %}
+	{{form.errors}}
+	{{form.as_p}}
+	<p><input type="submit" value="SUBMIT"></p>
+</form>
+
+{% endblock %}
+
+
+{% block js %}
+{{block.super}}
+<script src="{% static "redactor/jquery.min.js" %}"></script>
+<script src="{% static "redactor/jquery-migrate.min.js" %}"></script>
+<script src="{% static "redactor/langs/en.js" %}"></script>
+<script src="{% static "redactor/redactor.js" %}"></script>
+<script src="{% static "redactor/toolbars/default.js" %}"></script>
+{% endblock %}

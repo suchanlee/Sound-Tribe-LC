@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h1>Admin</h1>
+
+<ul>
+	<li><a href="/threads/create/interview/">Create interview</a></li>
+	<li><a href="/threads/create/thread/">Create thread</a></li>
+	<li><a href="/threads/create/types/">Create thread type</a></li>
+</ul>
+<ul>
+	<li><a href="/threads/list/interview/">Edit interviews</a></li>
+	<li><a href="/threads/list/thread">Edit threads</a></li>
+</ul>
+<ul>
+	<li><a href="/music/artist/create/">Create artist</a></li>
+	<li><a href="/music/artist/update/">Edit artist</a></li>
+</ul>
+<ul>
+	<li><a href="/misc/update/about/1">Edit About</a></li>
+	<li><a href="/misc/update/contact/1">Edit Contact</a></li>
+	<li><a href="/misc/update/facebook/1">Edit Facebook</a></li>
+	<li><a href="/misc/update/twitter/1">Edit Twitter links</a></li>
+	<li><a href="/misc/update/tumblr/1">Edit Tumblr links</a></li>
+</ul>
+
+
+{% endblock %}

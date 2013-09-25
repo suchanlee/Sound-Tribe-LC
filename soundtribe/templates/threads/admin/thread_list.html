@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h1>{{obj_title}}</h1>
+
+<h2>Published</h2>
+<ul>
+	{% for obj in objects %}
+	<li><a href="/threads/update/{{obj.id}}/">{{obj.title}}</a></li>
+	{% endfor %}
+</ul>
+
+<h2>Unpublished</h2>
+<ul>
+	{% for obj in unpublished_objects %}
+	<li><a href="/threads/update/{{obj.id}}/">{{obj.title}}</a></li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

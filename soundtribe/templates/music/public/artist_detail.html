@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>{{artist.name}}</h1>
+
+<ul>
+	<li>{{artist.name}}</li>
+	<li><img src="{{MEDIA_URL}}{{artist.image}}" alt="{{artist.name}}"></li>
+	<li>{{artist.description}}</li>
+	<li>{{artist.website}}</li>
+</ul>
+
+{% endblock %}
