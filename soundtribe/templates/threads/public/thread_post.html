@@ -16,7 +16,7 @@
 		<h1>{{thread.title|upper}}</h1>
 		{% endif %}
 		<h3>{{thread.subtitle|title}}</h3>
-		<p>{{thread.created|date:"M tS, o"}} + <a href="/threads/category/{{thread.thread_type.slug}}/">{{thread.thread_type.title|upper}}</a> + by {{thread.author.get_full_name|title}}</p>
+		<p><a href="/threads/category/{{thread.thread_type.slug}}/">{{thread.thread_type.title|upper}}</a> + {{thread.created|date:"M tS, o"}} + by {{thread.author.get_full_name|title}}</p>
 	</div>
 
 	{% if thread.thread_type.slug == 'interview' %}

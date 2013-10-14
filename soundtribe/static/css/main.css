@@ -14,7 +14,7 @@ header {
   font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   width: 100%;
   z-index: 99999;
-  position: absolute;
+  margin-top: 10px;
 }
 header nav {
   text-align: right;
@@ -108,9 +108,10 @@ header nav #header-nav-sns #header-sns {
   margin-top: 15px;
 }
 header #header-menu {
-  background-color: rgba(200, 200, 200, 0.5);
   padding-top: 8px;
   padding-bottom: 5px;
+  margin-bottom: 30px;
+  position: relative;
 }
 header #header-menu #header-search,
 header #header-menu #header-pull {
@@ -122,7 +123,7 @@ header #header-menu #header-logo {
 }
 header #header-menu #header-logo img {
   width: 200px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 header #header-menu #header-pull {
   margin-right: 10px;
@@ -131,38 +132,248 @@ header #header-menu #header-pull img {
   opacity: 0.8;
   width: 30px;
 }
+header #header-menu #search-anchor {
+  position: relative;
+}
+header #header-menu #icon-search {
+  cursor: pointer;
+}
 header #header-menu #header-search {
-  margin-right: 20px;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: -220px;
 }
 header #header-menu #header-search form {
-  position: relative;
   margin-bottom: 0px;
 }
 header #header-menu #header-search input {
-  opacity: 0.7;
   width: 245px;
   height: 26px;
-  padding: 5px 5px 5px 35px;
+  padding: 5px 5px 5px 5px;
   font-size: 1.2em;
   border: none;
-  border-radius: 7px;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
   margin-top: 0px;
   font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-header #header-menu #header-search input:focus {
-  opacity: 1;
+header #header-menu #menu-threads {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
-header #header-menu #header-search i.icon-search {
-  position: absolute;
-  left: 5px;
-  top: 5px;
+header #header-menu #menu-threads li {
+  display: inline-block;
+  font-size: 0.9em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+header #header-menu #menu-threads li a {
+  color: #6e6e6e;
+  text-decoration: none;
+}
+header #header-menu #menu-threads li a:hover {
+  text-decoration: underline;
+}
+header #header-menu #menu-threads li i {
+  color: #6e6e6e;
   font-size: 1.1em;
-  opacity: 0.5;
+  margin-left: 15px;
+}
+header #header-menu #menu-threads .header-menu-submenu {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+  display: none;
+  top: 50px;
+  left: 0;
+  height: 215px;
+  background-color: #F8F8F8;
+  text-align: center;
+}
+header #header-menu #menu-threads .header-menu-submenu .header-menu-submenu-nav p {
+  font-size: 1.1em;
+  margin-left: 25px;
+  color: #6e6e6e;
+}
+header #header-menu #menu-threads .header-menu-submenu .header-menu-submenu-icons {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 23%;
+  height: 150px;
+  margin-left: 6px;
+  margin-right: 6px;
+  background-size: cover;
+}
+header #header-menu #menu-threads .header-menu-submenu .header-menu-submenu-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-color: black;
+  opacity: 0.3;
 }
 .grayscale {
   -webkit-filter: grayscale(100%);
   filter: gray;
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+}
+#threads2 {
+  width: 100%;
+  margin-top: 30px;
+}
+#threads2 li {
+  list-style-type: none;
+}
+#threads2 ul {
+  padding-left: 0px;
+}
+#threads2 #hot-threads,
+#threads2 #new-threads {
+  display: inline-block;
+  vertical-align: top;
+}
+#threads2 #new-threads {
+  width: 36%;
+}
+#threads2 #new-threads .new-threads-li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div {
+  min-height: 125px;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div:hover {
+  background-color: #F8F8F8;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-image {
+  display: inline-block;
+  width: 35%;
+  background: no-repeat;
+  background-size: cover;
+  min-height: 125px;
+  position: relative;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-image a {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info {
+  display: inline-block;
+  vertical-align: top;
+  width: 64%;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info a {
+  text-decoration: none;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info a:hover {
+  text-decoration: underline;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info .new-threads-title,
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info .new-threads-subtitle {
+  padding-left: 10px;
+  padding-right: 15px;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info .new-threads-title {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  font-size: 1.1em;
+  line-height: 20px;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info .new-threads-title a {
+  color: #3c3c3c;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info .new-threads-subtitle {
+  margin-top: 0px;
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 15px;
+}
+#threads2 #new-threads .new-threads-li .new-threads-div .new-threads-info .new-threads-subtitle a {
+  color: #6e6e6e;
+}
+#threads2 #hot-threads {
+  width: 63%;
+  text-align: center;
+}
+#threads2 #hot-threads .hot-threads-ul {
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eeeeee;
+  width: 90%;
+  margin-right: 0px;
+  margin-left: 20px;
+}
+#threads2 #hot-threads .hot-threads-image {
+  text-align: center;
+}
+#threads2 #hot-threads .hot-threads-image img {
+  width: 100%;
+}
+#threads2 #hot-threads .hot-threads-type {
+  margin-top: 20px;
+  font-size: 0.85em;
+}
+#threads2 #hot-threads .hot-threads-type a {
+  color: #6e6e6e;
+  text-decoration: none;
+}
+#threads2 #hot-threads .hot-threads-type a:hover {
+  text-decoration: underline;
+}
+#threads2 #hot-threads .hot-threads-title {
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#threads2 #hot-threads .hot-threads-title h2 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size: 1.9em;
+  line-height: 30px;
+}
+#threads2 #hot-threads .hot-threads-title h2 a {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+#threads2 #hot-threads .hot-threads-title h2 a:hover {
+  text-decoration: underline;
+}
+#threads2 #hot-threads .hot-threads-subtitle h3 {
+  margin-top: 10px;
+  font-size: 1.4em;
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+#threads2 #hot-threads .hot-threads-subtitle h3 a {
+  color: #6e6e6e;
+  text-decoration: none;
+}
+#threads2 #hot-threads .hot-threads-subtitle h3 a:hover {
+  text-decoration: underline;
+}
+#threads2 #hot-threads .hot-threads-snippet {
+  font-family: "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  margin-top: 15px;
+}
+#threads2 #hot-threads .hot-threads-snippet iframe {
+  margin-top: 15px;
+}
+#threads2 #hot-threads .hot-threads-snippet a {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+#threads2 #hot-threads .hot-threads-snippet a:hover {
+  text-decoration: underline;
 }
 #threads .thread-square {
   position: relative;
@@ -231,6 +442,7 @@ header #header-menu #header-search i.icon-search {
 #slides {
   position: relative;
   width: 100%;
+  margin-top: 20px;
 }
 #slides img {
   width: 100%;
@@ -354,6 +566,7 @@ header #header-menu #header-search i.icon-search {
   font-family: "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
   color: #3c3c3c;
   font-size: 1.1em;
+  position: relative;
 }
 #thread-details #thread-content img {
   margin-top: 30px;

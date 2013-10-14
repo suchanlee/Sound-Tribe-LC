@@ -29,7 +29,7 @@ header {
 	font-family: @sans-serif;
 	width: 100%;
 	z-index: 99999;
-	position: absolute;
+	margin-top: 10px;
 	nav {
 		text-align: right;
 		background-color: black;
@@ -109,9 +109,10 @@ header {
 		}
 	}
 	#header-menu {
-		background-color: rgba(200,200,200,0.5);
 		padding-top: 8px;
 		padding-bottom: 5px;
+		margin-bottom: 30px;
+		position: relative;
 		#header-search, #header-pull {
 			float: right;
 		}
@@ -120,7 +121,7 @@ header {
 			vertical-align: top;
 			img {
 				width: 200px;
-				margin-left: 5px;
+				margin-left: 10px;
 			}
 		}
 		#header-pull {
@@ -130,32 +131,94 @@ header {
 				width: 30px;
 			}
 		}
+		#search-anchor {
+			position: relative;
+		}
+		#icon-search {
+			cursor: pointer;
+		}
 		#header-search {
-			margin-right: 20px;
+			display: none;
+			position: absolute;
+			top: 0px;
+			left: -220px;
 			form {
-				position: relative;
 				margin-bottom: 0px;
 			}
 			input {
-				opacity: 0.7;
 				width: 245px;
 				height: 26px;
-				padding: 5px 5px 5px 35px;
+				padding: 5px 5px 5px 5px;
 				font-size: 1.2em;
 				border: none;
-				border-radius: 7px;
+				border-radius: 3px;
+				border: 1px solid #e6e6e6;
 				margin-top: 0px;
 				font-family: @sans-serif;
 			}
-			input:focus {
-				opacity: 1;
+		}
+		#menu-threads {
+			list-style-type: none;
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 5px;
+			margin-bottom: 0px;
+			li {
+				display: inline-block;
+				font-size: 0.9em;
+				margin-left: 5px;
+				margin-right: 5px;
+				a {
+					color: @lighter-black;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				i {
+					color: @lighter-black;
+					font-size: 1.1em;
+					margin-left: 15px;
+				}
 			}
-			i.icon-search {
+			.header-menu-submenu {
 				position: absolute;
-				left: 5px;
-				top: 5px;
-				font-size: 1.1em;
-				opacity: 0.5;
+				width: 100%;
+				z-index: 999;
+				display: none;
+				top:50px;
+				left:0;
+				height: 215px;
+				background-color: #F8F8F8;
+				// background-color: black;
+				text-align: center;
+				// opacity: 0.9;
+				.header-menu-submenu-nav {
+					p {
+						font-size: 1.1em;
+						margin-left: 25px;
+						color: @lighter-black;
+					}
+				}
+				.header-menu-submenu-icons {
+					display: inline-block;
+					position: relative;
+					vertical-align: top;
+					width: 23%;
+					height: 150px;
+					margin-left: 6px;
+					margin-right: 6px;
+					background-size: cover;
+				}
+				.header-menu-submenu-background {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 150px;
+					background-color: black;
+					opacity: 0.3;
+				}
 			}
 		}
 	}
@@ -166,6 +229,159 @@ header {
 	-webkit-filter: grayscale(100%);
 	filter: gray;
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+}
+
+#threads2 {
+	width: 100%;
+	margin-top: 30px;
+	li {
+		list-style-type: none;
+	}
+	ul {
+		padding-left: 0px;
+	}
+	#hot-threads, #new-threads {
+		display: inline-block;
+		vertical-align: top;
+	}
+	#new-threads {
+		width: 36%;
+		.new-threads-li {
+			padding-top: 2px;
+			padding-bottom: 2px;
+			.new-threads-div {
+				min-height: 125px;
+				&:hover {
+					background-color: #F8F8F8;
+				}
+				.new-threads-image {
+					display: inline-block;
+					width: 35%;
+					background: no-repeat;
+					background-size: cover;
+					min-height: 125px;
+					position: relative;
+					a {
+						z-index: 999;
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 100%;
+					}
+				}
+				.new-threads-info {
+					display: inline-block;
+					vertical-align: top;
+					width: 64%;
+					a {
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+					.new-threads-title, .new-threads-subtitle {
+						padding-left: 10px;
+						padding-right: 15px;
+					}
+					.new-threads-title {
+						margin-top: 0px;
+						margin-bottom: 5px;
+						padding-top: 10px;
+						font-size: 1.1em;
+						line-height: 20px;
+						a {
+							color: @black;
+						}
+					}
+					.new-threads-subtitle {
+						margin-top: 0px;
+						font-size: 0.9em;
+						font-weight: 300;
+						line-height: 15px;
+						a {
+							color: @lighter-black;
+						}
+					}
+				}
+			}
+		}
+	}
+	#hot-threads {
+		width: 63%;
+		text-align: center;
+		.hot-threads-ul {
+			text-align: left;
+			display: inline-block;
+			margin-bottom: 40px;
+			border-bottom: 1px solid #eeeeee;
+			width: 90%;
+			margin-right: 0px;
+			margin-left: 20px;
+		}
+		.hot-threads-image {
+			img {
+				width: 100%
+			}
+			text-align: center;
+		}
+		.hot-threads-type {
+			margin-top: 20px;
+			font-size: 0.85em;
+			a {
+				color: @lighter-black;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.hot-threads-title {
+			font-family: @sans-serif;
+			h2 {
+				margin-top: 5px;
+				margin-bottom: 0px;
+				font-size: 1.9em;
+				line-height: 30px;
+				a {
+					color: @black;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.hot-threads-subtitle {
+			h3 {
+				margin-top: 10px;
+				font-size: 1.4em;
+				font-family: @sans-serif;
+				font-weight: 300;
+				a {
+					color: @lighter-black;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.hot-threads-snippet {
+			font-family: @serif;
+			margin-top: 15px;
+			iframe {
+				margin-top: 15px;
+			}
+			a {
+				color: @black;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }
 
 #threads {
@@ -237,6 +453,7 @@ header {
 #slides {
 	position: relative;
 	width: 100%;
+	margin-top: 20px;
 	img {
 		width: 100%;
 	}
@@ -364,6 +581,7 @@ header {
 		font-family: @serif;
 		color: @black;
 		font-size: 1.1em;
+		position: relative;
 		img {
 			margin-top: 30px;
 			margin-bottom: 30px;
