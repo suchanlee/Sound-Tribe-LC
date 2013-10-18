@@ -1,0 +1,6 @@
+{{ object.title }}
+{{ object.slug }}
+{{ object.subtitle }}
+{{ object.content }}
+{{ object.author.get_full_name}}
+{{ object.thread_type.title }}

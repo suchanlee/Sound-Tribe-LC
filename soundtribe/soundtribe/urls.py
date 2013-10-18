@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^misc/', include('misc.urls'), name='misc_views'),
     url(r'^music/', include('music.urls'), name='music_views'),
     url(r'^redactor/', include('redactor.urls')),
+    url(r'^search/', include('haystack.urls')),
+
 )
 
 if settings.DEBUG:
