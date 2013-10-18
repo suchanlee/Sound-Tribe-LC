@@ -6,6 +6,14 @@
 	{{block.super}}
 	<link rel="stylesheet" href="{% static "css/tipsy.min.css" %}">
 {% endblock %}
+{% block meta %}
+<meta property="og:title" content="{{single_thread.title}}">
+<meta property="og:url" content="http://soundtribelc.com{{request.path}}">
+<meta property="og:type" content="article">
+<meta property="og:image" content="{{ MEDIA_URL }}{{single_thread.main_image}}">
+<meta property="og:description" content="{{single_thread.content|striptags|truncatewords:50}}">
+<meta property="og:site_name" content="{{single_thread.title}}">
+{% endblock %}
 
 {% block content %}
 
