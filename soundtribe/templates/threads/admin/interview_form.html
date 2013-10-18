@@ -10,17 +10,13 @@
 <form enctype="multipart/form-data" method="POST">
 	{% csrf_token %}
 	{{form.errors}}
-	<p class="form-label">Slideshow</p>
-	{{form.slideshow}}
-	<p class="form-label">Slideshow image</p>
-	{{form.slideshow_image}}
 	<p class="form-label">Title</p>
 	{{form.title}}
 	<p class="form-label">Subtitle</p>
 	{{form.subtitle}}
 	<p class="form-label">Author</p>
 	{{form.author}}
-	<p class="form-label">main_image</p>
+	<p class="form-label">Main Image</p>
 	{{form.main_image}}
 	<p class="form-label">content</p>
 	{{form.content}}

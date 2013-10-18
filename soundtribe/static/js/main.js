@@ -6,19 +6,35 @@ $(function($) {
 
 $(window).resize(function() {
 	setThreadWidthHeight();
-	updateThreadPath();
 });
 
-// function setHeaderTop() {
-// 	var header = $('header');
-// 	var nav = $('nav');
-// 	header.css('top', nav.height()*-1);
-// }
-
-function updateThreadPath() {
-	var url = 'somenewurl';
-	// history.pushState('', 'New page title', url);
+$(window).scroll(function() {
+	var pos = $('body').scrollTop();
+	if (pos%20 === 0) {
+		updateThreadPath(pos);
+	}
+});
+function updateThreadPath(position) {
+	var cur_position = position;
+	var anchors = $('.thread-anchors');
+	var len = anchors.length;
+	var anchor;
+	for (var i=0; i<len; i++) {
+		anchor = $(anchors[len-i-1]);
+		if (anchor.offset().top < cur_position) {
+			var link = anchor.attr('href');
+			if (window.location.pathname !== link) {
+				history.replaceState('', '', link);
+				document.title = anchor.attr('title');
+			}
+			break;
+		}
+	}
 }
+
+$('.fold-unfold-anchor').click(function() {
+	$('.fold-unfold').toggle();
+});
 
 $('#icon-search').click(function() {
 	$('#header-search').toggle();

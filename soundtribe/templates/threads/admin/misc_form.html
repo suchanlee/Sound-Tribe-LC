@@ -6,13 +6,21 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{form_title}}</h1>
-<form enctype="multipart/form-data" method="POST">
-	{% csrf_token %}
-	{{form.errors}}
-	{{form.as_p}}
-	<p><input type="submit" value="SUBMIT"></p>
-</form>
+<div class="admin">
+	<div class="admin-header">
+		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
+		<h1>EDIT {{form_title|upper}}</h1>
+	</div>
+	<form enctype="multipart/form-data" method="POST">
+		<div class="form-errors">
+			{{form.errors}}
+		</div>
+		{% csrf_token %}
+		{{form.errors}}
+		{{form.as_p}}
+		<p><input type="submit" value="SUBMIT"></p>
+	</form>
+</div>
 
 {% endblock %}
 

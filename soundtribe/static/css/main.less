@@ -3,6 +3,7 @@
 @light-black: rgb(90,90,90);
 @black: rgb(60,60,60);
 @white: #eeeeee;
+@warning-red: #8F0000;
 @nav-white: #ffffff;
 
 // fonts
@@ -229,6 +230,12 @@ header {
 	-webkit-filter: grayscale(100%);
 	filter: gray;
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+}
+
+#container {
+	max-width: 960px;
+	margin: 0 auto;
+	position: relative;
 }
 
 #threads2 {
@@ -494,15 +501,21 @@ header {
 }
 #thread-menu {
 	position: fixed;
-	// max-width: 640px;
 	background-color: white;
 	opacity: 1;
 	width: 100%;
+	max-width: 960px;
 	margin: 0 auto;
 	padding-top: 10px;
 	height: 30px;
+	text-align: center;
 	&:hover {
 		opacity: 1;
+	}
+	#thread-header {
+		display: inline-block;
+		width: 100%;
+		max-width: 640px;
 	}
 	#thread-logo {
 		float: left;
@@ -618,6 +631,114 @@ header {
 		}
 	}
 }
+
+
+/* ADMIN CSS FILES */
+
+#login-form {
+	width: 100%;
+	text-align: center;
+	#login-logo{
+		margin-top: 200px;
+		img {
+			width: 400px;
+			margin-bottom: 30px;
+		}
+	}
+	#login-form {
+		font-family: @sans-serif;
+		font-weight: 200;
+		font-size: 2em;
+		p {
+			margin: 0 0 0 0;
+			color: @black;
+		}
+		form {
+			margin-top: 20px;
+		}
+		input[type="text"], input[type="password"] {
+			width: 300px;
+			height: 35px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			border: none;
+			border: 1px solid #dddddd;
+			font-size: 20px;
+			padding: 3px 3px 3px 3px;
+			font-family: @sans-serif;
+		}
+		input[type="submit"] {
+			margin-top: 30px;
+		}
+	}
+}
+
+.admin {
+	width: 800px;
+	margin: 0 auto;
+	ul {
+		padding-left: 0px;
+	}
+	li {
+		list-style-type: none;
+	}
+	.admin-header {
+		margin-top: 40px;
+		img {
+			width: 230px;
+		}
+		h1 {
+			font-size: 40px;
+		}
+	}
+	.form-label {
+		font-size: 18px;
+	}
+	.form-errors {
+		color: @warning-red;
+	}
+	.redactor_box {
+		margin-bottom: 30px;
+	}
+	.fold-unfold-anchor {
+		margin-top: 30px;
+	}
+	.fold-unfold {
+		display: none;
+	}
+	table {
+		font-size: 18px;
+		td {
+			min-width: 100px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			input[type="text"] {
+				width: 500px;
+				height: 30px;
+				font-size: 18px;
+				padding: 2px 5px 2px 5px;
+			}
+			// text-align: right;
+		}
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,12 +2,18 @@
 {% load staticfiles %}
 
 {% block content %}
-<h1>CREATE THREAD TYPE</h1>
-<form enctype="multipart/form-data" method="POST">
-	{% csrf_token %}
-	{{form.errors}}
-	{{form.as_p}}
-	<p><input type="submit" value="SUBMIT"></p>
-</form>
-
+<div class="admin">
+	<div class="admin-header">
+		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
+		<h1>CREATE THREAD TYPE</h1>
+	</div>
+	<form enctype="multipart/form-data" method="POST">
+		{% csrf_token %}
+		{{form.errors}}
+		<table>
+			<tr><td>Title: </td><td>{{form.title}}</td></tr>
+		</table>
+		<p><input type="submit" value="SUBMIT"></p>
+	</form>
+</div>
 {% endblock %}

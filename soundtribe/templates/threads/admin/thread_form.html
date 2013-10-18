@@ -1,41 +1,51 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block title %}Create Thread{% endblock %}
+
 {% block styles %}
 <link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">
 {% endblock %}
 
 {% block content %}
-<h1>CREATE THREAD</h1>
-<form enctype="multipart/form-data" method="POST">
-	{% csrf_token %}
-	{{form.errors}}
-	<p class="form-label">Slideshow</p>
-	{{form.slideshow}}
-	<p class="form-label">Slideshow image</p>
-	{{form.slideshow_image}}
-	<p class="form-label">Thread Type</p>
-	{{form.thread_type}}
-	<p class="form-label">Title</p>
-	{{form.title}}
-	<p class="form-label">Subtitle</p>
-	{{form.subtitle}}
-	<p class="form-label">Author</p>
-	{{form.author}}
-	<p class="form-label">main_image</p>
-	{{form.main_image}}
-	<p class="form-label">content</p>
-	{{form.content}}
-	<p class="form-label">tags <span>separate with commas</span></p>
-	{{form.tags}}
-	<p class="form-label">published</p>
-	{{form.published}}
-	<div style="display: none">
-		{{form.likes}}
-		{{form.views}}
+<div class="admin">
+	<div class="admin-header">
+		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
+		<h1>CREATE THREAD</h1>
 	</div>
-	<p><input type="submit" value="SUBMIT"></p>
-</form>
+	<form enctype="multipart/form-data" method="POST">
+		{% csrf_token %}
+		<div class="form-errors">
+			{{form.errors}}
+		</div>
+		<table>
+			<tr><td class="form-label">Thread Type:</td><td>{{form.thread_type}}</td></tr>
+			<tr><td class="form-label">Author:</td> <td>{{form.author}}</td></tr>
+			<tr><td class="form-label">Main Image:</td> <td>{{form.main_image}}</td></tr>
+			<tr><td class="form-label">Title:</td> <td>{{form.title}}</td></tr>
+			<tr><td class="form-label">Subtitle:</td> <td>{{form.subtitle}}</td></tr>
+		</table>
+		<p class="form-label">Content</p>
+		{{form.content}}
+		<table>
+		<tr><td class="form-label">Tags <span>separate with commas</span>: </td><td>{{form.tags}}</td></tr>
+		<tr><td class="form-label">Published: </td><td>{{form.published}}</td></tr>
+		</table>
+		<div style="display: none">
+			{{form.likes}}
+			{{form.views}}
+		</div>
+
+		<a href="#" class="fold-unfold-anchor">If thread type is interview</a>
+		<div class="fold-unfold">
+			<p class="form-label">Artist Description</p>
+			{{form.artist_description}}
+		</div>
+
+		<p><input type="submit" value="SUBMIT"></p>
+	</form>
+
+</div>
 
 {% endblock %}
 
