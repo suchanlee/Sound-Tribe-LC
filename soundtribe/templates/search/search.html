@@ -1,4 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Search results for {{query}}{% endblock %}
 
 {% block content %}
     <h2>Search</h2>
