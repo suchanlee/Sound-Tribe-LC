@@ -12,9 +12,9 @@
 	font-family: socialico;
 	src: url("../fonts/Socialico.otf") format("opentype");
 }
-
 @sans-serif: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @serif: "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+@museo: "museo-slab", @serif;
 
 .socialico {
 	font-family: socialico;
@@ -530,6 +530,52 @@ header {
 		}
 	}
 }
+.thread-subscribe {
+	max-width: 640px;
+	margin: 0 auto;
+	border-bottom: 1px solid #eeeeee;
+	font-family: @museo;
+	padding: 20px 0 20px 0;
+	p, h3, input {
+		margin-left: 35px;
+	}
+	h3 {
+		color: @black;
+		font-size: 1.3em;
+		font-weight: 500;
+	}
+	.subscribe-error {
+		color: @warning-red;
+		display: none;
+	}
+	.subscribe-success {
+		display: none;
+		color: @lighter-black;
+	}
+	input[type="email"] {
+		font-family: @museo;
+		font-size: 17px;
+		height: 30px;
+		width: 250px;
+		border: none;
+		border-bottom: 1px solid #ddd;
+	}
+	input[type="submit"] {
+		font-size: 0.9em;
+		border: none;
+		height: 32px;
+		border-radius: 50%;
+		color: white;
+		background-color: @black;
+		margin-left: 15px;
+		cursor: pointer;
+		&:hover {
+			background-color: white;
+			border: solid 1px @black;
+			color: @black;
+		}
+	}
+}
 #thread-details {
 	max-width: 640px;
 	margin: 0 auto;
@@ -730,7 +776,9 @@ header {
 
 
 
-
+#csrf-token {
+	display: none;
+}
 
 
 

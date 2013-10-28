@@ -1,12 +1,21 @@
 from django.views.generic import UpdateView
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponse, Http404
 
 import pdb
 
 from braces.views import LoginRequiredMixin
 
-from misc.models import Facebook, Twitter, Tumblr, About, Contact
+from misc.models import Facebook, Twitter, Tumblr, About, Contact, Subscription
 
+def subscribe(request):
+	if request.is_ajax():
+		try:
+			Subscription.objects.create(email=request.POST['email'])
+			message = 'success'
+		except:
+			message = 'failure'
+	return HttpResponse(message);
 
 class FacebookUpdateView(LoginRequiredMixin, UpdateView):
 

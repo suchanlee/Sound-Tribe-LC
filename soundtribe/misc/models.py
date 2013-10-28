@@ -1,6 +1,10 @@
 from django.db import models
 from redactor.fields import RedactorField
 
+class Subscription(models.Model):
+	date_added = models.DateTimeField(auto_now_add=True)
+	email = models.EmailField()
+
 
 class Facebook(models.Model):
 	url = models.URLField(max_length=200)

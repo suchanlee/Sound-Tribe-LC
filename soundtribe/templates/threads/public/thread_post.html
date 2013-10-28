@@ -1,6 +1,6 @@
 {% load endless %}
 
-{% paginate 1 threads %}
+{% paginate 2 threads %}
 	{% for thread in threads %}
 <a href="/threads/{{thread.id}}/{{thread.slug}}/" title="{{thread.title|upper}}" class="thread-anchors"></a>
 <div id="thread-details">
@@ -49,6 +49,16 @@
 	<a href="/threads/{{thread.id}}/{{thread.slug}}/" title="{{thread.title|upper}}" class="thread-anchors"></a>
 </div>
 	{% endfor %}
+	<div class="thread-subscribe">
+		<form action="">
+			{% csrf_token %}
+			<h3>Get updates from Sound Tribe LC!</h3>
+			<p class="subscribe-success">You have been successfully subscribed.</p>
+			<p class="subscribe-error">Please input a valid email address.</p>
+			<input type="email" name="subscription-email" placeholder="Email">
+			<input type="submit" value="GO" class="subscribe-submit">
+		</form>
+	</div>
 {% show_more %}
 
 

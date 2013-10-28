@@ -1,6 +1,7 @@
 $(function($) {
 	// setHeaderTop();
 	setThreadWidthHeight();
+	setSubscriptionVar(false);
 	$('.thread-anchors').addClass('anchor');
 });
 
@@ -14,6 +15,15 @@ $(window).scroll(function() {
 		updateThreadPath(pos);
 	}
 });
+
+function setSubscriptionVar(val) {
+	window.subscription = val;
+}
+
+function getSubscriptionVar() {
+	return window.subscription;
+}
+
 function updateThreadPath(position) {
 	var cur_position = position;
 	var anchors = $('.thread-anchors');
@@ -26,11 +36,48 @@ function updateThreadPath(position) {
 			if (window.location.pathname !== link) {
 				history.replaceState('', '', link);
 				document.title = anchor.attr('title');
+				if (getSubscriptionVar()) {
+					$('.thread-subscribe').css('display','none');
+				}
 			}
 			break;
 		}
 	}
 }
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+$('.subscribe-submit').click(function() {
+	var email = $(this).siblings('input[type="email"]').val();
+	var csrf = $('#csrf-token').text();
+	var subscribe = $(this);
+	if (validateEmail(email)) {
+		$.ajax({
+			type: "POST",
+			url: "/subscribe/submit/",
+			data: {
+				email: email,
+				csrfmiddlewaretoken: csrf,
+			},
+			success: function(data) {
+				subscribe.siblings('.subscribe-error').css('display', 'none');
+				subscribe.siblings('input[type="email"]').css('display', 'none');
+				subscribe.css('display', 'none');
+				subscribe.siblings('.subscribe-success').fadeIn();
+				setSubscriptionVar(true);
+			},
+			error: function(data) {
+				subscribe.siblings('.subscribe-error').val('There was an error. Please try again.').fadeIn('display', 'block');
+			}
+		});
+	} else {
+		$(this).siblings('.subscribe-error').fadeIn();
+	}
+	return false;
+});
 
 $('.fold-unfold-anchor').click(function() {
 	$('.fold-unfold').toggle();

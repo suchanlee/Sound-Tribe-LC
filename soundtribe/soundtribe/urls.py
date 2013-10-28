@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 
 from threads.views import AdminView, HomeView
+from misc.views import subscribe
 
 urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', name='login_view'),
@@ -12,7 +13,7 @@ urlpatterns = patterns('',
     url(r'^music/', include('music.urls'), name='music_views'),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^search/', include('haystack.urls')),
-
+    url(r'^subscribe/submit/$', subscribe, name='subscribe')
 )
 
 if settings.DEBUG:
