@@ -88,8 +88,7 @@ class ThreadType(models.Model):
 		If the post has not yet been saved
 		create a slug from the title and save it
 		'''
-		if not self.id:
-			self.slug = slugify(self.title)
+		self.slug = slugify(self.title)
 
 		super(ThreadType, self).save(*args, **kwargs)
 
