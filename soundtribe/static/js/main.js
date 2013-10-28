@@ -1,12 +1,14 @@
 $(function($) {
 	// setHeaderTop();
 	setThreadWidthHeight();
+	setSplashElemDim();
 	setSubscriptionVar(false);
 	$('.thread-anchors').addClass('anchor');
 });
 
 $(window).resize(function() {
 	setThreadWidthHeight();
+	setSplashElemDim();
 });
 
 $(window).scroll(function() {
@@ -15,6 +17,19 @@ $(window).scroll(function() {
 		updateThreadPath(pos);
 	}
 });
+
+function setSplashElemDim() {
+	var recents = $('.splash-recent-list');
+	recents.height(recents.width());
+	var interview1 = $('#splash-interviews-1');
+	var interviewContainer = $('#splash-interviews-2-container');
+	var interview2 = $('#splash-interviews-2');
+	var interview3 = $('#splash-interviews-3');
+	interview1.height(interview1.width());
+	interviewContainer.height(interview1.width());
+	interview2.height(interview2.width()/2.12);
+	interview3.height(interview3.width()/2.12);
+}
 
 function setSubscriptionVar(val) {
 	window.subscription = val;

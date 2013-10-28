@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}SOUND TRIBE LIFESTYLE AND CULTURE{% endblock %}
+{% block title %}Sound Tribe LC{% endblock %}
 {% block styles %}
 {{block.super}}
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -10,126 +10,87 @@
 {% block content %}
 
 <header>
-<!-- 	<nav>
-		<div id="header-about">
-			<h3>ABOUT US</h3>
-			<div class="header-about-contact-divider1"></div>
-			<div class="header-about-contact-divider2"></div>
-			<p>{{about.content|safe}}</p>
-		</div>
-		<div id="header-contact">
-			<h3>CONTACT</h3>
-			<div class="header-about-contact-divider1"></div>
-			<div class="header-about-contact-divider2"></div>
-			<p>{{contact.content|safe}}</p>
-		</div>
-		<div id="header-contact-extra">
-			<p>We do NOT accept any music submissions or press material via Facebook, Twitter, or our admin@soundtribelc.com account.
-			<br><br>We will respond back to you as soon as possible.</p>
-		</div>
-		<div id="header-nav-sns">
-			<div id="header-sns">
-				<a href="{{facebook.url}}" target="_blank" class="socialico">f</a>
-				<a href="{{tumblr.url}}" target="_blank" class="socialico">o</a>
-				<a href="{{twitter.url}}" target="_blank" class="socialico">l</a>
-				<a href="{{tumblr.url}}" target="_blank" class="socialico">x</a>
-			</div>
-			<ul>
-				{% for type in types %}
-				<li><a href="/threads/{{type.slug}}/">{{type.title|upper}}</a></li>
-				{% endfor %}
-			</ul>
-		</div>
-	</nav> -->
-	<div id="header-menu">
+	<nav id="header-menu">
 		<div id="header-logo">
 			<a href="#"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
 		</div>
 		<ul id="menu-threads">
-			{% for type, threads in menu_threads %}
 			<li class="header-menu-submenu-anchor">
-				<a href="/threads/category/{{type.slug}}/">{{type.title|upper}}</a>
-				<div class="header-menu-submenu">
-					<div class="header-menu-submenu-nav">
-						<p>Most recent {{type.title|title}} threads</p>
-					</div>
-					{% for thread in threads %}
-						<div class="header-menu-submenu-icons" style="background: url('{{MEDIA_URL}}{{thread.main_image}}') no-repeat; background-position: center;">
-							<h3>{{thread.title|title}}</h3>
-							<div class="header-menu-submenu-background">
-							</div>
-						</div>
-					{% endfor %}
-				</div>
+				<a href="/threads/category/{{type.slug}}/">INTERVIEW</a>
 			</li>
-			{% endfor %}
-			<li id="search-anchor">
-				<i class="icon-search" id="icon-search"></i>
-				<div id="header-search">
-					<form action="" method="POST">
-						<input type="text">
-					</form>
-				</div>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">AUDIO</a>
+			</li>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">VIDEO</a>
+			</li>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">TALK</a>
+			</li>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">BLOG</a>
 			</li>
 		</ul>
-	</div>
+<!-- 		<ul id="menu-social">
+			<li>
+				<a href="">f </a>
+			</li>
+			<li>
+				<a href="">l </a>
+			</li>
+		</ul> -->
+	</nav>
 </header>
 
-<div id="threads2">
-	<div id="new-threads">
-		{# <h3>New Threads</h3> #}
-		<ul>
-		{% for thread in threads %}
-			<li class="new-threads-li">
-				<div class="new-threads-div">
-					<div class="new-threads-image" style="background: url('{{MEDIA_URL}}{{thread.main_image}}') no-repeat; background-position: center;"><a href="/threads/{{thread.id}}/{{thread.slug}}/"></a>
-					</div>
-					<div class="new-threads-info">
-						<p class="new-threads-title"><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.title|title}}</a></p>
-						<p class="new-threads-subtitle"><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.subtitle|upper}}</a></p>
-					</div>
-				</div>
-			</li>
-		{% endfor %}
-		</ul>
-	</div>
-	<div id="hot-threads">
-		{# <h3>Hot Threads</h3> #}
-	{% for thread in threads %}
-		<ul class="hot-threads-ul">
-			<li class="hot-threads-image"><a href="/threads/{{thread.id}}/{{thread.slug}}/"><img src="{{MEDIA_URL}}{{thread.main_image}}" alt=""></a></li>
-			<li class="hot-threads-type"><a href="/threads/category/{{thread.thread_type.slug}}/">{{thread.thread_type|upper}} + {{thread.created|date:"M tS, o"}}</a></li>
-			<li class="hot-threads-title"><h2><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.title|upper}}</a></h2></li>
-			<li class="hot-threads-snippet"><p><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.content|truncatewords_html:40|safe}}</a></p></li>
-		</ul>
+<div class="splash-container">
+	<div id="slides">
+	{% for slide in slideshow %}
+		<img src="{{MEDIA_URL}}{{slide.main_image}}" alt="">
 	{% endfor %}
 	</div>
 </div>
 
-<!-- <div id="threads">
-	{% for thread in threads %}
-	<div class="thread-square">
-		<a href="/threads/{{thread.id}}/{{thread.slug}}/" style="width: 100%; height: 100; display: block;"></a>
-		<div class="thread-img" style="background: url('{{MEDIA_URL}}{{thread.main_image}}') no-repeat center center; filter: saturate(50%); -webkit-filter: saturate(50%);"></div>
-		<div class="thread-square-overlay">
-		</div>
-		<div class="thread-text">
-			<table>
-				<tr>
-					<td>
-						<p class="thread-title"><a href="">{{thread.title}}</a></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p class="thread-type"><a href="">{{thread.thread_type.title}}</a></p>
-					</td>
-				</tr>
-			</table>
-		</div>
+<div class="splash-container">
+	<div class="splash-subheading">RECENT</div>
+	<div id="splash-recent">
+		<ul>
+			{% for t in recents %}
+			<li>
+				<p class="splash-recent-list-type"><a href="/threads/category/{{t.thread_type.slug}}/">{{t.thread_type|upper}}</a></p>
+				<div class="splash-recent-list" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+					<a href="/threads/{{t.id}}/{{t.slug}}/"></a>
+				</div>
+				<p class="splash-recent-list-title"><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a></p>
+			</li>
+			{% endfor %}
+		</ul>
 	</div>
+</div>
+
+<div class="splash-container">
+	<div class="splash-subheading">INTERVIEW</div>
+	<div id="splash-interviews">
+	{% for t in interviews %}
+		{% if forloop.counter == 1 %}
+		<div id="splash-interviews-1" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+			<h3><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a>
+		</div>
+		{% elif forloop.counter == 2 %}
+		<div id="splash-interviews-2-container">
+		<div id="splash-interviews-2" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+			<h3><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a>
+		</div>
+		{% else %}
+		<div id="splash-interviews-3" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+			<h3><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a>
+		</div>
+		</div>
+		{% endif %}
 	{% endfor %}
-</div> -->
+	</div>
+</div>
+
+
 
 
 {% endblock %}

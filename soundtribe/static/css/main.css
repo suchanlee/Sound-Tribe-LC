@@ -15,102 +15,11 @@ header {
   width: 100%;
   z-index: 99999;
   margin-top: 10px;
-}
-header nav {
-  text-align: right;
-  background-color: black;
-  opacity: 0.65;
-  color: #ffffff;
-}
-header nav #header-about,
-header nav #header-contact,
-header nav #header-contact-extra {
-  text-align: left;
-  float: left;
-  width: 250px;
-  margin-left: 15px;
-  margin-right: 39px;
-}
-header nav #header-about h3,
-header nav #header-contact h3,
-header nav #header-contact-extra h3 {
-  font-weight: 300;
-  font-size: 25px;
-  margin-top: 15px;
-  margin-bottom: 0px;
-  letter-spacing: 1px;
-}
-header nav #header-about p,
-header nav #header-contact p,
-header nav #header-contact-extra p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: 300;
-  font-size: 1em;
-  letter-spacing: 1px;
-}
-header nav #header-about .header-about-contact-divider1,
-header nav #header-contact .header-about-contact-divider1,
-header nav #header-contact-extra .header-about-contact-divider1,
-header nav #header-about .header-about-contact-divider2,
-header nav #header-contact .header-about-contact-divider2,
-header nav #header-contact-extra .header-about-contact-divider2 {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 4px;
-  margin-bottom: 9px;
-}
-header nav #header-about .header-about-contact-divider1,
-header nav #header-contact .header-about-contact-divider1,
-header nav #header-contact-extra .header-about-contact-divider1 {
-  float: left;
-  width: 130px;
-  border-top: 1px solid white;
-}
-header nav #header-about .header-about-contact-divider2,
-header nav #header-contact .header-about-contact-divider2,
-header nav #header-contact-extra .header-about-contact-divider2 {
-  width: 105px;
-  border-top: 5px solid white;
-}
-header nav #header-contact-extra p {
-  margin-top: 67px;
-  margin-left: -24px;
-}
-header nav #header-nav-sns {
-  display: inline-block;
-  vertical-align: top;
-  text-align: right;
-  margin-right: 25px;
-}
-header nav #header-nav-sns ul {
-  padding-left: 0;
-  font-size: 1.6em;
-  margin-top: 5px;
-  font-weight: 300;
-  margin-bottom: 35px;
-}
-header nav #header-nav-sns li {
-  list-style-type: none;
-  margin-top: 2px;
-}
-header nav #header-nav-sns a {
-  text-decoration: none;
-  color: #ffffff;
-}
-header nav #header-nav-sns a:hover {
-  color: red;
-}
-header nav #header-nav-sns .socialico {
-  font-size: 3em;
-}
-header nav #header-nav-sns #header-sns {
-  margin-top: 15px;
+  border-bottom: 1px solid #cccccc;
 }
 header #header-menu {
   padding-top: 8px;
-  padding-bottom: 5px;
-  margin-bottom: 30px;
+  padding-bottom: 15px;
   position: relative;
 }
 header #header-menu #header-search,
@@ -123,7 +32,8 @@ header #header-menu #header-logo {
 }
 header #header-menu #header-logo img {
   width: 200px;
-  margin-left: 10px;
+  margin-left: 65px;
+  margin-top: 15px;
 }
 header #header-menu #header-pull {
   margin-right: 10px;
@@ -162,14 +72,14 @@ header #header-menu #menu-threads {
   list-style-type: none;
   display: inline-block;
   vertical-align: top;
-  margin-top: 5px;
+  margin-top: 25px;
   margin-bottom: 0px;
 }
 header #header-menu #menu-threads li {
   display: inline-block;
-  font-size: 0.9em;
-  margin-left: 5px;
-  margin-right: 5px;
+  font-size: 0.96em;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 header #header-menu #menu-threads li a {
   color: #6e6e6e;
@@ -217,6 +127,17 @@ header #header-menu #menu-threads .header-menu-submenu .header-menu-submenu-back
   height: 150px;
   background-color: black;
   opacity: 0.3;
+}
+header #header-menu #menu-social {
+  font-family: "socialico";
+}
+header #header-menu #menu-social li {
+  display: inline-block;
+  list-style-type: none;
+}
+header #header-menu #menu-social li a {
+  text-decoration: none;
+  color: #3c3c3c;
 }
 .grayscale {
   -webkit-filter: grayscale(100%);
@@ -444,10 +365,144 @@ header #header-menu #menu-threads .header-menu-submenu .header-menu-submenu-back
   font-weight: 300;
   font-size: 0.8em;
 }
+.splash-container {
+  border-bottom: 1px solid #cccccc;
+}
+.splash-container .splash-subheading {
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  margin-top: -19px;
+  font-size: 1.5em;
+  display: table;
+  padding: 0 45px 0 45px;
+  background-color: white;
+  color: #4b4c4e;
+}
+#splash-recent {
+  margin-top: 20px;
+}
+#splash-recent ul {
+  padding-left: 0;
+  text-align: center;
+}
+#splash-recent ul li {
+  display: inline-block;
+  list-style-type: none;
+  vertical-align: top;
+  width: 27.1%;
+  margin: 1%;
+  min-width: 150px;
+}
+#splash-recent ul li .splash-recent-list-type {
+  display: table;
+  margin: 0 auto;
+  margin-bottom: -13px;
+  padding: 6px 35px 6px 35px;
+  font-size: 0.85em;
+  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  font-weight: 300;
+}
+#splash-recent ul li .splash-recent-list-type a {
+  color: white;
+  text-decoration: none;
+}
+#splash-recent ul li .splash-recent-list-title {
+  text-align: left;
+  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-size: 1.05em;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-top: 7px;
+}
+#splash-recent ul li .splash-recent-list-title a {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+#splash-recent ul li .splash-recent-list-title a:hover {
+  text-decoration: underline;
+}
+#splash-recent ul .splash-recent-list {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#splash-recent ul .splash-recent-list a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+}
+#splash-interviews {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+#splash-interviews #splash-interviews-1,
+#splash-interviews #splash-interviews-2,
+#splash-interviews #splash-interviews-3 {
+  position: relative;
+}
+#splash-interviews #splash-interviews-1 h3,
+#splash-interviews #splash-interviews-2 h3,
+#splash-interviews #splash-interviews-3 h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 300;
+  padding: 10px 10px 10px 10px;
+  background-color: black;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  opacity: 0.8;
+  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+#splash-interviews #splash-interviews-1 h3 a,
+#splash-interviews #splash-interviews-2 h3 a,
+#splash-interviews #splash-interviews-3 h3 a {
+  color: white;
+  text-decoration: none;
+}
+#splash-interviews #splash-interviews-1 h3 a:hover,
+#splash-interviews #splash-interviews-2 h3 a:hover,
+#splash-interviews #splash-interviews-3 h3 a:hover {
+  text-decoration: underline;
+}
+#splash-interviews #splash-interviews-1,
+#splash-interviews #splash-interviews-2-container {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1%;
+  width: 41.8%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#splash-interviews #splash-interviews-2-container {
+  overflow: hidden;
+}
+#splash-interviews #splash-interviews-2,
+#splash-interviews #splash-interviews-3 {
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#splash-interviews #splash-interviews-2 {
+  margin-bottom: 5.85%;
+}
+#splash-interviews #splash-interviews-3 {
+  margin-top: 5.85%;
+}
 #slides {
   position: relative;
-  width: 100%;
-  margin-top: 20px;
+  margin: 0 auto;
+  width: 86%;
+  margin-top: 25px;
+  margin-bottom: 45px;
 }
 #slides img {
   width: 100%;
@@ -464,25 +519,26 @@ header #header-menu #menu-threads .header-menu-submenu .header-menu-submenu-back
 }
 #slides .slidesjs-previous {
   left: 20px;
-  background: url('../img/side-arrow-left.png') no-repeat;
-  background-size: 60 200px;
+  background: url('../img/arrows-left.png') no-repeat;
   height: 200px;
   width: 60px;
   text-indent: -9999px;
 }
 #slides .slidesjs-previous:hover {
-  background: url('../img/side-arrow-left-hover.png') no-repeat;
+  width: 60px;
+  background: url('../img/arrow-left-hover.png') no-repeat;
 }
 #slides .slidesjs-next {
+  background: url('../img/arrows-right.png') no-repeat;
   right: 20px;
-  background: url('../img/side-arrow.png') no-repeat;
   background-size: 60px 200px;
   height: 200px;
   width: 60px;
   text-indent: -9999px;
 }
 #slides .slidesjs-next:hover {
-  background: url('../img/side-arrow-hover.png') no-repeat;
+  background-size: 60px 200px;
+  background: url('../img/arrows-right.png') no-repeat;
 }
 #thread-menu {
   position: fixed;

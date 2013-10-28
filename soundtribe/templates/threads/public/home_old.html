@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}SOUND TRIBE LIFESTYLE AND CULTURE{% endblock %}
+{% block styles %}
+{{block.super}}
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<header>
+	<nav id="header-menu">
+		<div id="header-logo">
+			<a href="#"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
+		</div>
+		<ul id="menu-threads">
+<!-- 			{% for type, threads in menu_threads %}
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">{{type.title|upper}}</a>
+				<div class="header-menu-submenu">
+					<div class="header-menu-submenu-nav">
+						<p>Most recent {{type.title|title}} threads</p>
+					</div>
+					{% for thread in threads %}
+						<div class="header-menu-submenu-icons" style="background: url('{{MEDIA_URL}}{{thread.main_image}}') no-repeat; background-position: center;">
+							<h3>{{thread.title|title}}</h3>
+							<div class="header-menu-submenu-background">
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</li>
+			{% endfor %} -->
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">INTERVIEW</a>
+			</li>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">AUDIO</a>
+			</li>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">VIDEO</a>
+			</li>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">TALK</a>
+			</li>
+			<li class="header-menu-submenu-anchor">
+				<a href="/threads/category/{{type.slug}}/">BLOG</a>
+			</li>
+<!-- 			<li id="search-anchor">
+				<i class="icon-search" id="icon-search"></i>
+				<div id="header-search">
+					<form action="" method="POST">
+						<input type="text">
+					</form>
+				</div>
+			</li> -->
+		</ul>
+<!-- 		<ul id="menu-social">
+			<li>
+				<a href="">f </a>
+			</li>
+			<li>
+				<a href="">l </a>
+			</li>
+		</ul> -->
+	</nav>
+</header>
+
+<div id="threads2">
+	<div id="new-threads">
+		{# <h3>New Threads</h3> #}
+		<ul>
+		{% for thread in threads %}
+			<li class="new-threads-li">
+				<div class="new-threads-div">
+					<div class="new-threads-image" style="background: url('{{MEDIA_URL}}{{thread.main_image}}') no-repeat; background-position: center;"><a href="/threads/{{thread.id}}/{{thread.slug}}/"></a>
+					</div>
+					<div class="new-threads-info">
+						<p class="new-threads-title"><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.title|title}}</a></p>
+						<p class="new-threads-subtitle"><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.subtitle|upper}}</a></p>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+	<div id="hot-threads">
+		{# <h3>Hot Threads</h3> #}
+	{% for thread in threads %}
+		<ul class="hot-threads-ul">
+			<li class="hot-threads-image"><a href="/threads/{{thread.id}}/{{thread.slug}}/"><img src="{{MEDIA_URL}}{{thread.main_image}}" alt=""></a></li>
+			<li class="hot-threads-type"><a href="/threads/category/{{thread.thread_type.slug}}/">{{thread.thread_type|upper}} + {{thread.created|date:"M tS, o"}}</a></li>
+			<li class="hot-threads-title"><h2><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.title|upper}}</a></h2></li>
+			<li class="hot-threads-snippet"><p><a href="/threads/{{thread.id}}/{{thread.slug}}/">{{thread.content|truncatewords_html:40|safe}}</a></p></li>
+		</ul>
+	{% endfor %}
+	</div>
+</div>
+
+<!-- <div id="threads">
+	{% for thread in threads %}
+	<div class="thread-square">
+		<a href="/threads/{{thread.id}}/{{thread.slug}}/" style="width: 100%; height: 100; display: block;"></a>
+		<div class="thread-img" style="background: url('{{MEDIA_URL}}{{thread.main_image}}') no-repeat center center; filter: saturate(50%); -webkit-filter: saturate(50%);"></div>
+		<div class="thread-square-overlay">
+		</div>
+		<div class="thread-text">
+			<table>
+				<tr>
+					<td>
+						<p class="thread-title"><a href="">{{thread.title}}</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="thread-type"><a href="">{{thread.thread_type.title}}</a></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	{% endfor %}
+</div> -->
+
+
+{% endblock %}
+
+
+{% block js %}
+	{{block.super}}
+	<script src="{% static "js/jquery.slides.min.js" %}"></script>
+  	<script>
+  	  $(function() {
+  	  	var width = $(window).width();
+  	    $('#slides').slidesjs({
+  	      width: width,
+  	      height: width/2.3,
+  	      navigation: {
+  	      	active: true,
+  	      	effect: "slide"
+  	      }
+  	    });
+  	  });
+  	</script>
+{% endblock %}

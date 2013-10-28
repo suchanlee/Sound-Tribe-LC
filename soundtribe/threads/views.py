@@ -29,7 +29,6 @@ class ThreadMixin(object):
 
 class HomeView(TemplateView):
 	template_name = 'threads/public/home.html'
-
 	def get_context_data(self):
 		thread_types = ThreadType.objects.all()
 		types = []
@@ -37,8 +36,9 @@ class HomeView(TemplateView):
 			threads = Thread.objects.filter(Q(published=True)&Q(thread_type=t))[:4]
 			types.append([t,threads])
 		context = {
-			# 'slideshow': Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5],
-			'threads': Thread.objects.filter(published=True)[:25],
+			'slideshow': Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5],
+			'recents': Thread.objects.filter(published=True)[:6],
+			'interviews': Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))[:3],
 			'types': thread_types,
 			'menu_threads': types,
 			'facebook': Facebook.objects.get(id=1),
