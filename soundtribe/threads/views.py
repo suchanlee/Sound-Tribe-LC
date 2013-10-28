@@ -105,6 +105,16 @@ class ThreadListView(TemplateView):
 			context['obj_title'] = 'thread list'
 		return context
 
+class ThreadTypeListView(TemplateView):
+
+	template_name = 'threads/admin/threadtype_list.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(ThreadTypeListView, self).get_context_data(**kwargs)
+		context['objects'] = ThreadType.objects.all()
+		context['obj_title'] = 'thread types'
+		return context
+
 
 class TagListView(TemplateView):
 
@@ -144,6 +154,11 @@ class ThreadTypeCreateView(LoginRequiredMixin, CreateView):
 
 
 # UPDATE VIEWS
+
+class ThreadTypeUpdateView(LoginRequiredMixin, UpdateView):
+	model = ThreadType
+	template_name = 'threads/admin/threadtype_form.html'
+	success_url = '/admin/'
 
 
 class ThreadUpdateView(LoginRequiredMixin, UpdateView):

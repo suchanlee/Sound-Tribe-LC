@@ -17,13 +17,6 @@ header {
   margin-top: 10px;
   border-bottom: 1px solid #cccccc;
 }
-header #header-nav,
-header #header-logo {
-  display: inline-block;
-}
-header #header-nav {
-  text-align: right;
-}
 header #header-menu {
   padding-top: 8px;
   padding-bottom: 15px;
@@ -79,15 +72,14 @@ header #header-menu #menu-threads {
   list-style-type: none;
   display: inline-block;
   vertical-align: top;
-  margin-top: 0px;
+  margin-top: 25px;
   margin-bottom: 0px;
-  text-align: right;
-  padding-left: 0px;
 }
 header #header-menu #menu-threads li {
   display: inline-block;
   font-size: 0.96em;
-  margin-left: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 header #header-menu #menu-threads li a {
   color: #6e6e6e;
@@ -137,14 +129,11 @@ header #header-menu #menu-threads .header-menu-submenu .header-menu-submenu-back
   opacity: 0.3;
 }
 header #header-menu #menu-social {
-  margin-top: -10px;
-  margin-bottom: 7px;
   font-family: "socialico";
 }
 header #header-menu #menu-social li {
   display: inline-block;
   list-style-type: none;
-  font-size: 1.7em;
 }
 header #header-menu #menu-social li a {
   text-decoration: none;
@@ -417,10 +406,6 @@ header #header-menu #menu-social li a {
   color: white;
   font-weight: 300;
 }
-#splash-recent ul li .splash-recent-list-type a {
-  color: white;
-  text-decoration: none;
-}
 #splash-recent ul li .splash-recent-list-title {
   text-align: left;
   font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
@@ -440,81 +425,6 @@ header #header-menu #menu-social li a {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-}
-#splash-recent ul .splash-recent-list a {
-  width: 100%;
-  height: 100%;
-  display: block;
-  text-decoration: none;
-}
-#splash-interviews {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 35px;
-}
-#splash-interviews #splash-interviews-1,
-#splash-interviews #splash-interviews-2,
-#splash-interviews #splash-interviews-3 {
-  position: relative;
-}
-#splash-interviews #splash-interviews-1 h3,
-#splash-interviews #splash-interviews-2 h3,
-#splash-interviews #splash-interviews-3 h3 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-weight: 300;
-  padding: 10px 10px 10px 10px;
-  background-color: black;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  opacity: 0.8;
-  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-}
-#splash-interviews #splash-interviews-1 h3 a,
-#splash-interviews #splash-interviews-2 h3 a,
-#splash-interviews #splash-interviews-3 h3 a {
-  color: white;
-  text-decoration: none;
-}
-#splash-interviews #splash-interviews-1 h3 a:hover,
-#splash-interviews #splash-interviews-2 h3 a:hover,
-#splash-interviews #splash-interviews-3 h3 a:hover {
-  text-decoration: underline;
-}
-#splash-interviews #splash-interviews-1,
-#splash-interviews #splash-interviews-2-container {
-  display: inline-block;
-  vertical-align: top;
-  margin: 1%;
-  width: 41.8%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#splash-interviews #splash-interviews-2-container {
-  overflow: hidden;
-}
-#splash-interviews #splash-interviews-2,
-#splash-interviews #splash-interviews-3 {
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#splash-interviews #splash-interviews-2 {
-  margin-bottom: 5.85%;
-}
-#splash-interviews #splash-interviews-3 {
-  margin-top: 5.85%;
-}
-#splash-footer {
-  color: #6e6e6e;
-  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  text-transform: uppercase;
-}
-#splash-footer li {
-  list-style-type: none;
 }
 #slides {
   position: relative;
@@ -538,17 +448,19 @@ header #header-menu #menu-social li a {
 }
 #slides .slidesjs-previous {
   left: 20px;
-  background: url('../img/arrows-left.png') no-repeat;
+  background: url('../img/side-arrow-left.png') no-repeat;
+  background-size: 60 200px;
   height: 200px;
   width: 60px;
   text-indent: -9999px;
 }
 #slides .slidesjs-previous:hover {
+  background-size: 60 200px;
   width: 60px;
-  background: url('../img/arrow-left-hover.png') no-repeat;
+  background: url('../img/side-arrow-left-hover.png') no-repeat;
 }
 #slides .slidesjs-next {
-  background: url('../img/arrows-right.png') no-repeat;
+  background: url('../img/side-arrow.png') no-repeat;
   right: 20px;
   background-size: 60px 200px;
   height: 200px;
@@ -557,7 +469,7 @@ header #header-menu #menu-social li a {
 }
 #slides .slidesjs-next:hover {
   background-size: 60px 200px;
-  background: url('../img/arrows-right.png') no-repeat;
+  background: url('../img/side-arrow-hover.png') no-repeat;
 }
 #thread-menu {
   position: fixed;

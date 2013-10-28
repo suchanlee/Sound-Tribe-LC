@@ -22,13 +22,15 @@ function setSplashElemDim() {
 	var recents = $('.splash-recent-list');
 	recents.height(recents.width());
 	var interview1 = $('#splash-interviews-1');
-	var interviewContainer = $('#splash-interviews-2-container');
+	var interview_container = $('#splash-interviews-2-container');
 	var interview2 = $('#splash-interviews-2');
 	var interview3 = $('#splash-interviews-3');
 	interview1.height(interview1.width());
-	interviewContainer.height(interview1.width());
+	interview_container.height(interview1.width());
 	interview2.height(interview2.width()/2.12);
 	interview3.height(interview3.width()/2.12);
+	var header_nav = $('#header-nav');
+	header_nav.width($('#slides').width()-$('#header-logo img').width()-2);
 }
 
 function setSubscriptionVar(val) {

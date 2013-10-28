@@ -33,6 +33,12 @@ header {
 	z-index: 99999;
 	margin-top: 10px;
 	border-bottom: 1px solid @splash-border;
+	#header-nav, #header-logo {
+		display: inline-block;
+	}
+	#header-nav {
+		text-align: right;
+	}
 	#header-menu {
 		padding-top: 8px;
 		padding-bottom: 15px;
@@ -86,13 +92,14 @@ header {
 			list-style-type: none;
 			display: inline-block;
 			vertical-align: top;
-			margin-top: 25px;
+			margin-top: 0px;
 			margin-bottom: 0px;
+			text-align: right;
+			padding-left: 0px;
 			li {
 				display: inline-block;
 				font-size: 0.96em;
-				margin-left: 16px;
-				margin-right: 16px;
+				margin-left: 32px;
 				a {
 					color: @lighter-black;
 					text-decoration: none;
@@ -147,15 +154,26 @@ header {
 			}
 		}
 		#menu-social {
+			margin-top: -10px;
+			margin-bottom: 7px;
 			font-family: "socialico";
 			li {
 				display: inline-block;
 				list-style-type: none;
+				font-size: 1.7em;
 				a {
 					text-decoration: none;
 					color: @black;
 				}
 			}
+			// #menu-subscribe {
+			// 	font-family: @sans-serif;
+			// 	font-size: 0.8em;
+			// 	border-right: 1px solid @splash-border;
+			// 	a {
+			// 		color: @lighter-black;
+			// 	}
+			// }
 		}
 	}
 
@@ -522,7 +540,15 @@ header {
  	#splash-interviews-3 {
 		margin-top: 5.85%;
  	}
+}
 
+#splash-footer {
+	color: @lighter-black;
+	font-family: @sans-serif;
+	text-transform: uppercase;
+	li {
+		list-style-type: none;
+	}
 }
 
 #slides {
