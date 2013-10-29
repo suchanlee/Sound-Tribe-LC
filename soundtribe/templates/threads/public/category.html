@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Sound Tribe LC{% endblock %}
+
+{% block content %}
+
+{% include "nav.html" %}
+
+<div id="category-list" class="splash-container">
+	<h1>{{category.title|upper}}</h1>
+	<ul>
+		{% for t in threads %}
+		<li>
+			{% if forloop.last %}
+			<div class="category-item" id="category-item-last">
+			{% else %}
+			<div class="category-item">
+			{% endif %}
+				<div class="category-item-image" style="background-image:url('{{MEDIA_URL}}{{t.main_image}}');">
+					<a href=""></a>
+				</div>
+				<div class="category-item-info">
+					<h2>{{t.title|upper}}</h2>
+					<h3>{{t.subtitle|title}}</h3>
+					<p>{{t.content|truncatewords_html:30|safe}}</p>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+
+{% include "footer.html" %}
+
+{% endblock %}

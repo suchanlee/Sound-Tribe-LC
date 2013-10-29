@@ -9,35 +9,7 @@
 
 {% block content %}
 
-<header>
-	<nav id="header-menu">
-		<div id="header-logo">
-			<a href="/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
-		</div>
-		<div id="header-nav">
-			<ul id="menu-social">
-				<li><a href="{{facebook.url}}">f</a></li><li><a href="{{twitter.url}}">l</a></li><li><a href="{{tumblr.url}}">t</a></li>
-			</ul>
-			<ul id="menu-threads">
-				<li class="header-menu-submenu-anchor">
-					<a href="/threads/category/{{type.slug}}/">INTERVIEW</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/threads/category/{{type.slug}}/">AUDIO</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/threads/category/{{type.slug}}/">VIDEO</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/threads/category/{{type.slug}}/">TALK</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/threads/category/{{type.slug}}/">BLOG</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-</header>
+{% include "nav.html" %}
 
 <div class="splash-container">
 	<div id="slides">
@@ -87,15 +59,7 @@
 	</div>
 </div>
 
-<div class="splash-container">
-	<div id="splash-footer">
-		<ul>
-			<li>Sound Tribe Music</li>
-			<li>About Sound Tribe LC</li>
-			<li>Contact</li>
-		</ul>
-	</div>
-</div>
+{% include "footer.html" %}
 
 
 {% endblock %}

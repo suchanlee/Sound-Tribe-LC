@@ -30,7 +30,11 @@ function setSplashElemDim() {
 	interview2.height(interview2.width()/2.12);
 	interview3.height(interview3.width()/2.12);
 	var header_nav = $('#header-nav');
-	header_nav.width($('#slides').width()-$('#header-logo img').width()-2);
+	header_nav.width($('#container').width()*0.86-$('#header-logo img').width()-3);
+	var category_image = $('.category-item-image');
+	var category_info = $('.category-item-info');
+	category_image.height(category_image.width());
+	category_info.width($('.category-item').width()-category_image.width()-90);
 }
 
 function setSubscriptionVar(val) {

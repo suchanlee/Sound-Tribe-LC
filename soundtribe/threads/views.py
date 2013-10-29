@@ -37,7 +37,7 @@ class HomeView(TemplateView):
 			types.append([t,threads])
 		context = {
 			'slideshow': Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5],
-			'recents': Thread.objects.filter(published=True)[:6],
+			'recents': Thread.objects.filter(published=True)[:8],
 			'interviews': Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))[:3],
 			'types': thread_types,
 			'menu_threads': types,
@@ -72,7 +72,7 @@ class ThreadView(ThreadMixin, AjaxListView):
 
 class CategoryView(ThreadMixin, AjaxListView):
 	context_object_name = 'threads'
-	template_name = 'threads/public/thread_detail.html'
+	template_name = 'threads/public/category.html'
 	page_template = 'threads/public/thread_post.html'
 	queryset = []
 
@@ -80,6 +80,7 @@ class CategoryView(ThreadMixin, AjaxListView):
 		context = super(CategoryView, self).get_context_data(**kwargs)
 		threads = Thread.objects.filter(Q(thread_type__slug=self.kwargs['category'])&Q(published=True))
 		context['threads'] = threads
+		context['category'] = ThreadType.objects.get(slug=self.kwargs['category'])
 		try:
 			context['single_thread'] = threads[0]
 		except:
