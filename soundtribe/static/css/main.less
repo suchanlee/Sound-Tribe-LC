@@ -758,7 +758,8 @@ header {
 		}
 	}
 }
-#thread-details {
+@media only screen (min-width: 321px) {
+	.thread-details {
 	max-width: 640px;
 	margin: 0 auto;
 	padding-top: 120px;
@@ -772,7 +773,7 @@ header {
 		margin-top: 20px;
 		margin-bottom: 30px;
 	}
-	#thread-info {
+	.thread-info {
 		h1 {
 			font-size: 3.85em;
 			line-height: 0.85em;
@@ -807,7 +808,7 @@ header {
 			}
 		}
 	}
-	#thread-interview-info {
+	.thread-interview-info {
 		margin-top: 30px;
 		margin-bottom: -10px;
 		p {
@@ -817,7 +818,7 @@ header {
 			padding-right: 40px;
 		}
 	}
-	#thread-content {
+	.thread-content {
 		margin-top: 42px;
 		font-family: @serif;
 		color: @black;
@@ -830,7 +831,6 @@ header {
 		blockquote {
 			font-family: @sans-serif;
 			font-size: 1.4em;
-			text-transform: uppercase;
 			line-height: 1.15em;
 			padding-top: 10px;
 			padding-bottom: 10px;
@@ -841,7 +841,7 @@ header {
 			font-weight: 700;
 		}
 	}
-	#thread-tags {
+	.thread-tags {
 		margin-top: 35px;
 		a {
 			color: @lighter-black;
@@ -849,13 +849,15 @@ header {
 			margin-right: 3px;
 		}
 	}
-	#thread-social {
+	.thread-social {
 		text-align: center;
 		margin-top: 75px;
 		a {
 			text-decoration: none;
 			color: @black;
 			font-size: 3em;
+			margin-left: 3px;
+			margin-right: 3px;
 		}
 		.thread-like-button {
 			cursor: pointer;
@@ -874,8 +876,60 @@ header {
 			}
 		}
 	}
+	}
 }
 
+@media only screen and (max-width: 320px) {
+	.thread-details {
+		padding-top: 70px;
+		padding-bottom: 50px;
+		h1, h3, p {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.thread-info, .thread-content, .thread-tags, .thread-interview-info {
+		}
+		.thread-info {
+			h1 {
+				font-size: 2.5em;
+			}
+			h3 {
+				font-size: 1.2em;
+				line-height: 1em;
+			}
+		}
+		.thread-content {
+			margin-top: 25px;
+			iframe {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				width: 100%;
+			}
+			img {
+				width: 100%;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			p {
+				font-size: 0.98em;
+				line-height: 1.4em;
+			}
+			blockquote {
+				margin: 25px 0 25px 0;
+				padding: 0px 35px 0px 35px;
+				font-size: 1.3em;
+				line-height: 1.2em;
+			}
+		}
+		.thread-tags {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		.thread-social {
+			margin-top: 30px;
+		}
+	}
+}
 
 
 /* ADMIN CSS FILES */

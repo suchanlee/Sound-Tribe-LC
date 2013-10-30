@@ -712,116 +712,168 @@ header #header-menu #menu-social li .share-facebook:hover {
   border: solid 1px #3c3c3c;
   color: #3c3c3c;
 }
-#thread-details {
-  max-width: 640px;
-  margin: 0 auto;
-  padding-top: 120px;
-  padding-bottom: 100px;
-  border-bottom: 1px solid #eeeeee;
+@media only screen (min-width: 321px) {
+  .thread-details {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .thread-details img {
+    width: 100%;
+  }
+  .thread-details iframe {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .thread-details .thread-info h1 {
+    font-size: 3.85em;
+    line-height: 0.85em;
+    margin-top: 30px;
+    color: #3c3c3c;
+    margin-bottom: 10px;
+  }
+  .thread-details .thread-info h1 a {
+    text-decoration: none;
+    color: #3c3c3c;
+  }
+  .thread-details .thread-info h1 a:hover {
+    text-decoration: underline;
+  }
+  .thread-details .thread-info h3 {
+    color: #6e6e6e;
+    font-weight: 400;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 1.45em;
+  }
+  .thread-details .thread-info p {
+    color: #6e6e6e;
+    margin-top: 1px;
+    font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+  .thread-details .thread-info p a {
+    color: #6e6e6e;
+    text-decoration: none;
+  }
+  .thread-details .thread-info p a:hover {
+    text-decoration: underline;
+  }
+  .thread-details .thread-interview-info {
+    margin-top: 30px;
+    margin-bottom: -10px;
+  }
+  .thread-details .thread-interview-info p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .thread-details .thread-content {
+    margin-top: 42px;
+    font-family: "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    color: #3c3c3c;
+    font-size: 1.1em;
+    position: relative;
+  }
+  .thread-details .thread-content img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .thread-details .thread-content blockquote {
+    font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1.4em;
+    line-height: 1.15em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 65px;
+    margin-right: 65px;
+  }
+  .thread-details .thread-content b {
+    font-weight: 700;
+  }
+  .thread-details .thread-tags {
+    margin-top: 35px;
+  }
+  .thread-details .thread-tags a {
+    color: #6e6e6e;
+    font-size: 0.85em;
+    margin-right: 3px;
+  }
+  .thread-details .thread-social {
+    text-align: center;
+    margin-top: 75px;
+  }
+  .thread-details .thread-social a {
+    text-decoration: none;
+    color: #3c3c3c;
+    font-size: 3em;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .thread-details .thread-social .thread-like-button {
+    cursor: pointer;
+  }
+  .thread-details .thread-social .thread-like-button:hover {
+    color: #a00000;
+  }
+  .thread-details .thread-social .share-twitter:hover {
+    color: #36abe0;
+  }
+  .thread-details .thread-social .share-facebook:hover {
+    color: #3b5998;
+  }
 }
-#thread-details img {
-  width: 100%;
-}
-#thread-details iframe {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-#thread-details #thread-info h1 {
-  font-size: 3.85em;
-  line-height: 0.85em;
-  margin-top: 30px;
-  color: #3c3c3c;
-  margin-bottom: 10px;
-}
-#thread-details #thread-info h1 a {
-  text-decoration: none;
-  color: #3c3c3c;
-}
-#thread-details #thread-info h1 a:hover {
-  text-decoration: underline;
-}
-#thread-details #thread-info h3 {
-  color: #6e6e6e;
-  font-weight: 400;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  font-size: 1.45em;
-}
-#thread-details #thread-info p {
-  color: #6e6e6e;
-  margin-top: 1px;
-  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-#thread-details #thread-info p a {
-  color: #6e6e6e;
-  text-decoration: none;
-}
-#thread-details #thread-info p a:hover {
-  text-decoration: underline;
-}
-#thread-details #thread-interview-info {
-  margin-top: 30px;
-  margin-bottom: -10px;
-}
-#thread-details #thread-interview-info p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-#thread-details #thread-content {
-  margin-top: 42px;
-  font-family: "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  color: #3c3c3c;
-  font-size: 1.1em;
-  position: relative;
-}
-#thread-details #thread-content img {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-#thread-details #thread-content blockquote {
-  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 1.4em;
-  text-transform: uppercase;
-  line-height: 1.15em;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 65px;
-  margin-right: 65px;
-}
-#thread-details #thread-content b {
-  font-weight: 700;
-}
-#thread-details #thread-tags {
-  margin-top: 35px;
-}
-#thread-details #thread-tags a {
-  color: #6e6e6e;
-  font-size: 0.85em;
-  margin-right: 3px;
-}
-#thread-details #thread-social {
-  text-align: center;
-  margin-top: 75px;
-}
-#thread-details #thread-social a {
-  text-decoration: none;
-  color: #3c3c3c;
-  font-size: 3em;
-}
-#thread-details #thread-social .thread-like-button {
-  cursor: pointer;
-}
-#thread-details #thread-social .thread-like-button:hover {
-  color: #a00000;
-}
-#thread-details #thread-social .share-twitter:hover {
-  color: #36abe0;
-}
-#thread-details #thread-social .share-facebook:hover {
-  color: #3b5998;
+@media only screen and (max-width: 320px) {
+  .thread-details {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+  .thread-details h1,
+  .thread-details h3,
+  .thread-details p {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .thread-details .thread-info h1 {
+    font-size: 2.5em;
+  }
+  .thread-details .thread-info h3 {
+    font-size: 1.2em;
+    line-height: 1em;
+  }
+  .thread-details .thread-content {
+    margin-top: 25px;
+  }
+  .thread-details .thread-content iframe {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .thread-details .thread-content img {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .thread-details .thread-content p {
+    font-size: 0.98em;
+    line-height: 1.4em;
+  }
+  .thread-details .thread-content blockquote {
+    margin: 25px 0 25px 0;
+    padding: 0px 35px 0px 35px;
+    font-size: 1.3em;
+    line-height: 1.2em;
+  }
+  .thread-details .thread-tags {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .thread-details .thread-social {
+    margin-top: 30px;
+  }
 }
 /* ADMIN CSS FILES */
 #login-form {

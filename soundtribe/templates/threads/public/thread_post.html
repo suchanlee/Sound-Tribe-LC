@@ -3,38 +3,38 @@
 {% paginate 2 threads %}
 	{% for thread in threads %}
 <a href="/threads/{{thread.id}}/{{thread.slug}}/" title="{{thread.title|upper}}" class="thread-anchors"></a>
-<div id="thread-details">
-	<div id="thread-main-image">
+<div class="thread-details">
+	<div class="thread-main-image">
 		<img src="{{MEDIA_URL}}{{thread.main_image}}" alt="thread main image">
 	</div>
 
-	<div id="thread-info">
+	<div class="thread-info">
 		{% if thread.website or thread.soundcloud or thread.bandcamp or thread.facebook %}
-		<h1><a href="{% if thread.website %}{{thread.website}}{% elif thread.soundcloud %}{{thread.soundcloud}}{% elif thread.bandcamp %}{{thread.bandcamp}}{% else %}{{thread.facebook}}{% endif %}">{{thread.title|upper}}</a></h1>
+		<h1><a href="{% if thread.website %}{{thread.website}}{% elif thread.soundcloud %}{{thread.soundcloud}}{% elif thread.bandcamp %}{{thread.bandcamp}}{% else %}{{thread.facebook}}{% endif %}">{{thread.title|title}}</a></h1>
 		{% else %}
-		<h1>{{thread.title|upper}}</h1>
+		<h1>{{thread.title|title}}</h1>
 		{% endif %}
 		<h3>{{thread.subtitle|title}}</h3>
 		<p><a href="/threads/category/{{thread.thread_type.slug}}/">{{thread.thread_type.title|upper}}</a> + {{thread.created|date:"M tS, o"}} + by {{thread.author.get_full_name|title}}</p>
 	</div>
 
 	{% if thread.thread_type.slug == 'interview' %}
-	<div id="thread-interview-info">
+	<div class="thread-interview-info">
 		<p>{{thread.artist_description}}</p>
 	</div>
 	{% endif %}
 
-	<div id="thread-content">
+	<div class="thread-content">
 		{{thread.content|safe}}
 	</div>
 
-	<div id="thread-tags">
+	<div class="thread-tags">
 		{% for tag in thread.tags.all %}
 		<a href="/threads/tags/{{tag|lower}}/">{{tag|upper}}</a>
 		{% endfor %}
 	</div>
 
-	<div id="thread-social">
+	<div class="thread-social">
 		<a href="#"
   		onclick="
     	window.open(
