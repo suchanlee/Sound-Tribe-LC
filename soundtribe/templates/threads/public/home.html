@@ -8,16 +8,16 @@
 {% include "nav.html" %}
 
 <div id="home-thread-list">
-	<h1>RECENT THREADS</h1>
+	<h5 class="home-thread-heading">RECENT THREADS <span class="home-thread-heading-more"><a href="/threads/recent/">MORE</a></span></h5>
 	<ul>
 		{% for t in recents %}
 		<li>
 			<div class="home-thread-item">
 				<div class="home-thread-item-image" style="background-image:url('{{MEDIA_URL}}{{t.main_image}}');">
-					<a href=""></a>
+					<a href="/threads/{{t.id}}/{{t.slug}}/"></a>
 				</div>
 				<div class="home-thread-item-info">
-					<h2>{{t.title|title}}</h2>
+					<h2><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a></h2>
 					<h3>{{t.subtitle}}</h3>
 				</div>
 			</div>
