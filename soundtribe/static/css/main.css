@@ -808,9 +808,9 @@ header #header-menu #menu-social li .share-facebook:hover {
 .thread-details .thread-social a {
   text-decoration: none;
   color: #3c3c3c;
-  font-size: 3em;
-  margin-left: 3px;
-  margin-right: 3px;
+  font-size: 55px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 .thread-details .thread-social .thread-like-button {
   cursor: pointer;
@@ -871,6 +871,9 @@ header #header-menu #menu-social li .share-facebook:hover {
   .thread-details .thread-social {
     margin-top: 30px;
   }
+  .thread-details .thread-social a {
+    font-size: 50px;
+  }
 }
 @media only screen and (min-width: 321px) and (max-width: 540px) {
   .thread-details {
@@ -918,7 +921,10 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 20px;
   }
   .thread-details .thread-social {
-    margin-top: 40px;
+    margin-top: 30px;
+  }
+  .thread-details .thread-social a {
+    font-size: 45px;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -967,7 +973,10 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 15px;
   }
   .thread-details .thread-social {
-    margin-top: 40px;
+    margin-top: 30px;
+  }
+  .thread-details .thread-social a {
+    font-size: 45px;
   }
 }
 /* ADMIN CSS FILES */
