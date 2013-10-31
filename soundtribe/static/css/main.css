@@ -842,13 +842,16 @@ header #header-menu #menu-social li .share-facebook:hover {
     width: 100%;
     max-width: 800px;
   }
+  .thread-subscribe {
+    width: 92%;
+  }
   .thread-subscribe p,
   .thread-subscribe h3 {
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .thread-subscribe input {
-    margin-left: 35px;
+    margin-left: 15px;
     margin-right: 10px;
   }
   .thread-details {
@@ -904,16 +907,19 @@ header #header-menu #menu-social li .share-facebook:hover {
     width: 100%;
     max-width: 800px;
   }
+  .thread-subscribe {
+    width: 89%;
+  }
   .thread-subscribe h3 {
     font-size: 1.2em;
   }
   .thread-subscribe p,
   .thread-subscribe h3 {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .thread-subscribe input[type="email"] {
-    margin-left: 25px;
+    margin-left: 10px;
     margin-right: 5px;
     width: 230px;
   }
@@ -971,16 +977,19 @@ header #header-menu #menu-social li .share-facebook:hover {
     width: 100%;
     max-width: 800px;
   }
+  .thread-subscribe {
+    width: 88%;
+  }
   .thread-subscribe h3 {
     font-size: 1.2em;
   }
   .thread-subscribe p,
   .thread-subscribe h3 {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .thread-subscribe input[type="email"] {
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: 5px;
     width: 200px;
   }
