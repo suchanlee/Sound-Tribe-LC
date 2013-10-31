@@ -824,6 +824,103 @@ header #header-menu #menu-social li .share-facebook:hover {
 .thread-details .thread-social .share-facebook:hover {
   color: #3b5998;
 }
+@media only screen and (min-width: 541px) and (max-width: 680px) {
+  .thread-details {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+  .thread-details h1,
+  .thread-details h3,
+  .thread-details p {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .thread-details .thread-info h1 {
+    font-size: 3.0em;
+  }
+  .thread-details .thread-info h3 {
+    font-size: 1.3em;
+    line-height: 1.13em;
+  }
+  .thread-details .thread-content {
+    margin-top: 25px;
+  }
+  .thread-details .thread-content iframe {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .thread-details .thread-content img {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .thread-details .thread-content p {
+    font-size: 1em;
+  }
+  .thread-details .thread-content blockquote {
+    margin: 35px 0 35px 0;
+    padding: 0px 50px 0px 50px;
+    font-size: 1.35em;
+    line-height: 1.2em;
+  }
+  .thread-details .thread-tags {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .thread-details .thread-social {
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 540px) {
+  .thread-details {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+  .thread-details h1,
+  .thread-details h3,
+  .thread-details p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .thread-details .thread-info h1 {
+    font-size: 2.7em;
+  }
+  .thread-details .thread-info h3 {
+    font-size: 1.3em;
+    line-height: 1em;
+  }
+  .thread-details .thread-content {
+    margin-top: 25px;
+  }
+  .thread-details .thread-content iframe {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .thread-details .thread-content img {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .thread-details .thread-content p {
+    font-size: 0.98em;
+    line-height: 1.4em;
+  }
+  .thread-details .thread-content blockquote {
+    margin: 25px 0 25px 0;
+    padding: 0px 35px 0px 35px;
+    font-size: 1.3em;
+    line-height: 1.2em;
+  }
+  .thread-details .thread-tags {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .thread-details .thread-social {
+    margin-top: 40px;
+  }
+}
 @media only screen and (max-width: 320px) {
   .thread-details {
     padding-top: 70px;
@@ -870,7 +967,7 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 15px;
   }
   .thread-details .thread-social {
-    margin-top: 30px;
+    margin-top: 40px;
   }
 }
 /* ADMIN CSS FILES */
