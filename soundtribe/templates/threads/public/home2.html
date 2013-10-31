@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Sound Tribe LC{% endblock %}
+{% block styles %}
+{{block.super}}
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+{% include "nav.html" %}
+
+<div class="splash-container">
+    <div id="slides">
+    {% for slide in slideshow %}
+        <img src="{{MEDIA_URL}}{{slide.main_image}}" alt="">
+    {% endfor %}
+    </div>
+</div>
+
+<div class="splash-container">
+    <div class="splash-subheading">RECENT</div>
+    <div id="splash-recent">
+        <ul>
+            {% for t in recents %}
+            <li>
+                <p class="splash-recent-list-type"><a href="/threads/category/{{t.thread_type.slug}}/">{{t.thread_type|upper}}</a></p>
+                <div class="splash-recent-list" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+                    <a href="/threads/{{t.id}}/{{t.slug}}/"></a>
+                </div>
+                <p class="splash-recent-list-title"><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="splash-container">
+    <div class="splash-subheading">INTERVIEW</div>
+    <div id="splash-interviews">
+    {% for t in interviews %}
+        {% if forloop.counter == 1 %}
+        <div id="splash-interviews-1" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+            <h3><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a>
+        </div>
+        {% elif forloop.counter == 2 %}
+        <div id="splash-interviews-2-container">
+        <div id="splash-interviews-2" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+            <h3><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a>
+        </div>
+        {% else %}
+        <div id="splash-interviews-3" style="background-image: url('{{MEDIA_URL}}{{t.main_image}}');">
+            <h3><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a>
+        </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+{% include "footer.html" %}
+
+
+{% endblock %}
+
+
+{% block js %}
+    {{block.super}}
+    <script src="{% static "js/jquery.slides.min.js" %}"></script>
+    <script>
+      $(function() {
+        var width = $(window).width();
+        $('#slides').slidesjs({
+          width: width,
+          height: width/2.3,
+          navigation: {
+            active: true,
+            effect: "slide"
+          }
+        });
+      });
+    </script>
+{% endblock %}

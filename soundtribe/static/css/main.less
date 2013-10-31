@@ -48,6 +48,9 @@ header {
 		padding-top: 8px;
 		padding-bottom: 15px;
 		position: relative;
+		#nav-bar-toggle {
+			display: none;
+		}
 		#header-search, #header-pull {
 			float: right;
 		}
@@ -1105,7 +1108,7 @@ header {
 }
 
 @media only screen and (max-width: 639px) {
-header {
+	header {
 		margin-top: 0px;
 		border: none;
 		position: relative;
@@ -1117,6 +1120,7 @@ header {
 				}
 			}
 			#nav-bar-toggle {
+				display: block;
 				float: right;
 				border: none;
 				background-color: white;
@@ -1126,9 +1130,6 @@ header {
 				margin-right: 10px;
 				cursor: pointer;
 				padding: 7px 8px 8px 7px;
-				&:hover {
-					background-color: @nav-bar-toggle;
-				}
 				.nav-bar-toggle-bars {
 					width: 22px;
 					margin-bottom: 4px;
@@ -1182,6 +1183,51 @@ header {
 					li {
 						display: inline-block;
 						font-size: 2em;
+					}
+				}
+			}
+		}
+	}
+	#home-thread-list {
+		margin: 0 auto;
+		width: 90%;
+		ul {
+			padding-left: 0px;
+		}
+		li {
+			list-style-type: none;
+			.home-thread-item {
+				width: 100%;
+				.home-thread-item-image, .home-thread-item-info {
+					display: inline-block;
+					vertical-align: top;
+				}
+				.home-thread-item-image {
+					width: 35%;
+					height: 100px;
+					background-size: cover;
+					background-position: center center;
+					background-repeat: no-repeat;
+				}
+				.home-thread-item-info {
+					width: 63%;
+					h2, h3 {
+						font-family: @museo;
+						padding-left: 8px;
+						padding-right: 8px;
+					}
+					h2 {
+						margin-top: 5px;
+						margin-bottom: 0px;
+						color: @black;
+						font-weight: 500;
+						font-size: 1.15em;
+					}
+					h3 {
+						font-weight: 300;
+						color: @lighter-black;
+						margin-top: 0px;
+						font-size: 0.95em;
 					}
 				}
 			}

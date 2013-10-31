@@ -29,6 +29,9 @@ header #header-menu {
   padding-bottom: 15px;
   position: relative;
 }
+header #header-menu #nav-bar-toggle {
+  display: none;
+}
 header #header-menu #header-search,
 header #header-menu #header-pull {
   float: right;
@@ -1049,6 +1052,7 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin: 10px 0px 0px 10px;
   }
   header #header-menu #nav-bar-toggle {
+    display: block;
     float: right;
     border: none;
     background-color: white;
@@ -1058,9 +1062,6 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 10px;
     cursor: pointer;
     padding: 7px 8px 8px 7px;
-  }
-  header #header-menu #nav-bar-toggle:hover {
-    background-color: #eeeeee;
   }
   header #header-menu #nav-bar-toggle .nav-bar-toggle-bars {
     width: 22px;
@@ -1116,6 +1117,53 @@ header #header-menu #menu-social li .share-facebook:hover {
   header #header-menu #header-nav #menu-social li {
     display: inline-block;
     font-size: 2em;
+  }
+  #home-thread-list {
+    margin: 0 auto;
+    width: 90%;
+  }
+  #home-thread-list ul {
+    padding-left: 0px;
+  }
+  #home-thread-list li {
+    list-style-type: none;
+  }
+  #home-thread-list li .home-thread-item {
+    width: 100%;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-image,
+  #home-thread-list li .home-thread-item .home-thread-item-info {
+    display: inline-block;
+    vertical-align: top;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-image {
+    width: 35%;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info {
+    width: 63%;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info h2,
+  #home-thread-list li .home-thread-item .home-thread-item-info h3 {
+    font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info h2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #3c3c3c;
+    font-weight: 500;
+    font-size: 1.15em;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info h3 {
+    font-weight: 300;
+    color: #6e6e6e;
+    margin-top: 0px;
+    font-size: 0.95em;
   }
 }
 /* ADMIN CSS FILES */
