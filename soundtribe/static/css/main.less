@@ -713,10 +713,18 @@ header {
 	}
 }
 
+.thread-main-image {
+	padding-top: 120px;
+	text-align: center;
+	img {
+		width: 100%;
+		max-width: 800px;
+	}
+}
+
 .thread-details {
 	max-width: 640px;
 	margin: 0 auto;
-	padding-top: 120px;
 	padding-bottom: 100px;
 	border-bottom: 1px solid #eeeeee;
 	img {
@@ -805,7 +813,7 @@ header {
 	}
 	.thread-social {
 		text-align: center;
-		margin-top: 75px;
+		margin-top: 70px;
 		a {
 			text-decoration: none;
 			color: @black;
@@ -864,6 +872,7 @@ header {
 		width: 250px;
 		border: none;
 		border-bottom: 1px solid #ddd;
+		border-radius: 0;
 	}
 	input[type="submit"] {
 		font-size: 0.9em;
@@ -883,6 +892,14 @@ header {
 }
 
 @media only screen and (min-width: 541px) and (max-width: 680px) {
+	.thread-main-image {
+		padding-top: 95px;
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: 800px;
+		}
+	}
 	.thread-subscribe {
 		p, h3 {
 			padding-left: 35px;
@@ -894,7 +911,6 @@ header {
 		}
 	}
 	.thread-details {
-		padding-top: 70px;
 		padding-bottom: 50px;
 		h1, h3, p {
 			padding-left: 15px;
@@ -938,7 +954,7 @@ header {
 			margin-right: 15px;
 		}
 		.thread-social {
-			margin-top: 30px;
+			margin-top: 55px;
 			a {
 				font-size:50px;
 			}
@@ -946,6 +962,14 @@ header {
 	}
 }
 @media only screen and (min-width: 321px) and (max-width: 540px) {
+	.thread-main-image {
+		padding-top: 85px;
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: 800px;
+		}
+	}
 	.thread-subscribe {
 		h3 {
 			font-size: 1.2em;
@@ -961,7 +985,6 @@ header {
 		}
 	}
 	.thread-details {
-		padding-top: 70px;
 		padding-bottom: 50px;
 		h1, h3, p {
 			padding-left: 20px;
@@ -1006,7 +1029,7 @@ header {
 			margin-right: 20px;
 		}
 		.thread-social {
-			margin-top: 30px;
+			margin-top: 40px;
 			a {
 				font-size: 45px;
 			}
@@ -1015,6 +1038,14 @@ header {
 }
 
 @media only screen and (max-width: 320px) {
+	.thread-main-image {
+		padding-top: 70px;
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: 800px;
+		}
+	}
 	.thread-subscribe {
 		h3 {
 			font-size: 1.2em;
@@ -1031,14 +1062,8 @@ header {
 	}
 
 	.thread-details {
-		padding-top: 70px;
+		width: 90%;
 		padding-bottom: 50px;
-		h1, h3, p {
-			padding-left: 15px;
-			padding-right: 15px;
-		}
-		.thread-info, .thread-content, .thread-tags, .thread-interview-info {
-		}
 		.thread-info {
 			h1 {
 				font-size: 2.5em;
@@ -1076,7 +1101,7 @@ header {
 			margin-right: 15px;
 		}
 		.thread-social {
-			margin-top: 30px;
+			margin-top: 35px;
 			a {
 				font-size: 45px;
 			}

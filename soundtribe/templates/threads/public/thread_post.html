@@ -3,11 +3,10 @@
 {% paginate 2 threads %}
 	{% for thread in threads %}
 <a href="/threads/{{thread.id}}/{{thread.slug}}/" title="{{thread.title|upper}}" class="thread-anchors"></a>
+<div class="thread-main-image">
+	<img src="{{MEDIA_URL}}{{thread.main_image}}" alt="thread main image">
+</div>
 <div class="thread-details">
-	<div class="thread-main-image">
-		<img src="{{MEDIA_URL}}{{thread.main_image}}" alt="thread main image">
-	</div>
-
 	<div class="thread-info">
 		{% if thread.website or thread.soundcloud or thread.bandcamp or thread.facebook %}
 		<h1><a href="{% if thread.website %}{{thread.website}}{% elif thread.soundcloud %}{{thread.soundcloud}}{% elif thread.bandcamp %}{{thread.bandcamp}}{% else %}{{thread.facebook}}{% endif %}">{{thread.title|title}}</a></h1>

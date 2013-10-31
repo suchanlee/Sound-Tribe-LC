@@ -664,10 +664,17 @@ header #header-menu #menu-social li .share-facebook:hover {
 #thread-menu #thread-close-button:hover {
   opacity: 1.0;
 }
+.thread-main-image {
+  padding-top: 120px;
+  text-align: center;
+}
+.thread-main-image img {
+  width: 100%;
+  max-width: 800px;
+}
 .thread-details {
   max-width: 640px;
   margin: 0 auto;
-  padding-top: 120px;
   padding-bottom: 100px;
   border-bottom: 1px solid #eeeeee;
 }
@@ -755,7 +762,7 @@ header #header-menu #menu-social li .share-facebook:hover {
 }
 .thread-details .thread-social {
   text-align: center;
-  margin-top: 75px;
+  margin-top: 70px;
 }
 .thread-details .thread-social a {
   text-decoration: none;
@@ -810,6 +817,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   width: 250px;
   border: none;
   border-bottom: 1px solid #ddd;
+  border-radius: 0;
 }
 .thread-subscribe input[type="submit"] {
   font-size: 0.9em;
@@ -826,6 +834,14 @@ header #header-menu #menu-social li .share-facebook:hover {
   color: #3c3c3c;
 }
 @media only screen and (min-width: 541px) and (max-width: 680px) {
+  .thread-main-image {
+    padding-top: 95px;
+    text-align: center;
+  }
+  .thread-main-image img {
+    width: 100%;
+    max-width: 800px;
+  }
   .thread-subscribe p,
   .thread-subscribe h3 {
     padding-left: 35px;
@@ -836,7 +852,6 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 10px;
   }
   .thread-details {
-    padding-top: 70px;
     padding-bottom: 50px;
   }
   .thread-details h1,
@@ -879,13 +894,21 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 15px;
   }
   .thread-details .thread-social {
-    margin-top: 30px;
+    margin-top: 55px;
   }
   .thread-details .thread-social a {
     font-size: 50px;
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 540px) {
+  .thread-main-image {
+    padding-top: 85px;
+    text-align: center;
+  }
+  .thread-main-image img {
+    width: 100%;
+    max-width: 800px;
+  }
   .thread-subscribe h3 {
     font-size: 1.2em;
   }
@@ -900,7 +923,6 @@ header #header-menu #menu-social li .share-facebook:hover {
     width: 230px;
   }
   .thread-details {
-    padding-top: 70px;
     padding-bottom: 50px;
   }
   .thread-details h1,
@@ -944,13 +966,21 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 20px;
   }
   .thread-details .thread-social {
-    margin-top: 30px;
+    margin-top: 40px;
   }
   .thread-details .thread-social a {
     font-size: 45px;
   }
 }
 @media only screen and (max-width: 320px) {
+  .thread-main-image {
+    padding-top: 70px;
+    text-align: center;
+  }
+  .thread-main-image img {
+    width: 100%;
+    max-width: 800px;
+  }
   .thread-subscribe h3 {
     font-size: 1.2em;
   }
@@ -965,14 +995,8 @@ header #header-menu #menu-social li .share-facebook:hover {
     width: 200px;
   }
   .thread-details {
-    padding-top: 70px;
+    width: 90%;
     padding-bottom: 50px;
-  }
-  .thread-details h1,
-  .thread-details h3,
-  .thread-details p {
-    padding-left: 15px;
-    padding-right: 15px;
   }
   .thread-details .thread-info h1 {
     font-size: 2.5em;
@@ -1009,7 +1033,7 @@ header #header-menu #menu-social li .share-facebook:hover {
     margin-right: 15px;
   }
   .thread-details .thread-social {
-    margin-top: 30px;
+    margin-top: 35px;
   }
   .thread-details .thread-social a {
     font-size: 45px;
