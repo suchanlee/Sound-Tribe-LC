@@ -1038,6 +1038,86 @@ header #header-menu #menu-social li .share-facebook:hover {
     font-size: 45px;
   }
 }
+@media only screen and (max-width: 639px) {
+  header {
+    margin-top: 0px;
+    border: none;
+    position: relative;
+  }
+  header #header-menu #header-logo img {
+    width: 200px;
+    margin: 10px 0px 0px 10px;
+  }
+  header #header-menu #nav-bar-toggle {
+    float: right;
+    border: none;
+    background-color: white;
+    height: 32px;
+    width: 40px;
+    margin-top: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 7px 8px 8px 7px;
+  }
+  header #header-menu #nav-bar-toggle:hover {
+    background-color: #eeeeee;
+  }
+  header #header-menu #nav-bar-toggle .nav-bar-toggle-bars {
+    width: 22px;
+    margin-bottom: 4px;
+    background-color: white;
+    display: block;
+    border-top: 3px solid #3c3c3c;
+    border-bottom: 1px solid #3c3c3c;
+    border-left: 2px solid #3c3c3c;
+    border-right: 1px solid #3c3c3c;
+  }
+  header #header-menu #header-nav {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 55px;
+    left: 0;
+    z-index: 9999;
+    background-color: #eeeeee;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+  }
+  header #header-menu #header-nav li {
+    display: block;
+  }
+  header #header-menu #header-nav #menu-social,
+  header #header-menu #header-nav #menu-threads {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  header #header-menu #header-nav #menu-social li,
+  header #header-menu #header-nav #menu-threads li {
+    margin-left: 0px;
+    font-size: 1.15em;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  header #header-menu #header-nav #menu-threads {
+    display: block;
+  }
+  header #header-menu #header-nav #menu-threads li {
+    padding-left: 30px;
+  }
+  header #header-menu #header-nav #menu-threads li:hover a {
+    color: #3c3c3c;
+    text-decoration: none;
+  }
+  header #header-menu #header-nav #menu-social {
+    padding-left: 30px;
+  }
+  header #header-menu #header-nav #menu-social li {
+    display: inline-block;
+    font-size: 2em;
+  }
+}
 /* ADMIN CSS FILES */
 #login-form {
   width: 100%;

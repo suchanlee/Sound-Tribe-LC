@@ -29,8 +29,8 @@ function setSplashElemDim() {
 	interview_container.height(interview1.width());
 	interview2.height(interview2.width()/2.12);
 	interview3.height(interview3.width()/2.12);
-	var header_nav = $('#header-nav');
-	header_nav.width($('#container').width()*0.86-$('#header-logo img').width()-3);
+	// var header_nav = $('#header-nav');
+	// header_nav.width($('#container').width()*0.86-$('#header-logo img').width()-3);
 	var category_image = $('.category-item-image');
 	var category_info = $('.category-item-info');
 	category_image.height(category_image.width());
@@ -70,6 +70,10 @@ function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
+$('#nav-bar-toggle').click(function() {
+	$('#header-nav').slideToggle();
+});
 
 $('.subscribe-submit').click(function() {
 	var email = $(this).siblings('input[type="email"]').val();

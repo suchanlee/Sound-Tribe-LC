@@ -7,6 +7,7 @@
 @nav-white: #ffffff;
 @splash-border: #cccccc;
 @category-border: #ddd;
+@nav-bar-toggle: #eee;
 @like-red: #A00000;
 @facebook-blue: #3B5998;
 @twitter-blue: #36ABE0;
@@ -957,6 +958,7 @@ header {
 		}
 	}
 }
+
 @media only screen and (min-width: 321px) and (max-width: 540px) {
 	.thread-main-image {
 		padding-top: 85px;
@@ -1102,6 +1104,90 @@ header {
 	}
 }
 
+@media only screen and (max-width: 639px) {
+header {
+		margin-top: 0px;
+		border: none;
+		position: relative;
+		#header-menu {
+			#header-logo {
+				img {
+					width: 200px;
+					margin: 10px 0px 0px 10px;
+				}
+			}
+			#nav-bar-toggle {
+				float: right;
+				border: none;
+				background-color: white;
+				height: 32px;
+				width: 40px;
+				margin-top: 6px;
+				margin-right: 10px;
+				cursor: pointer;
+				padding: 7px 8px 8px 7px;
+				&:hover {
+					background-color: @nav-bar-toggle;
+				}
+				.nav-bar-toggle-bars {
+					width: 22px;
+					margin-bottom: 4px;
+					background-color: white;
+					display: block;
+					border-top: 3px solid @black;
+					border-bottom: 1px solid @black;
+					border-left: 2px solid @black;
+					border-right: 1px solid @black;
+				}
+			}
+			#header-nav {
+				display: none;
+				position: absolute;
+				width: 100%;
+				top: 55px;
+				left: 0;
+				z-index: 9999;
+				background-color: @nav-bar-toggle;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				text-align: left;
+				li {
+					display: block;
+				}
+				#menu-social, #menu-threads {
+					li {
+						margin-left: 0px;
+						font-size: 1.15em;
+						margin-top: 3px;
+						margin-bottom: 3px;
+					}
+					margin-top: 0px;
+					margin-bottom: 0px;
+					text-align: left;
+				}
+				#menu-threads {
+					display: block;
+					li {
+						padding-left: 30px;
+						&:hover {
+							a {
+								color: @black;
+								text-decoration: none;
+							}
+						}
+					}
+				}
+				#menu-social {
+					padding-left: 30px;
+					li {
+						display: inline-block;
+						font-size: 2em;
+					}
+				}
+			}
+		}
+	}
+}
 
 /* ADMIN CSS FILES */
 

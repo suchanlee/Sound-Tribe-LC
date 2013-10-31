@@ -28,7 +28,7 @@ class ThreadMixin(object):
 # TEMPLATE VIEWS
 
 class HomeView(TemplateView):
-	template_name = 'threads/public/home.html'
+	template_name = 'threads/public/category.html'
 	def get_context_data(self):
 		thread_types = ThreadType.objects.all()
 		types = []
