@@ -924,12 +924,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
   .thread-details {
     padding-bottom: 50px;
-  }
-  .thread-details h1,
-  .thread-details h3,
-  .thread-details p {
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 88%;
   }
   .thread-details .thread-info h1 {
     font-size: 2.7em;
@@ -995,7 +990,7 @@ header #header-menu #menu-social li .share-facebook:hover {
     width: 200px;
   }
   .thread-details {
-    width: 90%;
+    width: 88%;
     padding-bottom: 50px;
   }
   .thread-details .thread-info h1 {
