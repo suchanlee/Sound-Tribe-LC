@@ -12,7 +12,32 @@
 	<ul>
 		{% for t in recents %}
 		<li>
+			{% if forloop.last %}
+			<div class="home-thread-item" id="home-thread-item-last">
+			{% else %}
 			<div class="home-thread-item">
+			{% endif %}
+				<div class="home-thread-item-image" style="background-image:url('{{MEDIA_URL}}{{t.main_image}}');">
+					<a href="/threads/{{t.id}}/{{t.slug}}/"></a>
+				</div>
+				<div class="home-thread-item-info">
+					<h2><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a></h2>
+					<h3>{{t.subtitle}}</h3>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+
+	<h5 class="home-thread-heading">INTERVIEW THREADS <span class="home-thread-heading-more"><a href="/threads/category/interview/">MORE</a></span></h5>
+	<ul>
+		{% for t in interviews %}
+		<li>
+			{% if forloop.last %}
+			<div class="home-thread-item" id="home-thread-item-last">
+			{% else %}
+			<div class="home-thread-item">
+			{% endif %}
 				<div class="home-thread-item-image" style="background-image:url('{{MEDIA_URL}}{{t.main_image}}');">
 					<a href="/threads/{{t.id}}/{{t.slug}}/"></a>
 				</div>
