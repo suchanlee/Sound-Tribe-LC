@@ -664,54 +664,6 @@ header #header-menu #menu-social li .share-facebook:hover {
 #thread-menu #thread-close-button:hover {
   opacity: 1.0;
 }
-.thread-subscribe {
-  max-width: 640px;
-  margin: 0 auto;
-  border-bottom: 1px solid #eeeeee;
-  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  padding: 20px 0 20px 0;
-}
-.thread-subscribe p,
-.thread-subscribe h3,
-.thread-subscribe input {
-  margin-left: 35px;
-}
-.thread-subscribe h3 {
-  color: #3c3c3c;
-  font-size: 1.3em;
-  font-weight: 500;
-}
-.thread-subscribe .subscribe-error {
-  color: #8f0000;
-  display: none;
-}
-.thread-subscribe .subscribe-success {
-  display: none;
-  color: #6e6e6e;
-}
-.thread-subscribe input[type="email"] {
-  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  font-size: 17px;
-  height: 30px;
-  width: 250px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-.thread-subscribe input[type="submit"] {
-  font-size: 0.9em;
-  border: none;
-  height: 32px;
-  border-radius: 50%;
-  color: white;
-  background-color: #3c3c3c;
-  margin-left: 15px;
-  cursor: pointer;
-}
-.thread-subscribe input[type="submit"]:hover {
-  background-color: white;
-  border: solid 1px #3c3c3c;
-  color: #3c3c3c;
-}
 .thread-details {
   max-width: 640px;
   margin: 0 auto;
@@ -824,7 +776,66 @@ header #header-menu #menu-social li .share-facebook:hover {
 .thread-details .thread-social .share-facebook:hover {
   color: #3b5998;
 }
+.thread-subscribe {
+  max-width: 640px;
+  margin: 0 auto;
+  border-bottom: 1px solid #eeeeee;
+  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  padding: 20px 0 20px 0;
+}
+.thread-subscribe p,
+.thread-subscribe h3 {
+  padding-left: 35px;
+}
+.thread-subscribe input {
+  margin-left: 35px;
+}
+.thread-subscribe h3 {
+  color: #3c3c3c;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.thread-subscribe .subscribe-error {
+  color: #8f0000;
+  display: none;
+}
+.thread-subscribe .subscribe-success {
+  display: none;
+  color: #6e6e6e;
+}
+.thread-subscribe input[type="email"] {
+  font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-size: 17px;
+  height: 30px;
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+.thread-subscribe input[type="submit"] {
+  font-size: 0.9em;
+  border: none;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  background-color: #3c3c3c;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.thread-subscribe input[type="submit"]:hover {
+  background-color: white;
+  border: solid 1px #3c3c3c;
+  color: #3c3c3c;
+}
 @media only screen and (min-width: 541px) and (max-width: 680px) {
+  .thread-subscribe p,
+  .thread-subscribe h3 {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .thread-subscribe input {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
   .thread-details {
     padding-top: 70px;
     padding-bottom: 50px;
@@ -876,6 +887,18 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 540px) {
+  .thread-subscribe h3 {
+    font-size: 1.2em;
+  }
+  .thread-subscribe p,
+  .thread-subscribe h3 {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .thread-subscribe input[type="email"] {
+    margin-left: 25px;
+    margin-right: 15px;
+  }
   .thread-details {
     padding-top: 70px;
     padding-bottom: 50px;
@@ -928,6 +951,18 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
 }
 @media only screen and (max-width: 320px) {
+  .thread-subscribe h3 {
+    font-size: 1.2em;
+  }
+  .thread-subscribe p,
+  .thread-subscribe h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .thread-subscribe input[type="email"] {
+    margin-left: 20px;
+    margin-right: 5px;
+  }
   .thread-details {
     padding-top: 70px;
     padding-bottom: 50px;

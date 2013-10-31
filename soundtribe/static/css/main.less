@@ -712,52 +712,6 @@ header {
 		}
 	}
 }
-.thread-subscribe {
-	max-width: 640px;
-	margin: 0 auto;
-	border-bottom: 1px solid #eeeeee;
-	font-family: @museo;
-	padding: 20px 0 20px 0;
-	p, h3, input {
-		margin-left: 35px;
-	}
-	h3 {
-		color: @black;
-		font-size: 1.3em;
-		font-weight: 500;
-	}
-	.subscribe-error {
-		color: @warning-red;
-		display: none;
-	}
-	.subscribe-success {
-		display: none;
-		color: @lighter-black;
-	}
-	input[type="email"] {
-		font-family: @museo;
-		font-size: 17px;
-		height: 30px;
-		width: 250px;
-		border: none;
-		border-bottom: 1px solid #ddd;
-	}
-	input[type="submit"] {
-		font-size: 0.9em;
-		border: none;
-		height: 32px;
-		border-radius: 50%;
-		color: white;
-		background-color: @black;
-		margin-left: 15px;
-		cursor: pointer;
-		&:hover {
-			background-color: white;
-			border: solid 1px @black;
-			color: @black;
-		}
-	}
-}
 
 .thread-details {
 	max-width: 640px;
@@ -878,7 +832,67 @@ header {
 	}
 }
 
+.thread-subscribe {
+	max-width: 640px;
+	margin: 0 auto;
+	border-bottom: 1px solid #eeeeee;
+	font-family: @museo;
+	padding: 20px 0 20px 0;
+	p, h3 {
+		padding-left: 35px;
+	}
+	input {
+		margin-left: 35px;
+	}
+	h3 {
+		color: @black;
+		font-size: 1.3em;
+		font-weight: 500;
+	}
+	.subscribe-error {
+		color: @warning-red;
+		display: none;
+	}
+	.subscribe-success {
+		display: none;
+		color: @lighter-black;
+	}
+	input[type="email"] {
+		font-family: @museo;
+		font-size: 17px;
+		height: 30px;
+		width: 250px;
+		border: none;
+		border-bottom: 1px solid #ddd;
+	}
+	input[type="submit"] {
+		font-size: 0.9em;
+		border: none;
+		height: 32px;
+		border-radius: 50%;
+		color: white;
+		background-color: @black;
+		margin-left: 15px;
+		cursor: pointer;
+		&:hover {
+			background-color: white;
+			border: solid 1px @black;
+			color: @black;
+		}
+	}
+}
+
 @media only screen and (min-width: 541px) and (max-width: 680px) {
+	.thread-subscribe {
+		p, h3 {
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+		input{
+			margin-left: 35px;
+			margin-right: 35px;
+		}
+	}
 	.thread-details {
 		padding-top: 70px;
 		padding-bottom: 50px;
@@ -932,6 +946,19 @@ header {
 	}
 }
 @media only screen and (min-width: 321px) and (max-width: 540px) {
+	.thread-subscribe {
+		h3 {
+			font-size: 1.2em;
+		}
+		p, h3 {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+		input[type="email"]{
+			margin-left: 25px;
+			margin-right: 15px;
+		}
+	}
 	.thread-details {
 		padding-top: 70px;
 		padding-bottom: 50px;
@@ -987,6 +1014,20 @@ header {
 }
 
 @media only screen and (max-width: 320px) {
+	.thread-subscribe {
+		h3 {
+			font-size: 1.2em;
+		}
+		p, h3 {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		input[type="email"]{
+			margin-left: 20px;
+			margin-right: 5px;
+		}
+	}
+
 	.thread-details {
 		padding-top: 70px;
 		padding-bottom: 50px;
