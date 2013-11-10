@@ -585,14 +585,6 @@ header #header-menu #menu-social li .share-facebook:hover {
 #splash-interviews #splash-interviews-3 {
   margin-top: 5.85%;
 }
-#splash-footer {
-  color: #6e6e6e;
-  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  text-transform: uppercase;
-}
-#splash-footer li {
-  list-style-type: none;
-}
 #slides {
   position: relative;
   margin: 0 auto;
@@ -1080,7 +1072,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   header #header-menu #header-nav #menu-threads {
     margin-top: 0px;
     margin-bottom: 0px;
-    text-align: left;
+    text-align: right;
   }
   header #header-menu #header-nav #menu-social li,
   header #header-menu #header-nav #menu-threads li {
@@ -1094,6 +1086,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
   header #header-menu #header-nav #menu-threads li {
     padding-left: 30px;
+    padding-right: 18px;
   }
   header #header-menu #header-nav #menu-threads li:hover a {
     color: #3c3c3c;
@@ -1101,6 +1094,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
   header #header-menu #header-nav #menu-social {
     padding-left: 30px;
+    padding-right: 18px;
   }
   header #header-menu #header-nav #menu-social li {
     display: inline-block;
@@ -1179,10 +1173,47 @@ header #header-menu #menu-social li .share-facebook:hover {
     font-weight: 300;
     color: #6e6e6e;
     margin-top: 0px;
+    margin-bottom: 5px;
     font-size: 0.95em;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info p {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 5px;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info .home-item-date {
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #6e6e6e;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info .home-item-type {
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 0px;
+    color: #999;
   }
   #home-thread-list li #home-thread-item-last {
     border: none;
+  }
+  footer {
+    width: 90%;
+    margin: 0 auto;
+  }
+  footer #splash-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-top: 1px solid #eee;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  footer #splash-footer ul {
+    padding-left: 0px;
+  }
+  footer #splash-footer ul li {
+    list-style-type: none;
   }
 }
 /* ADMIN CSS FILES */
