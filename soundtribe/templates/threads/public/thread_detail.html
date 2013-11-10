@@ -38,14 +38,17 @@
 			paginateOnScrollMargin: 150
 		});
 		</script>
+		<script src="{% static "js/main.js" %}"></script>
 		<script src="{% static "js/jquery.tipsy.min.js" %}"></script>
 		<script>
 		$(function() {
-			$('a.share').tipsy({
-				live: true,
-				fade: true,
-				gravity: 's',
-			});
+			if ($(window).width() > 680) {
+				$('a.share').tipsy({
+					live: true,
+					fade: true,
+					gravity: 's',
+				});
+			}
 		});
 		</script>
 	{% endblock %}

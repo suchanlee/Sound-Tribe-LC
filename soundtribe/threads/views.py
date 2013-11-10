@@ -27,27 +27,36 @@ class ThreadMixin(object):
 
 # TEMPLATE VIEWS
 
-class HomeView(TemplateView):
+class HomeView(AjaxListView):
 	template_name = 'threads/public/home.html'
-	def get_context_data(self):
-		thread_types = ThreadType.objects.all()
-		types = []
-		for t in thread_types:
-			threads = Thread.objects.filter(Q(published=True)&Q(thread_type=t))[:4]
-			types.append([t,threads])
-		context = {
-			'slideshow': Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5],
-			'recents': Thread.objects.filter(published=True)[:8],
-			'interviews': Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))[:3],
-			'types': thread_types,
-			'menu_threads': types,
-			'facebook': Facebook.objects.get(id=1),
-			'twitter': Twitter.objects.get(id=1),
-			'tumblr': Tumblr.objects.get(id=1),
-			'contact': Contact.objects.get(id=1),
-			'about': About.objects.get(id=1),
-		}
+	page_template = 'threads/public/home_post.html'
+	queryset = []
+
+	def get_context_data(self, **kwargs):
+		context = super(HomeView, self).get_context_data(**kwargs)
+		context['threads'] = Thread.objects.filter(published=True)
+		context['slideshow'] = Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5]
 		return context
+
+	# def get_context_data(self):
+		# thread_types = ThreadType.objects.all()
+		# types = []
+		# for t in thread_types:
+		# 	threads = Thread.objects.filter(Q(published=True)&Q(thread_type=t))[:4]
+		# 	types.append([t,threads])
+		# context = {
+		# 	# 'slideshow': Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5],
+		# 	'threads': Thread.objects.filter(published=True)[:8],
+		# 	# 'interviews': Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))[:3],
+		# 	'types': thread_types,
+		# 	'menu_threads': types,
+		# 	'facebook': Facebook.objects.get(id=1),
+		# 	'twitter': Twitter.objects.get(id=1),
+		# 	'tumblr': Tumblr.objects.get(id=1),
+		# 	'contact': Contact.objects.get(id=1),
+		# 	'about': About.objects.get(id=1),
+		# }
+		# return context
 
 
 class AdminView(LoginRequiredMixin, TemplateView):
@@ -73,13 +82,12 @@ class ThreadView(ThreadMixin, AjaxListView):
 class CategoryView(ThreadMixin, AjaxListView):
 	context_object_name = 'threads'
 	template_name = 'threads/public/category.html'
-	page_template = 'threads/public/thread_post.html'
+	page_template = 'threads/public/home_post.html'
 	queryset = []
 
 	def get_context_data(self, **kwargs):
 		context = super(CategoryView, self).get_context_data(**kwargs)
-		threads = Thread.objects.filter(Q(thread_type__slug=self.kwargs['category'])&Q(published=True))
-		context['threads'] = threads
+		context['threads'] = Thread.objects.filter(Q(thread_type__slug=self.kwargs['category'])&Q(published=True))
 		context['category'] = ThreadType.objects.get(slug=self.kwargs['category'])
 		try:
 			context['single_thread'] = threads[0]

@@ -33,11 +33,11 @@ body {
 }
 
 header {
+	width: 90%;
+	margin: 0 auto;
 	font-family: @sans-serif;
-	width: 100%;
 	z-index: 99999;
 	margin-top: 10px;
-	border-bottom: 1px solid @splash-border;
 	#header-nav, #header-logo {
 		display: inline-block;
 	}
@@ -59,7 +59,6 @@ header {
 			vertical-align: top;
 			img {
 				width: 200px;
-				margin-left: 65px;
 				margin-top: 15px;
 			}
 		}
@@ -629,53 +628,6 @@ header {
  	}
 }
 
-#slides {
-	position: relative;
-	margin: 0 auto;
-	width: 86%;
-	margin-top: 25px;
-	margin-bottom: 45px;
-	img {
-		width: 100%;
-	}
-	.slidesjs-pagination {
-		display: none;
-	}
-	.slidesjs-next, .slidesjs-previous {
-		top: 50%;
-		margin-top: -100px;
-		position: absolute;
-		z-index: 9998;
-	}
-
-	.slidesjs-previous {
-		left: 20px;
-		background: url('../img/arrows-left.png') no-repeat;
-		// background-size: 60 200px;
-		height: 200px;
-		width: 60px;
-		text-indent: -9999px;
-		&:hover {
-			// background-size: 60 200px;
-			width: 60px;
-			background: url('../img/arrow-left-hover.png') no-repeat;
-		}
-	}
-
-
-	.slidesjs-next {
-		background: url('../img/arrows-right.png') no-repeat;
-		right: 20px;
-		background-size: 60px 200px;
-		height: 200px;
-		width: 60px;
-		text-indent: -9999px;
-		&:hover {
-			background-size: 60px 200px;
-			background: url('../img/arrows-right.png') no-repeat;
-		}
-	}
-}
 #thread-menu {
 	position: fixed;
 	background-color: white;
@@ -886,6 +838,54 @@ header {
 	}
 }
 
+#slides {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	// margin-top: 25px;
+	// margin-bottom: 45px;
+	img {
+		width: 100%;
+	}
+	.slidesjs-pagination {
+		display: none;
+	}
+	.slidesjs-next, .slidesjs-previous {
+		top: 50%;
+		margin-top: -100px;
+		position: absolute;
+		z-index: 9998;
+	}
+
+	.slidesjs-previous {
+		left: 20px;
+		background: url('../img/arrows-left.png') no-repeat;
+		// background-size: 60 200px;
+		height: 200px;
+		width: 60px;
+		text-indent: -9999px;
+		&:hover {
+			// background-size: 60 200px;
+			width: 60px;
+			background: url('../img/arrow-left-hover.png') no-repeat;
+		}
+	}
+
+
+	.slidesjs-next {
+		background: url('../img/arrows-right.png') no-repeat;
+		right: 20px;
+		background-size: 60px 200px;
+		height: 200px;
+		width: 60px;
+		text-indent: -9999px;
+		&:hover {
+			background-size: 60px 200px;
+			background: url('../img/arrows-right.png') no-repeat;
+		}
+	}
+}
+
 @media only screen and (min-width: 541px) and (max-width: 680px) {
 	.thread-main-image {
 		padding-top: 95px;
@@ -950,6 +950,10 @@ header {
 }
 
 @media only screen and (min-width: 321px) and (max-width: 540px) {
+	#slides {
+		margin-top: 15px;
+		margin-bottom: 30px;
+	}
 	.thread-main-image {
 		padding-top: 85px;
 		text-align: center;
@@ -1086,8 +1090,10 @@ header {
 	}
 }
 
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 670px) {
 	header {
+		width: 90%;
+		margin: 0 auto;
 		margin-top: 0px;
 		border: none;
 		position: relative;
@@ -1095,7 +1101,7 @@ header {
 			#header-logo {
 				img {
 					width: 200px;
-					margin: 10px 0px 0px 10px;
+					margin: 10px 0px 0px -3px;
 				}
 			}
 			#nav-bar-toggle {
@@ -1104,17 +1110,16 @@ header {
 				border: none;
 				background-color: white;
 				height: 32px;
-				width: 40px;
+				width: 35px;
 				margin-top: 6px;
-				margin-right: 10px;
+				margin-right: 0px;
 				cursor: pointer;
-				padding: 7px 8px 8px 7px;
+				padding: 7px 0px 8px 7px;
 				.nav-bar-toggle-bars {
-					width: 22px;
 					margin-bottom: 4px;
 					background-color: white;
 					display: block;
-					border-top: 3px solid @black;
+					border-top: 2px solid @black;
 					border-bottom: 1px solid @black;
 					border-left: 2px solid @black;
 					border-right: 1px solid @black;
@@ -1255,7 +1260,10 @@ header {
 						letter-spacing: 1px;
 						margin-top: 0px;
 						margin-bottom: 0px;
-						color: #999;
+						a {
+							color: #999;
+							text-decoration: none;
+						}
 					}
 				}
 			}
@@ -1274,11 +1282,27 @@ header {
 			border-top: 1px solid #eee;
 			font-weight: 700;
 			text-transform: uppercase;
-			letter-spacing: 1px;
+			// letter-spacing: 1px;
 			ul {
 				padding-left: 0px;
 				li {
 					list-style-type: none;
+					a {
+						color: #777;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 670px) {
+	#home-thread-list {
+		li {
+			.home-thread-item {
+				.home-thread-item-image {
+					height: 130px;
 				}
 			}
 		}
