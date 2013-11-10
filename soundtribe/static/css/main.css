@@ -1031,6 +1031,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   display: block;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   position: relative;
 }
 .slides .slide .slide-item a {

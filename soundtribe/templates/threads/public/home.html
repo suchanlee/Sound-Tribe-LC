@@ -16,7 +16,7 @@
 			{% for s in slideshow %}
 			<li class="slide">
 				<div class="slide-item" style="background-image:url('{{MEDIA_URL}}{{s.main_image}}');">
-					<a href="/threads/{{s.id}}/{{s.slug}}/"></a>
+					{# <a href="/threads/{{s.id}}/{{s.slug}}/"></a> #}
 					<div class="slide-item-caption">
 						<p><a href="/threads/category/{{s.thread_type.slug}}/">{{s.thread_type.title|upper}}</a></p>
 						<h2><a href="/threads/{{s.id}}/{{s.slug}}/">{{s.title|upper}}</a></h2>
