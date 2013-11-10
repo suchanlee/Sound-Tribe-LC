@@ -638,8 +638,8 @@ header #header-menu #menu-social li .share-facebook:hover {
   margin-bottom: 30px;
 }
 .thread-details .thread-info h1 {
-  font-size: 3.85em;
-  line-height: 0.85em;
+  font-size: 3.5em;
+  line-height: 0.95em;
   margin-top: 30px;
   color: #3c3c3c;
   margin-bottom: 10px;
@@ -852,6 +852,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
   .thread-details .thread-info h1 {
     font-size: 3.0em;
+    line-height: 0.95em;
   }
   .thread-details .thread-info h3 {
     font-size: 1.3em;
@@ -887,7 +888,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 540px) {
-  #slides {
+  #home-slides {
     margin-top: 15px;
     margin-bottom: 30px;
   }
@@ -921,6 +922,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
   .thread-details .thread-info h1 {
     font-size: 2.7em;
+    line-height: 0.95em;
   }
   .thread-details .thread-info h3 {
     font-size: 1.3em;
@@ -987,6 +989,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
   .thread-details .thread-info h1 {
     font-size: 2.5em;
+    line-height: 0.95em;
   }
   .thread-details .thread-info h3 {
     font-size: 1.2em;
@@ -1021,6 +1024,51 @@ header #header-menu #menu-social li .share-facebook:hover {
   .thread-details .thread-social a {
     font-size: 45px;
   }
+}
+.slides .slide .slide-item {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.slides .slide .slide-item a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.slides .slide .slide-item .slide-item-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  opacity: 0.8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.slides .slide .slide-item .slide-item-caption a {
+  text-decoration: none;
+  color: white;
+}
+.slides .slide .slide-item .slide-item-caption a:hover {
+  color: #ccc;
+}
+.slides .slide .slide-item .slide-item-caption p,
+.slides .slide .slide-item .slide-item-caption h2 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.slides .slide .slide-item .slide-item-caption p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 0.85em;
+}
+.slides .slide .slide-item .slide-item-caption h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: 0.92em;
+  font-size: 1.35em;
 }
 @media only screen and (max-width: 670px) {
   header {

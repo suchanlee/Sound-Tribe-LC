@@ -1,11 +1,33 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block styles %}
+<link rel='stylesheet' href="{% static 'css/jquery.swipeshow.css' %}">
+{% endblock %}
+
 {% block title %}Sound Tribe LC{% endblock %}
 
 {% block content %}
 
 {% include "nav.html" %}
+
+	<div class="swipeshow" id="home-slides">
+		<ul class="slides">
+			{% for s in slideshow %}
+			<li class="slide">
+				<div class="slide-item" style="background-image:url('{{MEDIA_URL}}{{s.main_image}}');">
+					<a href="/threads/{{s.id}}/{{s.slug}}/"></a>
+					<div class="slide-item-caption">
+						<p><a href="/threads/category/{{s.thread_type.slug}}/">{{s.thread_type.title|upper}}</a></p>
+						<h2><a href="/threads/{{s.id}}/{{s.slug}}/">{{s.title|upper}}</a></h2>
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+<!-- 		<button class="next"></button>
+		<button class="previous"></button> -->
+	</div>
 
 	{% block js %}
 		{{ block.super }}
@@ -27,21 +49,18 @@
 	</ul>
 </div>
 
-    <script src="{% static "js/jquery.slides.min.js" %}"></script>
-    <script>
-      $(function() {
-        var width = $(window).width();
-        $('#slides').slidesjs({
-          width: width,
-          height: width/2,
-          navigation: {
-            active: true,
-            effect: "slide"
-          }
-        });
-      });
-    </script>
     <script src="{% static "js/main.js" %}"></script>
+    <script src="{% static 'js/jquery.swipeshow.js' %}"></script>
+	<script>
+	$(function() {
+		// $(".swipeshow").height();
+	  	$(".swipeshow").swipeshow({
+	  		autostart: false,
+	  		mouse: true,
+	  		keys: true,
+	  	});
+	});
+	</script>
 
 {% include "footer.html" %}
 

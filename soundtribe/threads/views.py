@@ -29,7 +29,7 @@ class ThreadMixin(object):
 
 class HomeView(AjaxListView):
 	template_name = 'threads/public/home.html'
-	page_template = 'threads/public/home_post.html'
+	page_template = 'threads/public/thread_list_post.html'
 	queryset = []
 
 	def get_context_data(self, **kwargs):
@@ -81,14 +81,14 @@ class ThreadView(ThreadMixin, AjaxListView):
 
 class CategoryView(ThreadMixin, AjaxListView):
 	context_object_name = 'threads'
-	template_name = 'threads/public/category.html'
-	page_template = 'threads/public/home_post.html'
+	template_name = 'threads/public/thread_list.html'
+	page_template = 'threads/public/thread_list_post.html'
 	queryset = []
 
 	def get_context_data(self, **kwargs):
 		context = super(CategoryView, self).get_context_data(**kwargs)
 		context['threads'] = Thread.objects.filter(Q(thread_type__slug=self.kwargs['category'])&Q(published=True))
-		context['category'] = ThreadType.objects.get(slug=self.kwargs['category'])
+		context['title'] = ThreadType.objects.get(slug=self.kwargs['category']).title
 		try:
 			context['single_thread'] = threads[0]
 		except:
@@ -125,13 +125,25 @@ class ThreadTypeListView(TemplateView):
 		return context
 
 
-class TagListView(TemplateView):
+# class TagListView(TemplateView):
 
-	template_name = 'threads/public/home.html'
+# 	template_name = 'threads/public/home.html'
+
+# 	def get_context_data(self, **kwargs):
+# 		context = super(TagListView, self).get_context_data(**kwargs)
+# 		context['threads'] = Thread.objects.filter(Q(tags__name__in=[self.kwargs['tag']])&Q(published=True))
+# 		return context
+
+
+class TagListView(AjaxListView):
+	template_name = 'threads/public/thread_list.html'
+	page_template = 'threads/public/thread_list_post.html'
+	queryset = []
 
 	def get_context_data(self, **kwargs):
 		context = super(TagListView, self).get_context_data(**kwargs)
 		context['threads'] = Thread.objects.filter(Q(tags__name__in=[self.kwargs['tag']])&Q(published=True))
+		context['title'] = self.kwargs['tag']
 		return context
 
 
