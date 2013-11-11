@@ -16,7 +16,7 @@
 					<p class="home-item-type"><a href="/threads/category/{{t.thread_type.slug}}/">{{t.thread_type|upper}}</a></p>
 					<h2><a href="/threads/{{t.id}}/{{t.slug}}/">{{t.title|title}}</a></h2>
 					<h3>{{t.subtitle}}</h3>
-					<p class="home-item-date">{{t.created|date:"M tS, o"}}</p>
+					<p class="home-item-date">By {{t.author.get_full_name|title}} on {{t.created|date:"M t, o"}}</p>
 				</div>
 			</div>
 		</li>

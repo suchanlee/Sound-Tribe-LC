@@ -1217,7 +1217,7 @@ header #header-menu #menu-social li .share-facebook:hover {
     color: #ccc;
     border-bottom: 1px solid #ccc;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   #home-thread-list .home-thread-heading .home-thread-heading-more {
     float: right;
@@ -1228,6 +1228,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   }
   #home-thread-list ul {
     padding-left: 0px;
+    margin-top: 0px;
   }
   #home-thread-list li {
     list-style-type: none;
@@ -1271,7 +1272,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   #home-thread-list li .home-thread-item .home-thread-item-info h2 {
     margin-top: 1px;
     margin-bottom: 0px;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.25em;
   }
   #home-thread-list li .home-thread-item .home-thread-item-info h2 a {
@@ -1281,7 +1282,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   #home-thread-list li .home-thread-item .home-thread-item-info h3 {
     font-weight: 300;
     color: #6e6e6e;
-    margin-top: 5px;
+    margin-top: 3px;
     margin-bottom: 5px;
     font-size: 1.05em;
   }
