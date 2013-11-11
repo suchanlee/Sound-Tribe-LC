@@ -68,7 +68,8 @@
   var has3d = (function() {
     var div = $("<div>");
     div.css('transform', 'translate3d(0,0,0)');
-    return div.css('transform') !== '';
+    // return div.css('transform') !== '';
+    return false;
   })();
 
   // Count instances.

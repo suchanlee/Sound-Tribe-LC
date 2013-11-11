@@ -22,6 +22,7 @@ header #header-logo {
   display: inline-block;
 }
 header #header-nav {
+  float: right;
   text-align: right;
 }
 header #header-menu {
@@ -1025,6 +1026,14 @@ header #header-menu #menu-social li .share-facebook:hover {
     font-size: 45px;
   }
 }
+.swipeshow {
+  position: relative;
+}
+.swipeshow button {
+  z-index: 9999;
+  position: absolute;
+  bottom: 0;
+}
 .slides .slide .slide-item {
   width: 100%;
   height: 100%;
@@ -1070,6 +1079,202 @@ header #header-menu #menu-social li .share-facebook:hover {
   margin-bottom: 0px;
   line-height: 0.92em;
   font-size: 1.35em;
+}
+@media only screen and (min-width: 671px) {
+  #home-slides {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 350px;
+  }
+  #home-thread-list,
+  #home-side {
+    display: inline-block;
+    vertical-align: top;
+  }
+  #home-side {
+    width: 27%;
+    margin-left: 3%;
+  }
+  #home-side .side-heading {
+    font-weight: 700;
+    font-size: 1em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  #home-side #home-subscribe .thread-subscribe {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  #home-side #home-subscribe .thread-subscribe p {
+    padding-left: 0;
+    font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    color: #5a5a5a;
+  }
+  #home-side #home-subscribe .thread-subscribe input {
+    margin-left: 0px;
+    font-size: 0.95em;
+  }
+  #home-side #home-subscribe .thread-subscribe input[type="submit"] {
+    background-color: white;
+    height: 1px;
+  }
+  #home-side #home-subscribe .thread-subscribe .subscribe-error {
+    color: #8f0000;
+    display: none;
+  }
+  #home-side #home-subscribe .thread-subscribe .subscribe-success {
+    display: none;
+    color: #6e6e6e;
+  }
+  #home-side #home-featured-artist-image {
+    width: 100%;
+    display: block;
+    height: 175px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  #home-side .home-featured-artist-profile-header {
+    font-weight: 700;
+    font-size: 0.8em;
+    margin-top: 8px;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+  }
+  #home-side .home-featured-artist-profile {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #3c3c3c;
+  }
+  #home-side .home-featured-artist-profile a {
+    margin-top: 15px;
+    color: #8f0000;
+  }
+  #home-side .home-featured-artist-profile-link {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+  #home-side .home-featured-artist-profile-link a {
+    color: #8f0000;
+    text-decoration: none;
+  }
+  #home-side .home-featured-artist-profile-link a:hover {
+    color: #6d0000;
+  }
+  #home-thread-list {
+    margin-left: 5%;
+    width: 60%;
+  }
+  #home-thread-list .home-thread-heading {
+    font-weight: 700;
+    font-size: 1em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  #home-thread-list .home-thread-heading .home-thread-heading-more {
+    float: right;
+  }
+  #home-thread-list .home-thread-heading .home-thread-heading-more a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  #home-thread-list ul {
+    padding-left: 0px;
+  }
+  #home-thread-list li {
+    list-style-type: none;
+  }
+  #home-thread-list li:hover {
+    background-color: #f6f6f6;
+  }
+  #home-thread-list li .home-thread-item {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-image,
+  #home-thread-list li .home-thread-item .home-thread-item-info {
+    display: inline-block;
+    vertical-align: top;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-image {
+    width: 35%;
+    height: 140px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-image a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info {
+    width: 63%;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info h2,
+  #home-thread-list li .home-thread-item .home-thread-item-info h3 {
+    font-family: "museo-slab", "ff-tisa-web-pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info h2 {
+    margin-top: 1px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    font-size: 1.25em;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info h2 a {
+    color: #3c3c3c;
+    text-decoration: none;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info h3 {
+    font-weight: 300;
+    color: #6e6e6e;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.05em;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info p {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 5px;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info .home-item-date {
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #6e6e6e;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info .home-item-type {
+    font-size: 0.87em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  #home-thread-list li .home-thread-item .home-thread-item-info .home-item-type a {
+    color: #999;
+    text-decoration: none;
+  }
+  #home-thread-list li #home-thread-item-last {
+    border: none;
+  }
 }
 @media only screen and (max-width: 670px) {
   header {

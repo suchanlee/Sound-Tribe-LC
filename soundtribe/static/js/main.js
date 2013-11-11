@@ -92,6 +92,7 @@ $('.subscribe-submit').click(function() {
 				subscribe.siblings('input[type="email"]').css('display', 'none');
 				subscribe.css('display', 'none');
 				subscribe.siblings('.subscribe-success').fadeIn();
+				$('#subscribe-text').css('display', 'none');
 				setSubscriptionVar(true);
 			},
 			error: function(data) {

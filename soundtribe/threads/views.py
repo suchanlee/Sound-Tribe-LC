@@ -1,3 +1,5 @@
+from random import randint
+
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin, BaseDetailView
 from django.db.models import Q
@@ -36,6 +38,8 @@ class HomeView(AjaxListView):
 		context = super(HomeView, self).get_context_data(**kwargs)
 		context['threads'] = Thread.objects.filter(published=True)
 		context['slideshow'] = Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5]
+		interviews = Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))
+		context['feature_artist'] = interviews[randint(0, len(interviews)-1)]
 		return context
 
 	# def get_context_data(self):

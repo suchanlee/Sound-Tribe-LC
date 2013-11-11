@@ -35,7 +35,7 @@
 		<script>
 		$.endlessPaginate({
 			paginateOnScroll: true,
-			paginateOnScrollMargin: 150
+			paginateOnScrollMargin: 250
 		});
 		</script>
 	{% endblock %}
@@ -48,6 +48,43 @@
 		</div>
 	</ul>
 </div>
+<div id="home-side">
+	<div class="home-side-item">
+		<h5 class="side-heading">FEATURED ARTIST</h5>
+		<div id="home-featured-artist-image" style="background-image:url('{{MEDIA_URL}}{{feature_artist.main_image}}')"></div>
+		<div id="home-featured-artist-info">
+			<p class="home-featured-artist-profile-header">NAME</p>
+			<p class="home-featured-artist-profile">{{feature_artist.artist_name|upper}}</p>
+			<p class="home-featured-artist-profile-header">OCCUPATION</p>
+			<p class="home-featured-artist-profile">{{feature_artist.artist_occupation|upper}}</p>
+			<p class="home-featured-artist-profile-header">GENRE</p>
+			<p class="home-featured-artist-profile">{{feature_artist.artist_genre|upper}}</p>
+			<p class="home-featured-artist-profile-link"><a href="/threads/{{feature_artist.id}}/{{feature_artist.slug}}/">Read STLC's interview with {{feature_artist.artist_name|title}}</a></p>
+		</div>
+	</div>
+	<div class="home-side-item">
+		<h5 class="side-heading">TALKBOX</h5>
+	</div>
+	<div class="home-side-item">
+		<h5 class="side-heading">STLC MONTHLY PLAYLIST</h5>
+	</div>
+	<div id="home-subscribe">
+		<h5 class="side-heading">SUBSCRIBE</h5>
+		<div id="csrf-token">{{csrf_token}}</div>
+		<div class="thread-subscribe">
+			<form action="">
+				<p id="subscribe-text">Get weekly updates from Sound Tribe LC</p>
+				<p class="subscribe-success">You have been successfully subscribed.</p>
+				<p class="subscribe-error">Please input a valid email address.</p>
+				<input type="email" name="subscription-email" placeholder="Email">
+				<input type="submit" value="" class="subscribe-submit">
+			</form>
+		</div>
+	</div>
+	<div class="home-side-item">
+		<h5 class="side-heading">STLC SNS</h5>
+	</div>
+</div>
 
     <script src="{% static "js/main.js" %}"></script>
     <script src="{% static 'js/jquery.swipeshow.js' %}"></script>
@@ -58,6 +95,7 @@
 	  		autostart: false,
 	  		mouse: true,
 	  		keys: true,
+	  		friction: 0,
 	  	});
 	});
 	</script>
