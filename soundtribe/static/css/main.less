@@ -1,4 +1,5 @@
 // colors
+@lightest-black: rgb(130,130,130);
 @lighter-black: rgb(110,110,110);
 @light-black: rgb(90,90,90);
 @black: rgb(60,60,60);
@@ -720,6 +721,7 @@ header {
 			margin-top: 30px;
 			color: @black;
 			margin-bottom: 10px;
+			font-weight: 600;
 			a {
 				text-decoration: none;
 				color: @black;
@@ -780,6 +782,8 @@ header {
 		b {
 			font-weight: 700;
 		}
+		a {
+		}
 	}
 	.thread-tags {
 		margin-top: 35px;
@@ -822,18 +826,34 @@ header {
 	max-width: 640px;
 	margin: 0 auto;
 	border-bottom: 1px solid #eeeeee;
-	font-family: @museo;
-	padding: 20px 0 20px 0;
-	p, h3 {
-		padding-left: 35px;
-	}
+	font-family: @sans-serif;
+	padding: 10px 0 10px 0;
 	input {
-		margin-left: 35px;
+		margin-left: 25px;
 	}
 	h3 {
 		color: @black;
-		font-size: 1.3em;
-		font-weight: 500;
+		font-size: 2.2em;
+		line-height: 1.2em;
+		width: 50%;
+		text-align: right;
+		font-weight: 900;
+		letter-spacing: 1px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	h3, p {
+		display: inline-block;
+		vertical-align: top;
+	}
+	p {
+	}
+	.subscribe-info-block {
+		display: inline-block;
+		width: 45%;
+	}
+	.subscribe-email {
+		color: @light-black;
 	}
 	.subscribe-error {
 		color: @warning-red;
@@ -843,13 +863,21 @@ header {
 		display: none;
 		color: @lighter-black;
 	}
+	.subscribe {
+		margin-top: 30px;
+		margin-left: 25px;
+		margin-bottom: 5px;
+		font-family: @sans-serif;
+		font-weight: 300;
+		letter-spacing: 1px;
+		font-size: 1.17em;
+	}
 	input[type="email"] {
-		font-family: @museo;
 		font-size: 17px;
-		height: 30px;
-		width: 250px;
+		height: 25px;
+		width: 220px;
 		border: none;
-		border-bottom: 1px solid #ddd;
+		border: 1px solid #ddd;
 		border-radius: 0;
 	}
 	input[type="submit"] {
@@ -927,14 +955,34 @@ header {
 		}
 	}
 	.thread-subscribe {
-		width: 92%;
-		p, h3 {
-			padding-left: 15px;
-			padding-right: 15px;
+		width: 90%;
+		h3 {
+			font-size: 1.2em;
+			width: 100%;
+			text-align: left;
+			margin-bottom: 0px;
 		}
-		input{
-			margin-left: 15px;
-			margin-right: 10px;
+		.subscribe-info-block {
+			display: block;
+			width: 100%;
+		}
+		.subscribe {
+			margin-left: 10%;
+			font-size: 1em;
+			margin-top: 10px;
+		}
+		p, h3 {
+			width: 80%;
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+		.subscribe-email {
+			padding-left: 0px;
+		}
+		input[type="email"]{
+			margin-left: 10%;
+			margin-right: 5px;
+			width: 180px;
 		}
 	}
 	.thread-details {
@@ -982,10 +1030,6 @@ header {
 }
 
 @media only screen and (min-width: 321px) and (max-width: 540px) {
-	#home-slides {
-		margin-top: 15px;
-		margin-bottom: 30px;
-	}
 	.thread-main-image {
 		padding-top: 85px;
 		text-align: center;
@@ -995,18 +1039,34 @@ header {
 		}
 	}
 	.thread-subscribe {
-		width: 89%;
+		width: 90%;
 		h3 {
 			font-size: 1.2em;
+			width: 100%;
+			text-align: left;
+			margin-bottom: 0px;
+		}
+		.subscribe-info-block {
+			display: block;
+			width: 100%;
+		}
+		.subscribe {
+			margin-left: 10%;
+			font-size: 1em;
+			margin-top: 10px;
 		}
 		p, h3 {
-			padding-left: 10px;
-			padding-right: 10px;
+			width: 80%;
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+		.subscribe-email {
+			padding-left: 0px;
 		}
 		input[type="email"]{
-			margin-left: 10px;
+			margin-left: 10%;
 			margin-right: 5px;
-			width: 230px;
+			width: 180px;
 		}
 	}
 	.thread-details {
@@ -1064,18 +1124,34 @@ header {
 		}
 	}
 	.thread-subscribe {
-		width: 88%;
+		width: 90%;
 		h3 {
 			font-size: 1.2em;
+			width: 100%;
+			text-align: left;
+			margin-bottom: 0px;
+		}
+		.subscribe-info-block {
+			display: block;
+			width: 100%;
+		}
+		.subscribe {
+			margin-left: 10%;
+			font-size: 1em;
+			margin-top: 10px;
 		}
 		p, h3 {
-			padding-left: 10px;
-			padding-right: 10px;
+			width: 80%;
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+		.subscribe-email {
+			padding-left: 0px;
 		}
 		input[type="email"]{
-			margin-left: 10px;
+			margin-left: 10%;
 			margin-right: 5px;
-			width: 200px;
+			width: 150px;
 		}
 	}
 
@@ -1177,6 +1253,7 @@ header {
 					margin-bottom: 0px;
 					line-height: 0.92em;
 					font-size: 1.35em;
+					font-weight: 600;
 				}
 			}
 		}
@@ -1208,7 +1285,7 @@ header {
 		width: 27%;
 		margin-left: 3%;
 		.side-heading {
-			font-weight: 700;
+			font-weight: 600;
 			font-size: 1em;
 			padding-top: 4px;
 			padding-bottom: 4px;
@@ -1222,16 +1299,40 @@ header {
 				padding-top: 0;
 				padding-bottom: 0;
 				border-bottom: none;
+				.subscribe {
+					font-family: @sans-serif;
+					font-weight: 600;
+					margin-left: 0px;
+				}
+				#subscribe-text {
+					font-weight: 900;
+					letter-spacing: 1px;
+					font-size: 1.4em;
+					margin-top: 0px;
+					margin-bottom: 2px;
+					line-height: 1em;
+				}
+				#subscribe-email {
+					margin-top: 10px;
+					margin-bottom: 5px;
+					font-family: @sans-serif;
+					font-weight: 300;
+					letter-spacing: 1px;
+					font-size: 1.02em;
+				}
 				p {
 					padding-left: 0;
 					font-family: @museo;
 					color: @light-black;
 				}
-				input {
+				input[type="email"] {
 					margin-left: 0px;
 					font-size: 0.95em;
+					border: 1px solid #ccc;
+					height: 27px;
 				}
 				input[type="submit"] {
+					margin-top: 5px;
 					background-color: white;
 					height: 1px;
 				}
@@ -1254,7 +1355,7 @@ header {
 			background-position: center center;
 		}
 		.home-featured-artist-profile-header {
-			font-weight: 700;
+			font-weight: 600;
 			font-size: 0.8em;
 			margin-top: 8px;
 			color: #999;
@@ -1264,38 +1365,38 @@ header {
 		.home-featured-artist-profile {
 			margin-top: 0px;
 			margin-bottom: 5px;
-			font-weight: 700;
+			font-weight: 600;
 			color: @black;
-			a {
-				margin-top: 15px;
-				color: @warning-red;
-			}
 		}
 		.home-featured-artist-profile-link {
 			margin-top: 20px;
 			margin-bottom: 5px;
-			font-weight: 700;
+			font-weight: 600;
 			a {
-				color: @warning-red;
+				color: @light-black;
 				text-decoration: none;
 				&:hover {
-					color: @warning-red - #222;
+					color: @lighter-black;
 				}
 			}
 		}
 		.home-side-sns {
 			text-align: center;
 			a {
-				font-size: 4em;
+				font-size: 3.25em;
 				text-decoration: none;
 			}
+		}
+		iframe {
+			width: 100%;
+			height: 250px;
 		}
 	}
 	#home-thread-list {
 		margin-left: 5%;
 		width: 60%;
 		.home-thread-heading {
-			font-weight: 700;
+			font-weight: 600;
 			font-size: 1em;
 			padding-top: 4px;
 			padding-bottom: 4px;
@@ -1378,7 +1479,7 @@ header {
 					}
 					.home-item-type {
 						font-size: 0.87em;
-						font-weight: 700;
+						font-weight: 600;
 						letter-spacing: 1px;
 						margin-top: 0px;
 						margin-bottom: 0px;
@@ -1390,9 +1491,38 @@ header {
 				}
 			}
 			#home-thread-item-last {
-				border: none;
+				// border: none;
 			}
 		}
+	}
+}
+
+footer {
+	padding-bottom: 30px;
+	margin-top: 55px;
+	ul {
+		padding-left: 0;
+		margin-left: 5%;
+		margin-bottom: 10px;
+	}
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin-right: 12px;
+		font-size: 0.9em;
+		a {
+			text-decoration: none;
+			color: @lighter-black;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	p {
+		color: @lightest-black;
+		margin-left: 5%;
+		margin-top: 0px;
+		font-size: 0.9em;
 	}
 }
 
@@ -1484,7 +1614,7 @@ header {
 		margin: 0 auto;
 		width: 90%;
 		.home-thread-heading {
-			font-weight: 700;
+			font-weight: 600;
 			font-size: 0.9em;
 			padding-top: 4px;
 			padding-bottom: 4px;
@@ -1562,7 +1692,7 @@ header {
 					}
 					.home-item-type {
 						font-size: 0.75em;
-						font-weight: 700;
+						font-weight: 600;
 						letter-spacing: 1px;
 						margin-top: 0px;
 						margin-bottom: 0px;
@@ -1574,32 +1704,17 @@ header {
 				}
 			}
 			#home-thread-item-last {
-				border: none;
 			}
 		}
 	}
 	footer {
 		width: 90%;
-		margin: 0 auto;
-		#splash-footer {
-			margin-top: 50px;
-			padding-top: 20px;
-			padding-bottom: 30px;
-			border-top: 1px solid #eee;
-			font-weight: 700;
-			text-transform: uppercase;
-			// letter-spacing: 1px;
-			ul {
-				padding-left: 0px;
-				li {
-					list-style-type: none;
-					a {
-						color: #777;
-						text-decoration: none;
-					}
-				}
-			}
+		li {
+			display: block;
 		}
+	}
+	#home-side {
+		display: none;
 	}
 }
 

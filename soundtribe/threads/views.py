@@ -10,8 +10,10 @@ from django.shortcuts import get_object_or_404
 from braces.views import LoginRequiredMixin
 from endless_pagination.views import AjaxListView
 
+
 from threads.models import Thread, ThreadType
 from misc.models import Facebook, Twitter, Tumblr, About, Contact
+from misc.models import Talkbox, MonthlyPlaylist, Listen
 from core.helpers import is_interview_path
 
 import pdb
@@ -40,6 +42,19 @@ class HomeView(AjaxListView):
 		context['slideshow'] = Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5]
 		interviews = Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))
 		context['feature_artist'] = interviews[randint(0, len(interviews)-1)]
+		try:
+			context['mplaylist'] = MonthlyPlaylist.objects.latest('date_added').embed
+		except:
+			pass
+		try:
+			context['talkbox'] = Talkbox.objects.latest('date_added').embed
+		except:
+			pass
+		try:
+			context['listen'] = Listen.objects.latest('date_added').embed
+		except:
+			pass
+
 		return context
 
 	# def get_context_data(self):

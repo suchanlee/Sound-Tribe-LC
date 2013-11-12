@@ -51,11 +51,14 @@
 	<div class="thread-subscribe">
 		<form action="">
 			{% csrf_token %}
-			<h3>Get updates from Sound Tribe LC!</h3>
-			<p class="subscribe-success">You have been successfully subscribed.</p>
-			<p class="subscribe-error">Please input a valid email address.</p>
-			<input type="email" name="subscription-email" placeholder="Email">
+			<h3>STAY TUNED WITH SOUND TRIBE LC!</h3>
+			<div class="subscribe-info-block">
+			<p class="subscribe subscribe-email">ENTER YOUR EMAIL:</p>
+			<p class="subscribe subscribe-success">You have been successfully subscribed.</p>
+			<p class="subscribe subscribe-error">Please input a valid email address.</p>
+			<input type="email" name="subscription-email">
 			<input type="submit" value="GO" class="subscribe-submit">
+			</div>
 		</form>
 	</div>
 {% show_more %}

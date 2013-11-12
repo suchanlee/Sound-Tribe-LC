@@ -62,22 +62,36 @@
 			<p class="home-featured-artist-profile-link"><a href="/threads/{{feature_artist.id}}/{{feature_artist.slug}}/">Read STLC's interview with {{feature_artist.artist_name|title}}</a></p>
 		</div>
 	</div>
-	<div class="home-side-item">
-		<h5 class="side-heading">TALKBOX</h5>
-	</div>
+	{% if mplaylist %}
 	<div class="home-side-item">
 		<h5 class="side-heading">STLC MONTHLY PLAYLIST</h5>
+		{{mplaylist|safe}}
 	</div>
+	{% endif %}
+	{% if talkbox %}
+	<div class="home-side-item">
+		<h5 class="side-heading">TALKBOX</h5>
+		{{talkbox|safe}}
+	</div>
+	{% endif %}
+	{% if listen %}
+	<div class="home-side-item">
+		<h5 class="side-heading">L!STEN</h5>
+		{{listen|safe}}
+	</div>
+	{% endif %}
 	<div id="home-subscribe">
 		<h5 class="side-heading">SUBSCRIBE</h5>
 		<div id="csrf-token">{{csrf_token}}</div>
 		<div class="thread-subscribe">
 			<form action="">
-				<p id="subscribe-text">Get weekly updates from Sound Tribe LC</p>
-				<p class="subscribe-success">You have been successfully subscribed.</p>
-				<p class="subscribe-error">Please input a valid email address.</p>
-				<input type="email" name="subscription-email" placeholder="Email">
+				<p class="subscribe" id="subscribe-text">STAY TUNED WITH STLC!</p>
+				<p class="subscribe subscribe-success">You have been successfully subscribed.</p>
+				<p class="subscribe subscribe-error">Please input a valid email address.</p>
+				<p class="subscribe" id="subscribe-email">ENTER YOUR EMAIL:</p>
+				<input type="email" name="subscription-email">
 				<input type="submit" value="" class="subscribe-submit">
+				{# <button type="submit" class="subscribe-submit"></button> #}
 			</form>
 		</div>
 	</div>
