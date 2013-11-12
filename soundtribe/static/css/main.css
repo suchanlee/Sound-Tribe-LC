@@ -1704,6 +1704,8 @@ footer p {
   font-size: 40px;
 }
 .admin .form-label {
+  text-transform: capitalize;
+  margin-bottom: 10px;
   font-size: 18px;
 }
 .admin .form-errors {

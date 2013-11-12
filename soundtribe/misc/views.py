@@ -1,4 +1,4 @@
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, CreateView, FormView
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, Http404
 
@@ -7,6 +7,7 @@ import pdb
 from braces.views import LoginRequiredMixin
 
 from misc.models import Facebook, Twitter, Tumblr, About, Contact, Subscription
+from misc.models import Talkbox, Listen, MonthlyPlaylist
 
 def subscribe(request):
 	if request.is_ajax():
@@ -75,3 +76,43 @@ class AboutUpdateView(LoginRequiredMixin, UpdateView):
 		context = super(AboutUpdateView, self).get_context_data(**kwargs)
 		context['form_title'] = 'about'
 		return context
+
+
+class CreateTalkboxView(LoginRequiredMixin, CreateView):
+
+	model = Talkbox
+	template_name = 'threads/admin/misc_url_form.html'
+	success_url = '/admin/'
+
+	def get_context_data(self, **kwargs):
+		context = super(CreateTalkboxView, self).get_context_data(**kwargs)
+		context['form_title'] = 'Talkbox'
+		return context
+
+
+class CreateListenView(LoginRequiredMixin, CreateView):
+
+	model = Listen
+	template_name = 'threads/admin/misc_url_form.html'
+	success_url = '/admin/'
+
+	def get_context_data(self, **kwargs):
+		context = super(CreateListenView, self).get_context_data(**kwargs)
+		context['form_title'] = 'L!STEN'
+		return context
+
+
+class CreatePlaylistView(LoginRequiredMixin, CreateView):
+
+	model = MonthlyPlaylist
+	template_name = 'threads/admin/misc_url_form.html'
+	success_url = '/admin/'
+
+	def get_context_data(self, **kwargs):
+		context = super(CreatePlaylistView, self).get_context_data(**kwargs)
+		context['form_title'] = 'Monthly Playlist'
+		return context
+
+
+
+

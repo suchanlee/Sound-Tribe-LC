@@ -20,7 +20,7 @@
 		</div>
 		<table>
 			<tr><td class="form-label">Use as slideshow?</td><td>{{form.slideshow}}</td></tr>
-			<tr><td class="form-label">Slideshow image (only if you've selected to use as slideshow)</td><td>{{form.slideshow_image}}</td></tr>
+			{# <tr><td class="form-label">Slideshow image (only if you've selected to use as slideshow)</td><td>{{form.slideshow_image}}</td></tr> #}
 			<tr><td class="form-label">Thread Type:</td><td>{{form.thread_type}}</td></tr>
 			<tr><td class="form-label">Author:</td> <td>{{form.author}}</td></tr>
 			<tr><td class="form-label">Main Image:</td> <td>{{form.main_image}}</td></tr>
@@ -38,14 +38,23 @@
 			{{form.views}}
 		</div>
 
-		<a href="#" class="fold-unfold-anchor">If thread type is interview</a>
+		<a href="#" class="fold-unfold-anchor" style="margin-top: 30px; margin-bottom: 30px; display: block;">If thread type is interview</a>
 		<div class="fold-unfold">
-			<p class="form-label">Artist Description</p>
+			<h3>If this is an interview thread, please input the following information before submission.</h3>
+			<p class="form-label">artist name</p>
+			{{form.artist_name}}
+			<p class="form-label">artist occupation</p>
+			{{form.artist_occupation}}
+			<p class="form-label">artist description</p>
 			{{form.artist_description}}
+			<p class="form-label">artist genre</p>
+			{{form.artist_genre}}
 		</div>
 
 		<p><input type="submit" value="SUBMIT"></p>
 	</form>
+
+	<script src="{% static "js/main.js" %}"></script>
 
 </div>
 

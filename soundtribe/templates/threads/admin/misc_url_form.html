@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="admin">
+	<div class="admin-header">
+		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
+		<h1>CREATE {{form_title|upper}}</h1>
+		<h3>If you submit a new link, it will override the previous one</h3>
+	</div>
+	<form enctype="multipart/form-data" method="POST">
+		<div class="form-errors">
+			{{form.errors}}
+		</div>
+		<p>For Monthly Playlist, please submit the Soundcloud link</p>
+		<p>For Talkbox and L!STEN, please submit the Youtube link</p>
+		{% csrf_token %}
+		{{form.errors}}
+		<br>
+		<p>URL:</p>
+		<p>{{form.url}}</p>
+		<p><input type="submit" value="SUBMIT"></p>
+	</form>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+{{block.super}}
+<script src="{% static "redactor/jquery.min.js" %}"></script>
+<script src="{% static "redactor/jquery-migrate.min.js" %}"></script>
+<script src="{% static "redactor/langs/en.js" %}"></script>
+<script src="{% static "redactor/redactor.js" %}"></script>
+<script src="{% static "redactor/toolbars/default.js" %}"></script>
+{% endblock %}

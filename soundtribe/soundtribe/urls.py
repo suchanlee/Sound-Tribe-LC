@@ -5,7 +5,7 @@ from threads.views import AdminView, HomeView
 from misc.views import subscribe
 
 urlpatterns = patterns('',
-    url(r'^login/$', 'django.contrib.auth.views.login', name='login_view'),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login_view'),
 	url(r'^admin/$', AdminView.as_view(), name='admin_view'),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^threads/', include('threads.urls'), name='thread_views'),

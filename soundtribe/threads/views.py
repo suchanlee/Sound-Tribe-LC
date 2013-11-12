@@ -60,26 +60,6 @@ class HomeView(AjaxListView):
 
 		return context
 
-	# def get_context_data(self):
-		# thread_types = ThreadType.objects.all()
-		# types = []
-		# for t in thread_types:
-		# 	threads = Thread.objects.filter(Q(published=True)&Q(thread_type=t))[:4]
-		# 	types.append([t,threads])
-		# context = {
-		# 	# 'slideshow': Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5],
-		# 	'threads': Thread.objects.filter(published=True)[:8],
-		# 	# 'interviews': Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))[:3],
-		# 	'types': thread_types,
-		# 	'menu_threads': types,
-		# 	'facebook': Facebook.objects.get(id=1),
-		# 	'twitter': Twitter.objects.get(id=1),
-		# 	'tumblr': Tumblr.objects.get(id=1),
-		# 	'contact': Contact.objects.get(id=1),
-		# 	'about': About.objects.get(id=1),
-		# }
-		# return context
-
 
 class AdminView(LoginRequiredMixin, TemplateView):
 	template_name = 'threads/admin/admin.html'
@@ -126,14 +106,9 @@ class ThreadListView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super(ThreadListView, self).get_context_data(**kwargs)
-		if is_interview_path(self.request):
-			context['objects'] = Thread.objects.filter(Q(thread_type__title='interview')&Q(published=True))
-			context['unpublished_objects'] = Thread.objects.filter(Q(thread_type__title='interview')&Q(published=False))
-			context['obj_title'] = 'interview list'
-		else:
-			context['objects'] = Thread.objects.filter(~Q(thread_type__title='interview')&Q(published=True))
-			context['unpublished_objects'] = Thread.objects.filter(~Q(thread_type__title='interview')&Q(published=False))
-			context['obj_title'] = 'thread list'
+		context['objects'] = Thread.objects.filter(published=True)
+		context['unpublished_objects'] = Thread.objects.filter(published=False)
+		context['obj_title'] = 'Thread List'
 		return context
 
 class ThreadTypeListView(TemplateView):
@@ -145,16 +120,6 @@ class ThreadTypeListView(TemplateView):
 		context['objects'] = ThreadType.objects.all()
 		context['obj_title'] = 'thread types'
 		return context
-
-
-# class TagListView(TemplateView):
-
-# 	template_name = 'threads/public/home.html'
-
-# 	def get_context_data(self, **kwargs):
-# 		context = super(TagListView, self).get_context_data(**kwargs)
-# 		context['threads'] = Thread.objects.filter(Q(tags__name__in=[self.kwargs['tag']])&Q(published=True))
-# 		return context
 
 
 class TagListView(AjaxListView):
@@ -210,10 +175,7 @@ class ThreadUpdateView(LoginRequiredMixin, UpdateView):
 
 	def get_template_names(self, **kwargs):
 		context = super(ThreadUpdateView, self).get_context_data(**kwargs)
-		if context['thread'].thread_type.title == 'interview':
-			return ['threads/admin/interview_form.html']
-		else:
-			return ['threads/admin/thread_form.html']
+		return ['threads/admin/thread_form.html']
 
 
 
