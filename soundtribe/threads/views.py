@@ -41,7 +41,10 @@ class HomeView(AjaxListView):
 		context['threads'] = Thread.objects.filter(published=True)
 		context['slideshow'] = Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5]
 		interviews = Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))
-		context['feature_artist'] = interviews[randint(0, len(interviews)-1)]
+		try:
+			context['feature_artist'] = interviews[randint(0, len(interviews)-1)]
+		except:
+			pass
 		try:
 			context['mplaylist'] = MonthlyPlaylist.objects.latest('date_added').embed
 		except:
