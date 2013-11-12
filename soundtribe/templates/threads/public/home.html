@@ -25,8 +25,8 @@
 			</li>
 			{% endfor %}
 		</ul>
-<!-- 		<button class="next"></button>
-		<button class="previous"></button> -->
+ 		<a href="#" class="next"></a>
+		<a href="#" class="previous"></a>
 	</div>
 
 	{% block js %}
@@ -110,7 +110,6 @@
     <script src="{% static 'js/jquery.swipeshow.js' %}"></script>
 	<script>
 	$(function() {
-		// $(".swipeshow").height();
 	  	$(".swipeshow").swipeshow({
 	  		autostart: false,
 	  		mouse: true,

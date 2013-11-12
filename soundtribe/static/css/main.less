@@ -1202,10 +1202,30 @@ header {
 
 .swipeshow {
 	position: relative;
-	button {
-		z-index: 9999;
+	.next, .previous {
 		position: absolute;
-		bottom: 0;
+		z-index: 9999;
+		bottom: 45%;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+	}
+	.previous {
+		background: url('../img/arrow-left.png') no-repeat center center;
+		background-size: cover;
+		&:hover {
+			background: url('../img/arrow-left-hover.png') no-repeat center center;
+			background-size: cover;
+		}
+	}
+	.next {
+		right: 0;
+		background: url('../img/arrow-right.png') no-repeat center center;
+		background-size: cover;
+		&:hover {
+			background: url('../img/arrow-right-hover.png') no-repeat center center;
+			background-size: cover;
+		}
 	}
 }
 
