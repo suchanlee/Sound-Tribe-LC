@@ -727,6 +727,10 @@ header #header-menu #menu-social li .share-facebook:hover {
 .thread-details .thread-content b {
   font-weight: 700;
 }
+.thread-details .thread-content h3 {
+  margin-top: 35px;
+  line-height: 1.4em;
+}
 .thread-details .thread-tags {
   margin-top: 35px;
 }
