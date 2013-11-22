@@ -75,9 +75,10 @@ class ThreadView(ThreadMixin, AjaxListView):
 	queryset = []
 
 	def get_context_data(self, **kwargs):
+		pdb.set_trace()
 		context = super(ThreadView, self).get_context_data(**kwargs)
 		context['single_thread'] = get_object_or_404(Thread, id=self.kwargs['pk'])
-		context['threads'] = Thread.objects.filter(Q(id__lte=self.kwargs['pk'])&Q(published=True))
+		context['threads'] = Thread.objects.filter(Q(created__lte=context['single_thread'].created)&Q(published=True))
 		ThreadMixin.increment_view(self, context['threads'][0])
 		return context
 
