@@ -29,7 +29,7 @@
 
 	<div class="thread-tags">
 		{% for tag in thread.tags.all %}
-		<a href="/threads/tags/{{tag|lower}}/">{{tag|upper}}</a>
+		<a href="/threads/tags/{{tag.slug|lower}}/">{{tag|upper}}</a>
 		{% endfor %}
 	</div>
 

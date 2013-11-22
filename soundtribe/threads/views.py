@@ -9,6 +9,7 @@ from django.shortcuts import get_object_or_404
 
 from braces.views import LoginRequiredMixin
 from endless_pagination.views import AjaxListView
+from taggit.models import Tag
 
 
 from threads.models import Thread, ThreadType
@@ -75,7 +76,6 @@ class ThreadView(ThreadMixin, AjaxListView):
 	queryset = []
 
 	def get_context_data(self, **kwargs):
-		pdb.set_trace()
 		context = super(ThreadView, self).get_context_data(**kwargs)
 		context['single_thread'] = get_object_or_404(Thread, id=self.kwargs['pk'])
 		context['threads'] = Thread.objects.filter(Q(created__lte=context['single_thread'].created)&Q(published=True))
@@ -131,8 +131,9 @@ class TagListView(AjaxListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(TagListView, self).get_context_data(**kwargs)
-		context['threads'] = Thread.objects.filter(Q(tags__name__in=[self.kwargs['tag']])&Q(published=True))
-		context['title'] = self.kwargs['tag']
+		context['threads'] = Thread.objects.filter(Q(tags__slug__in=[self.kwargs['tag']])&Q(published=True))
+		tag = Tag.objects.get(slug=self.kwargs['tag'])
+		context['title'] = tag.name
 		return context
 
 
