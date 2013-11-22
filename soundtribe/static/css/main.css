@@ -614,6 +614,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   background-color: white;
   opacity: 1;
   width: 100%;
+  z-index: 999;
   padding-top: 10px;
   height: 30px;
   text-align: center;
@@ -762,6 +763,13 @@ header #header-menu #menu-social li .share-facebook:hover {
 }
 .thread-details .thread-social .share-facebook:hover {
   color: #3b5998;
+}
+.thread-details .thread-social .thread-social-like-thanks {
+  margin-top: 0px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #999;
+  display: none;
 }
 .thread-subscribe {
   max-width: 640px;

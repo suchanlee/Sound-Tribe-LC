@@ -665,9 +665,7 @@ header {
 	background-color: white;
 	opacity: 1;
 	width: 100%;
-	// max-width: 960px;
-	// margin: 0 auto;
-	// margin-left: -50%;
+	z-index: 999;
 	padding-top: 10px;
 	height: 30px;
 	text-align: center;
@@ -826,6 +824,13 @@ header {
 			&:hover {
 				color: @facebook-blue;
 			}
+		}
+		.thread-social-like-thanks {
+			margin-top: 0px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: #999;
+			display: none;
 		}
 	}
 }

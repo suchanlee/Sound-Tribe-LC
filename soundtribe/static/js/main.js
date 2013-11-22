@@ -157,8 +157,8 @@ $('body').on('click', 'a.thread-like-button', function() {
 			data: {
 				csrfmiddlewaretoken: $('#csrf_token').text(),
 			},
-			success: function() {
-				console.log('success');
+			success: function(data) {
+				console.log(data);
 			},
 			error: function() {
 				console.log('error');
@@ -166,6 +166,7 @@ $('body').on('click', 'a.thread-like-button', function() {
 		});
 		$(this).addClass('thread-liked');
 		$(this).attr('title', parseInt($(this).attr('rel'))+1 +' likes');
+		$(this).siblings('.thread-social-like-thanks').css('display', 'block');
 	} else {
 		console.log('you have already liked this thread');
 	}
