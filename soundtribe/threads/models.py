@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
@@ -32,7 +34,7 @@ class ThreadModel(models.Model):
 	published = models.BooleanField(default=True)
 	slideshow = models.BooleanField(default=False)
 	slideshow_image = models.FileField(upload_to='thread_slideshow_images', blank=True, null=True)
-	created = models.DateTimeField(auto_now_add=True)
+	created = models.DateTimeField(blank=True)
 	modified = models.DateTimeField(auto_now=True)
 
 	class Meta:
@@ -65,6 +67,8 @@ class Thread(ThreadModel):
 		If the post has not yet been saved
 		create a slug from the title and save it
 		'''
+		if not self.id:
+			self.created = datetime.datetime.now()
 		if not self.slug:
 			self.slug = slugify(self.title)
 

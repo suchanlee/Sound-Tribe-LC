@@ -40,7 +40,8 @@ class HomeView(AjaxListView):
 		context = super(HomeView, self).get_context_data(**kwargs)
 		context['threads'] = Thread.objects.filter(published=True)
 		context['slideshow'] = Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5]
-		interviews = Thread.objects.filter(Q(published=True)&Q(thread_type__slug='interview'))
+		interviews = Thread.objects.filter(Q(published=True)&Q(title__icontains='(interview'))
+
 		try:
 			context['feature_artist'] = interviews[randint(0, len(interviews)-1)]
 		except:
