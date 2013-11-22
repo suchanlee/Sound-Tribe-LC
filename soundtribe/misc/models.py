@@ -52,7 +52,7 @@ class MonthlyPlaylist(models.Model):
 		if (self.current_url != self.url):
 			client = sc.Client(client_id='7b049100ad8da6c3ef9767248ddf7c0a') # move client_id out later
 			try:
-				embed_info = client.get('/oembed', url=self.url, maxheight='300', color='6E6E6E')
+				embed_info = client.get('/oembed', url=self.url, maxheight='400', color='6E6E6E')
 				self.embed = embed_info.html
 				self.current_url = self.url
 			except:

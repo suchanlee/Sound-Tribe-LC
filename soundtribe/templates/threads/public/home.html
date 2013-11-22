@@ -51,7 +51,7 @@
 <div id="home-side">
 	<div class="home-side-item">
 		<h5 class="side-heading">FEATURED ARTIST</h5>
-		<div id="home-featured-artist-image" style="background-image:url('{{MEDIA_URL}}{{feature_artist.main_image}}')"></div>
+		<div id="home-featured-artist-image" style="background-image:url('{{MEDIA_URL}}{{feature_artist.main_image}}')"><a href="/threads/{{feature_artist.id}}/{{feature_artist.slug}}/" title="Read STLC's interview with {{feature_artist.artist_name|title}}"></a></div>
 		<div id="home-featured-artist-info">
 			<p class="home-featured-artist-profile-header">NAME</p>
 			<p class="home-featured-artist-profile">{{feature_artist.artist_name|upper}}</p>
