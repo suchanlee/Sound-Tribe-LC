@@ -150,6 +150,7 @@ $('.thread-text').mouseout(function() {
 
 $('body').on('click', 'a.thread-like-button', function() {
 	if (!$(this).hasClass('thread-liked')) {
+		var curElement = $(this);
 		$(this).css('color','#A00000');
 		$.ajax({
 			url: window.location.pathname + 'likes/',
@@ -158,7 +159,9 @@ $('body').on('click', 'a.thread-like-button', function() {
 				csrfmiddlewaretoken: $('#csrf_token').text(),
 			},
 			success: function(data) {
+				curElement.siblings('.thread-social-like-thanks').text(data);
 				console.log(data);
+				curElement.siblings('.thread-social-like-thanks').css('display', 'block');
 			},
 			error: function() {
 				console.log('error');
@@ -166,7 +169,6 @@ $('body').on('click', 'a.thread-like-button', function() {
 		});
 		$(this).addClass('thread-liked');
 		$(this).attr('title', parseInt($(this).attr('rel'))+1 +' likes');
-		$(this).siblings('.thread-social-like-thanks').css('display', 'block');
 	} else {
 		console.log('you have already liked this thread');
 	}
