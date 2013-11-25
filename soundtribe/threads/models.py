@@ -15,9 +15,9 @@ class ThreadModel(models.Model):
 	as the common fields required for all threads
 	'''
 	thread_type = models.ForeignKey('ThreadType')
-	title = models.CharField(max_length=50)
+	title = models.CharField(max_length=200)
 	slug = models.SlugField(blank=True, db_index=True)
-	subtitle = models.CharField(max_length=150, blank=True)
+	subtitle = models.CharField(max_length=200, blank=True)
 	author = models.ForeignKey(User)
 	main_image = models.FileField(upload_to='thread_main_images')
 	thumbnail_image = models.FileField(upload_to='thread_main_thumbnails', blank=True, null=True)
