@@ -10,6 +10,7 @@ from django.shortcuts import get_object_or_404
 from braces.views import LoginRequiredMixin
 from endless_pagination.views import AjaxListView
 from taggit.models import Tag
+from haystack.forms import ModelSearchForm
 
 
 from threads.models import Thread, ThreadType
@@ -39,6 +40,7 @@ class HomeView(AjaxListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(HomeView, self).get_context_data(**kwargs)
+		context['searchform'] = ModelSearchForm
 		context['threads'] = Thread.objects.filter(published=True)
 		context['slideshow'] = Thread.objects.filter(Q(slideshow=True)&Q(published=True))[:5]
 		interviews = Thread.objects.filter(Q(published=True)&Q(title__icontains='(interview'))
@@ -77,6 +79,7 @@ class ThreadView(ThreadMixin, AjaxListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(ThreadView, self).get_context_data(**kwargs)
+		context['searchform'] = ModelSearchForm
 		context['single_thread'] = get_object_or_404(Thread, id=self.kwargs['pk'])
 		context['threads'] = Thread.objects.filter(Q(created__lte=context['single_thread'].created)&Q(published=True))
 		ThreadMixin.increment_view(self, context['threads'][0])
@@ -91,12 +94,26 @@ class CategoryView(ThreadMixin, AjaxListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(CategoryView, self).get_context_data(**kwargs)
+		context['searchform'] = ModelSearchForm
 		context['threads'] = Thread.objects.filter(Q(thread_type__slug=self.kwargs['category'])&Q(published=True))
 		context['title'] = ThreadType.objects.get(slug=self.kwargs['category']).title
 		try:
 			context['single_thread'] = threads[0]
 		except:
 			context['single_thread'] = None
+		return context
+
+class TagListView(AjaxListView):
+	template_name = 'threads/public/thread_list.html'
+	page_template = 'threads/public/thread_list_post.html'
+	queryset = []
+
+	def get_context_data(self, **kwargs):
+		context = super(TagListView, self).get_context_data(**kwargs)
+		context['searchform'] = ModelSearchForm
+		context['threads'] = Thread.objects.filter(Q(tags__slug__in=[self.kwargs['tag']])&Q(published=True))
+		tag = Tag.objects.get(slug=self.kwargs['tag'])
+		context['title'] = tag.name
 		return context
 
 
@@ -123,22 +140,6 @@ class ThreadTypeListView(TemplateView):
 		context['obj_title'] = 'thread types'
 		return context
 
-
-class TagListView(AjaxListView):
-	template_name = 'threads/public/thread_list.html'
-	page_template = 'threads/public/thread_list_post.html'
-	queryset = []
-
-	def get_context_data(self, **kwargs):
-		context = super(TagListView, self).get_context_data(**kwargs)
-		context['threads'] = Thread.objects.filter(Q(tags__slug__in=[self.kwargs['tag']])&Q(published=True))
-		tag = Tag.objects.get(slug=self.kwargs['tag'])
-		context['title'] = tag.name
-		return context
-
-
-# CREATE VIEWS
-
 class ThreadCreateView(LoginRequiredMixin, CreateView):
 	model = Thread
 	template_name = 'threads/admin/thread_form.html'
@@ -162,9 +163,6 @@ class ThreadTypeCreateView(LoginRequiredMixin, CreateView):
 	model = ThreadType
 	template_name = 'threads/admin/threadtype_form.html'
 	success_url = '/admin/'
-
-
-# UPDATE VIEWS
 
 class ThreadTypeUpdateView(LoginRequiredMixin, UpdateView):
 	model = ThreadType
