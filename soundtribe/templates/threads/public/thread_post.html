@@ -34,10 +34,8 @@
 	</div>
 
 	<div class="thread-social">
-<!-- 		<a href="#"
-  		onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;" class="socialico share share-facebook" rel="tipsy" title="Share on Facebook">f</a> -->
-  		<a href="https://www.facebook.com/sharer/sharer.php?u=http://soundtribelc.com/threads/{{thread.id}}/{{thread.slug}}/" target="_blank" class="socialico share share-facebook" rel="tipsy" title="Share on Facebook">f</a>
-		<a href="#" class="socialico share share-twitter" title="Share on Twitter" rel="{{thread.title|title}}" onclick="window.open('https://twitter.com/share?url='+location.href+'&text={{thread.title|title}}')">l</a>
+  		<a href="https://www.facebook.com/sharer/sharer.php?u=http://soundtribelc.com/threads/{{thread.id}}/{{thread.slug}}/" target="_blank" class="socialico share share-facebook" rel="tipsy" title="Share on Facebook" onclick="incrFacebookShareCount();">f</a>
+		<a href="#" class="socialico share share-twitter" title="Share on Twitter" rel="{{thread.title}}" onclick="shareOnTwitter(location.href);">l</a>
       	<a rel="{{thread.likes}}" class="socialico share thread-like-button" rel="tipsy" title="{{thread.likes}} likes">3</a>
       	<p class="thread-social-like-thanks"></p>
       	<span id="csrf_token" style="display: none;">{{csrf_token}}</span>

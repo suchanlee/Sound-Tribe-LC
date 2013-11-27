@@ -174,6 +174,45 @@ $('body').on('click', 'a.thread-like-button', function() {
 	}
 });
 
+function shareOnTwitter(link) {
+	incrTwitterShareCount();
+	window.open('https://twitter.com/intent/tweet?url='+link+'&text=');
+}
+
+function incrFacebookShareCount() {
+	var curElement = $(this);
+	$.ajax({
+		url: window.location.pathname + 'facebook/share/',
+		method: "POST",
+		data: {
+			csrfmiddlewaretoken: $('#csrf_token').text(),
+		},
+		success: function(data) {
+			console.log('facebook shared');
+		},
+		error: function() {
+			console.log('error');
+		}
+	});
+}
+
+// $('body').on('click', 'a.share-twitter', function() {
+function incrTwitterShareCount() {
+	var curElement = $(this);
+	$.ajax({
+		url: window.location.pathname + 'twitter/share/',
+		method: "POST",
+		data: {
+			csrfmiddlewaretoken: $('#csrf_token').text(),
+		},
+		success: function(data) {
+			console.log('twitter shared');
+		},
+		error: function() {
+			console.log('error');
+		}
+	});
+}
 
 $('#thread-menu').hover(function() {
 	if ($(this).hasClass('low-menu-animated')) {

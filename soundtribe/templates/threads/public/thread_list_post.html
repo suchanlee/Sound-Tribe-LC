@@ -10,7 +10,11 @@
 			<div class="home-thread-item">
 			{% endif %}
 				<div class="home-thread-item-image" style="background-image:url('{{MEDIA_URL}}{{t.main_image}}');">
+					{% if type == 'category' %}
 					<a href="/threads/{{t.thread_type.slug}}/{{t.id}}/{{t.slug}}/"></a>
+					{% else %}
+					<a href="/threads/{{t.id}}/{{t.slug}}/"></a>
+					{% endif %}
 				</div>
 				<div class="home-thread-item-info">
 					<p class="home-item-type"><a href="/threads/category/{{t.thread_type.slug}}/">{{t.thread_type|upper}}</a></p>

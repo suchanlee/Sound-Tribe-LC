@@ -30,6 +30,8 @@ class ThreadModel(models.Model):
 	)
 	tags = TaggableManager(blank=True)
 	likes = models.IntegerField(default=0)
+	fb_shared = models.IntegerField(default=0, blank=True)
+	twtr_shared = models.IntegerField(default=0, blank=True)
 	views = models.IntegerField(default=0)
 	published = models.BooleanField(default=True)
 	slideshow = models.BooleanField(default=False)
