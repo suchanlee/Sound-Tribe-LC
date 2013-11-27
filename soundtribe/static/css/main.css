@@ -25,6 +25,21 @@ header #header-nav {
   float: right;
   text-align: right;
 }
+header #header-nav form {
+  margin-bottom: 0px;
+}
+header #header-nav form input[type="text"] {
+  width: 245px;
+  height: 26px;
+  padding: 5px 0px 5px 5px;
+  font-size: 0.96em;
+  text-align: right;
+  border: none;
+  color: #777;
+  border-bottom: 1px solid #e6e6e6;
+  margin-top: 0px;
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
 header #header-menu {
   padding-top: 8px;
   padding-bottom: 15px;
@@ -40,6 +55,10 @@ header #header-menu #header-pull {
 header #header-menu #header-logo {
   display: inline-block;
   vertical-align: top;
+  margin-top: 12px;
+}
+header #header-menu #header-logo a {
+  display: block;
 }
 header #header-menu #header-logo img {
   width: 200px;
@@ -58,31 +77,11 @@ header #header-menu #search-anchor {
 header #header-menu #icon-search {
   cursor: pointer;
 }
-header #header-menu #header-search {
-  display: none;
-  position: absolute;
-  top: 0px;
-  left: -220px;
-}
-header #header-menu #header-search form {
-  margin-bottom: 0px;
-}
-header #header-menu #header-search input {
-  width: 245px;
-  height: 26px;
-  padding: 5px 5px 5px 5px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 3px;
-  border: 1px solid #e6e6e6;
-  margin-top: 0px;
-  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
 header #header-menu #menu-threads {
   list-style-type: none;
   display: inline-block;
   vertical-align: top;
-  margin-top: 25px;
+  margin-top: 8px;
   margin-bottom: 0px;
   text-align: right;
   padding-left: 0px;

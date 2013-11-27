@@ -47,6 +47,21 @@ header {
 	#header-nav {
 		float: right;
 		text-align: right;
+		form {
+			margin-bottom: 0px;
+			input[type="text"] {
+				width: 245px;
+				height: 26px;
+				padding: 5px 0px 5px 5px;
+				font-size: 0.96em;
+				text-align: right;
+				border: none;
+				color: #777;
+				border-bottom: 1px solid #e6e6e6;
+				margin-top: 0px;
+				font-family: @sans-serif;
+			}
+		}
 	}
 	#header-menu {
 		padding-top: 8px;
@@ -61,6 +76,10 @@ header {
 		#header-logo {
 			display: inline-block;
 			vertical-align: top;
+			margin-top: 12px;
+			a {
+				display: block;
+			}
 			img {
 				width: 200px;
 				margin-top: 15px;
@@ -79,31 +98,11 @@ header {
 		#icon-search {
 			cursor: pointer;
 		}
-		#header-search {
-			display: none;
-			position: absolute;
-			top: 0px;
-			left: -220px;
-			form {
-				margin-bottom: 0px;
-			}
-			input {
-				width: 245px;
-				height: 26px;
-				padding: 5px 5px 5px 5px;
-				font-size: 1.2em;
-				border: none;
-				border-radius: 3px;
-				border: 1px solid #e6e6e6;
-				margin-top: 0px;
-				font-family: @sans-serif;
-			}
-		}
 		#menu-threads {
 			list-style-type: none;
 			display: inline-block;
 			vertical-align: top;
-			margin-top: 25px;
+			margin-top: 8px;
 			margin-bottom: 0px;
 			text-align: right;
 			padding-left: 0px;

@@ -65,12 +65,6 @@ class HomeView(AjaxListView):
 		return context
 
 
-class AdminView(LoginRequiredMixin, TemplateView):
-	template_name = 'threads/admin/admin.html'
-
-
-# DETAIL VIEWS
-
 class ThreadView(ThreadMixin, AjaxListView):
 	context_object_name = 'threads'
 	template_name = 'threads/public/thread_detail.html'
@@ -85,6 +79,22 @@ class ThreadView(ThreadMixin, AjaxListView):
 		ThreadMixin.increment_view(self, context['threads'][0])
 		return context
 
+class CategoryThreadView(ThreadMixin, AjaxListView):
+	context_object_name = 'threads'
+	template_name = 'threads/public/thread_detail.html'
+	page_template = 'threads/public/thread_post.html'
+	queryset = []
+
+	def get_context_data(self, **kwargs):
+		context = super(CategoryThreadView, self).get_context_data(**kwargs)
+		context['searchform'] = ModelSearchForm
+		context['single_thread'] = get_object_or_404(Thread, id=self.kwargs['pk'])
+		context['threads'] = Thread.objects.filter(
+			Q(created__lte=context['single_thread'].created)&
+			Q(published=True)&
+			Q(thread_type__slug=self.kwargs['category']))
+		ThreadMixin.increment_view(self, context['threads'][0])
+		return context
 
 class CategoryView(ThreadMixin, AjaxListView):
 	context_object_name = 'threads'
@@ -97,6 +107,7 @@ class CategoryView(ThreadMixin, AjaxListView):
 		context['searchform'] = ModelSearchForm
 		context['threads'] = Thread.objects.filter(Q(thread_type__slug=self.kwargs['category'])&Q(published=True))
 		context['title'] = ThreadType.objects.get(slug=self.kwargs['category']).title
+		context['type'] = 'category'
 		try:
 			context['single_thread'] = threads[0]
 		except:
@@ -114,10 +125,15 @@ class TagListView(AjaxListView):
 		context['threads'] = Thread.objects.filter(Q(tags__slug__in=[self.kwargs['tag']])&Q(published=True))
 		tag = Tag.objects.get(slug=self.kwargs['tag'])
 		context['title'] = tag.name
+		context['type'] = 'tag'
 		return context
 
 
 # LIST VIEWS
+
+class AdminView(LoginRequiredMixin, TemplateView):
+	template_name = 'threads/admin/admin.html'
+
 
 class ThreadListView(TemplateView):
 
