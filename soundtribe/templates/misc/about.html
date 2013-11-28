@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block outer-content %}
+	{% include "details_nav.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="thread-main-image">
+</div>
+
+<div class="thread-details">
+	<div class="thread-info">
+		<h1>About Sound Tribe Lifestyle & Culture</h1>
+	</div>
+
+	<div class="thread-content">
+		<p><span class="bold">Sound Tribe LC (Lifestyle & Culture)</span> is an organization that is dedicated to creating and sharing the best entertainment that the world has to offer. We specialize in music but strive to share all great art.</p>
+
+		<p><span class="underline">The Web</span> is Sound Tribe LC’s music blog weaved out of “threads” which consist of songs, videos, interviews, music news, trustworthy reviews, and anything related to music. The Web is music porn, you can thank us later.</p>
+
+		<p>We are run by small group that came together solely with our love for music and belief in what we do. If you like what you find here and would like to support the organization, please help us by making donation clicking on the link below. Thank you!</p>
+
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align: center; margin-top: 100px;">
+		<input type="hidden" name="cmd" value="_donations">
+		<input type="hidden" name="business" value="admin@soundtribelc.com">
+		<input type="hidden" name="lc" value="US">
+		<input type="hidden" name="item_name" value="Sound Tribe Lifestyle and Culture">
+		<input type="hidden" name="no_note" value="0">
+		<input type="hidden" name="currency_code" value="USD">
+		<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+
+
+	</div>
+
+</div>
+
+
+{% endblock %}

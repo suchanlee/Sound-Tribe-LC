@@ -69,6 +69,10 @@ class Thread(ThreadModel):
 		If the post has not yet been saved
 		create a slug from the title and save it
 		'''
+		if not self.fb_shared:
+			self.fb_shared = 0
+		if not self.twtr_shared:
+			self.twtr_shared = 0
 		if not self.id:
 			self.created = datetime.datetime.now()
 		if not self.slug:

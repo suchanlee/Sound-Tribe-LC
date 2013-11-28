@@ -1,4 +1,4 @@
-from django.views.generic import UpdateView, CreateView, FormView
+from django.views.generic import UpdateView, CreateView, FormView, TemplateView
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, Http404
 
@@ -113,6 +113,11 @@ class CreatePlaylistView(LoginRequiredMixin, CreateView):
 		context['form_title'] = 'Monthly Playlist'
 		return context
 
+class AboutView(TemplateView):
+	template_name = 'misc/about.html'
+
+class ContactView(TemplateView):
+	template_name = 'misc/Contact.html'
 
 
 

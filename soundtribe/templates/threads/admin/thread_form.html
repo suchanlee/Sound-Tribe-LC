@@ -20,10 +20,11 @@
 		</div>
 		<table>
 			<tr><td class="form-label">Use as slideshow?</td><td>{{form.slideshow}}</td></tr>
-			{# <tr><td class="form-label">Slideshow image (only if you've selected to use as slideshow)</td><td>{{form.slideshow_image}}</td></tr> #}
 			<tr><td class="form-label">Thread Type:</td><td>{{form.thread_type}}</td></tr>
 			<tr><td class="form-label">Author:</td> <td>{{form.author}}</td></tr>
 			<tr><td class="form-label">Main Image:</td> <td>{{form.main_image}}</td></tr>
+			<tr><td class="form-label">Artist Name:</td> <td>{{form.artist_name}}</td></tr>
+			<tr><td class="form-label">Artist Website:</td> <td>{{form.website}}</td></tr>
 			<tr><td class="form-label">Title:</td> <td>{{form.title}}</td></tr>
 			<tr><td class="form-label">Subtitle:</td> <td>{{form.subtitle}}</td></tr>
 		</table>
@@ -42,14 +43,20 @@
 		<a href="#" class="fold-unfold-anchor" style="margin-top: 30px; margin-bottom: 30px; display: block;">If thread type is interview</a>
 		<div class="fold-unfold">
 			<h3>If this is an interview thread, please input the following information before submission.</h3>
-			<p class="form-label">artist name</p>
-			{{form.artist_name}}
-			<p class="form-label">artist occupation</p>
+			<p class="form-label">Artist Occupation</p>
 			{{form.artist_occupation}}
-			<p class="form-label">artist description</p>
+			<p class="form-label">Artist Description</p>
 			{{form.artist_description}}
-			<p class="form-label">artist genre</p>
+			<p class="form-label">Artist Genre</p>
 			{{form.artist_genre}}
+			<p class="form-label">Artist Facebook</p>
+			{{form.facebook}}
+			<p class="form-label">Artist Bandcamp</p>
+			{{form.bandcamp}}
+			<p class="form-label">Artist Soundcloud</p>
+			{{form.soundcloud}}
+			<p class="form-label">Artist YouTube</p>
+			{{form.youtube}}
 		</div>
 
 		<p><input type="submit" value="SUBMIT"></p>

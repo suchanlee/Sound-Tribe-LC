@@ -16,12 +16,7 @@
 {% endblock %}
 
 {% block outer-content %}
-<div id="thread-menu">
-	<div id="thread-header">
-	<a href="/"><img src="{% static "img/logo.png" %}" alt="logo" id="thread-logo"></a>
-	<a href="/"><img src="{% static "img/x-button.png" %}" alt="thread close button" id="thread-close-button"></a>
-	</div>
-</div>
+	{% include "details_nav.html" %}
 {% endblock %}
 
 {% block content %}

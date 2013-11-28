@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 
 from threads.views import AdminView, HomeView
-from misc.views import subscribe
+from misc.views import subscribe, AboutView, ContactView
 
 urlpatterns = patterns('',
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login_view'),
@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^music/', include('music.urls'), name='music_views'),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^search/', include('haystack.urls')),
+    url(r'^about/', AboutView.as_view(), name='about'),
+    url(r'^contact/', ContactView.as_view(), name='contact'),
     url(r'^subscribe/submit/$', subscribe, name='subscribe')
 )
 

@@ -8,16 +8,38 @@
 </div>
 <div class="thread-details">
 	<div class="thread-info">
-		{% if thread.website or thread.soundcloud or thread.bandcamp or thread.facebook %}
-		<h1><a href="{% if thread.website %}{{thread.website}}{% elif thread.soundcloud %}{{thread.soundcloud}}{% elif thread.bandcamp %}{{thread.bandcamp}}{% else %}{{thread.facebook}}{% endif %}">{{thread.title}}</a></h1>
-		{% else %}
 		<h1>{{thread.title}}</h1>
-		{% endif %}
 		<h3>{{thread.subtitle}}</h3>
 		<p><a href="/threads/category/{{thread.thread_type.slug}}/">{{thread.thread_type.title|upper}}</a> + {{thread.created|date:"M jS, o"}} + by {{thread.author.get_full_name}}</p>
 	</div>
 
-	{% if thread.thread_type.slug == 'interview' %}
+	{% if thread.artist_genre and thread.artist_description %}
+	<div class="thread-artist-info">
+		<h3 class="blah">{{thread.artist_name|upper}} + {{thread.artist_genre|upper}} + {{thread.artist_occupation|upper}}</h3>
+		<p>
+			{% if thread.website %}
+			<a href="{{thread.website}}">WEBSITE</a>
+				{% if thread.facebook or thread.facebook or thread.soundcloud or thread.youtube %} + {% endif %}
+			{% endif %}
+			{% if thread.facebook %}
+			<a href="{{thread.facebook}}">FACEBOOK</a>
+				{% if thread.facebook or thread.soundcloud or thread.youtube %} + {% endif %}
+			{% endif %}
+			{% if thread.soundcloud %}
+			<a href="thread.soundcloud">SOUNDCLOUD</a>
+				{% if thread.soundcloud or thread.youtube %} + {% endif %}
+			{% endif %}
+			{% if thread.bandcamp %}
+			<a href="thread.bandcamp">BANDCAMP</a>
+				{% if thread.youtube %} + {% endif %}
+			{% endif %}
+			{% if thread.youtube %}
+			<a href="thread.youtube">YOUTUBE</a>
+			{% endif %}</p>
+	</div>
+	{% endif %}
+
+	{% if thread.artist_description %}
 	<div class="thread-interview-info">
 		<p>{{thread.artist_description}}</p>
 	</div>
@@ -26,6 +48,12 @@
 	<div class="thread-content">
 		{{thread.content|safe}}
 	</div>
+
+	{% if thread.website and not thread.artist_description %}
+	<div class="thread-artist-info">
+		<p><a href="{{thread.website}}">Check out more of {{thread.artist_name}}'s work here</a></p>
+	</div>
+	{% endif %}
 
 	<div class="thread-tags">
 		{% for tag in thread.tags.all %}

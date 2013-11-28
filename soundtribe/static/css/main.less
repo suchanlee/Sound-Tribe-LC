@@ -14,6 +14,7 @@
 @twitter-blue: #36ABE0;
 @tumblr-blue: #2D455C;
 @youtube-red: #FF3333;
+@link-red: #A60000;
 
 // fonts
 
@@ -29,10 +30,22 @@
 	font-family: socialico;
 }
 
+.bold {
+	font-weight: 700;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
 body {
 	margin: 0 0 0 0;
 	text-rendering: optimizelegibility;
 	font-family: @sans-serif;
+}
+
+a {
+	color: @link-red;
 }
 
 header {
@@ -752,13 +765,28 @@ header {
 		}
 	}
 	.thread-interview-info {
-		margin-top: 30px;
+		margin-top: 10px;
 		margin-bottom: -10px;
 		p {
 			margin-top: 0px;
 			margin-bottom: 0px;
 			padding-left: 40px;
 			padding-right: 40px;
+		}
+	}
+	.thread-artist-info {
+		margin-top: 30px;
+		h3 {
+			color: @light-black;
+			font-weight: 600;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+		p {
+			margin-bottom: 0px;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 0.93em;
 		}
 	}
 	.thread-content {
@@ -1410,7 +1438,6 @@ header {
 			margin-bottom: 5px;
 			font-weight: 100;
 			a {
-				color: @light-black;
 				text-decoration: underline;
 				&:hover {
 					color: @black;

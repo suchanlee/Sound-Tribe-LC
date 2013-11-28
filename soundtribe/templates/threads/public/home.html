@@ -48,7 +48,32 @@
 		</div>
 	</ul>
 </div>
+
 <div id="home-side">
+	<div class="home-side-item">
+		<h5 class="side-heading">STLC SNS</h5>
+		<div class="home-side-sns">
+			<a href="https://www.facebook.com/official.soundtribelc" class="socialico facebook">f</a>
+			<a href="https://twitter.com/SoundTribeLC" class="socialico twitter">l</a>
+			<a href="https://www.youtube.com/user/SoundTribeTV" class="socialico youtube">x</a>
+			<a href="http://soundtribelc.tumblr.com" class="socialico tumblr">t</a>
+		</div>
+	</div>
+	<div id="home-subscribe">
+		<h5 class="side-heading">SUBSCRIBE</h5>
+		<div id="csrf-token">{{csrf_token}}</div>
+		<div class="thread-subscribe">
+			<form action="">
+				<p class="subscribe" id="subscribe-text">STAY TUNED WITH STLC!</p>
+				<p class="subscribe subscribe-success">You have been successfully subscribed.</p>
+				<p class="subscribe subscribe-error">Please input a valid email address.</p>
+				<p class="subscribe" id="subscribe-email">ENTER YOUR EMAIL:</p>
+				<input type="email" name="subscription-email">
+				<input type="submit" value="" class="subscribe-submit">
+				{# <button type="submit" class="subscribe-submit"></button> #}
+			</form>
+		</div>
+	</div>
 	<div class="home-side-item">
 		<h5 class="side-heading">FEATURED ARTIST</h5>
 		<div id="home-featured-artist-image" style="background-image:url('{{MEDIA_URL}}{{feature_artist.main_image}}')"><a href="/threads/{{feature_artist.id}}/{{feature_artist.slug}}/" title="Read STLC's interview with {{feature_artist.artist_name|title}}"></a></div>
@@ -80,30 +105,6 @@
 		{{listen|safe}}
 	</div>
 	{% endif %}
-	<div id="home-subscribe">
-		<h5 class="side-heading">SUBSCRIBE</h5>
-		<div id="csrf-token">{{csrf_token}}</div>
-		<div class="thread-subscribe">
-			<form action="">
-				<p class="subscribe" id="subscribe-text">STAY TUNED WITH STLC!</p>
-				<p class="subscribe subscribe-success">You have been successfully subscribed.</p>
-				<p class="subscribe subscribe-error">Please input a valid email address.</p>
-				<p class="subscribe" id="subscribe-email">ENTER YOUR EMAIL:</p>
-				<input type="email" name="subscription-email">
-				<input type="submit" value="" class="subscribe-submit">
-				{# <button type="submit" class="subscribe-submit"></button> #}
-			</form>
-		</div>
-	</div>
-	<div class="home-side-item">
-		<h5 class="side-heading">STLC SNS</h5>
-		<div class="home-side-sns">
-			<a href="https://www.facebook.com/official.soundtribelc" class="socialico facebook">f</a>
-			<a href="https://twitter.com/SoundTribeLC" class="socialico twitter">l</a>
-			<a href="https://www.youtube.com/user/SoundTribeTV" class="socialico youtube">x</a>
-			<a href="http://soundtribelc.tumblr.com" class="socialico tumblr">t</a>
-		</div>
-	</div>
 </div>
 
     <script src="{% static "js/main.js" %}"></script>

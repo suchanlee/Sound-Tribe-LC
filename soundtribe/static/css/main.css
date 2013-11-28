@@ -5,10 +5,19 @@
 .socialico {
   font-family: socialico;
 }
+.bold {
+  font-weight: 700;
+}
+.underline {
+  text-decoration: underline;
+}
 body {
   margin: 0 0 0 0;
   text-rendering: optimizelegibility;
   font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+a {
+  color: #a60000;
 }
 header {
   width: 90%;
@@ -696,7 +705,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   text-decoration: underline;
 }
 .thread-details .thread-interview-info {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: -10px;
 }
 .thread-details .thread-interview-info p {
@@ -704,6 +713,21 @@ header #header-menu #menu-social li .share-facebook:hover {
   margin-bottom: 0px;
   padding-left: 40px;
   padding-right: 40px;
+}
+.thread-details .thread-artist-info {
+  margin-top: 30px;
+}
+.thread-details .thread-artist-info h3 {
+  color: #5a5a5a;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.thread-details .thread-artist-info p {
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.93em;
 }
 .thread-details .thread-content {
   margin-top: 42px;
@@ -1314,7 +1338,6 @@ header #header-menu #menu-social li .share-facebook:hover {
     font-weight: 100;
   }
   #home-side .home-featured-artist-profile-link a {
-    color: #5a5a5a;
     text-decoration: underline;
   }
   #home-side .home-featured-artist-profile-link a:hover {
