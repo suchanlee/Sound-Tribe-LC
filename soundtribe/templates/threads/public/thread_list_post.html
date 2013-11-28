@@ -9,7 +9,7 @@
 			{% else %}
 			<div class="home-thread-item">
 			{% endif %}
-				<div class="home-thread-item-image" style="background-image:url('{{MEDIA_URL}}{{t.main_image}}');">
+				<div class="home-thread-item-image" style="background-image:url('{{MEDIA_URL}}{{t.thumbnail_image}}');">
 					{% if type == 'category' %}
 					<a href="/threads/{{t.thread_type.slug}}/{{t.id}}/{{t.slug}}/"></a>
 					{% else %}

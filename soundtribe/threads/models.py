@@ -1,8 +1,10 @@
-import datetime, pdb
+import datetime, pdb, StringIO
+import Image
 
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 from taggit.managers import TaggableManager
 from redactor.fields import RedactorField
@@ -69,9 +71,30 @@ class Thread(ThreadModel):
 		If the post has not yet been saved
 		create a slug from the title and save it
 		'''
-		if not self.fb_shared:
+		if not self.thumbnail_image:
+			image = Image.open(self.main_image)
+			(width, height) = image.size
+			width = float(width)
+			height = float(height)
+			if width > 300:
+				if width/height > 2:
+					factor = height/170
+				elif width/height > 1:
+					factor = width/280
+				else:
+					factor = height/280
+			else:
+				factor = 1
+			size = (int(width/factor), int(height/factor))
+			image = image.resize(size, Image.ANTIALIAS)
+			path = self.main_image.path.replace('thread_main_images', 'thread_main_thumbnails')
+			image_io = StringIO.StringIO()
+			image.save(image_io, format='JPEG')
+			thumb_file = InMemoryUploadedFile(image_io, None, path, 'image/jpeg', image_io.len, None)
+			self.thumbnail_image.save('thumb_pk{}.jpg'.format(self.pk), thumb_file)
+		if self.fb_shared is None:
 			self.fb_shared = 0
-		if not self.twtr_shared:
+		if self.twtr_shared is None:
 			self.twtr_shared = 0
 		if not self.id:
 			self.created = datetime.datetime.now()
