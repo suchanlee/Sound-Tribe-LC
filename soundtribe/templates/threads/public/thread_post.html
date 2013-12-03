@@ -19,22 +19,26 @@
 		<p>
 			{% if thread.website %}
 			<a href="{{thread.website}}">WEBSITE</a>
-				{% if thread.facebook or thread.facebook or thread.soundcloud or thread.youtube %} + {% endif %}
+				{% if thread.twitter or thread.facebook or thread.bandcamp or thread.soundcloud or thread.youtube %} + {% endif %}
+			{% endif %}
+			{% if thread.twitter %}
+			<a href="{{thread.twitter}}">TWITTER</a>
+				{% if thread.facebook or thread.bandcamp or thread.soundcloud or thread.youtube %} + {% endif %}
 			{% endif %}
 			{% if thread.facebook %}
 			<a href="{{thread.facebook}}">FACEBOOK</a>
-				{% if thread.facebook or thread.soundcloud or thread.youtube %} + {% endif %}
+				{% if thread.soundcloud or thread.bandcamp or thread.youtube %} + {% endif %}
 			{% endif %}
 			{% if thread.soundcloud %}
-			<a href="thread.soundcloud">SOUNDCLOUD</a>
-				{% if thread.soundcloud or thread.youtube %} + {% endif %}
+			<a href="{{thread.soundcloud}}">SOUNDCLOUD</a>
+				{% if thread.bandcamp or thread.youtube %} + {% endif %}
 			{% endif %}
 			{% if thread.bandcamp %}
-			<a href="thread.bandcamp">BANDCAMP</a>
+			<a href="{{thread.bandcamp}}">BANDCAMP</a>
 				{% if thread.youtube %} + {% endif %}
 			{% endif %}
 			{% if thread.youtube %}
-			<a href="thread.youtube">YOUTUBE</a>
+			<a href="{{thread.youtube}}">YOUTUBE</a>
 			{% endif %}</p>
 	</div>
 	{% endif %}
@@ -51,7 +55,7 @@
 
 	{% if thread.website and not thread.artist_description %}
 	<div class="thread-artist-info">
-		<p><a href="{{thread.website}}">Check out more of {{thread.artist_name}}'s work here</a></p>
+		<p><a href="{{thread.website}}">Find out more about {{thread.artist_name}} here</a></p>
 	</div>
 	{% endif %}
 
