@@ -33,6 +33,7 @@ header #header-logo {
 header #header-nav {
   float: right;
   text-align: right;
+  margin-top: 10px;
 }
 header #header-nav form {
   margin-bottom: 0px;
@@ -624,7 +625,7 @@ header #header-menu #menu-social li .share-facebook:hover {
   width: 100%;
   z-index: 999;
   padding-top: 10px;
-  height: 30px;
+  height: 40px;
   text-align: center;
 }
 #thread-menu:hover {
