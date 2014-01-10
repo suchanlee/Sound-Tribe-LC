@@ -17,7 +17,11 @@ class RssFeed(Feed):
 		return item.title
 
 	def item_description(self, item):
-		return item.content
+		image = URL + 'media/' + item.main_image.name
+
+		ret = '<img src=' + image + '>' + item.content
+		
+		return ret
 
 	def item_link(self, item):
 		return reverse('thread_detail_view', args=[item.pk, item.slug])
