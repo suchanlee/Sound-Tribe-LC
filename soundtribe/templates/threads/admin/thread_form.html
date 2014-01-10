@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}Create Thread{% endblock %}
+{% block title %}Thread Form {% if object %}- {{object.title}}{% endif %}{% endblock %}
 
 {% block styles %}
 <link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">

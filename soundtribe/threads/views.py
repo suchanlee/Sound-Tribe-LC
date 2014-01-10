@@ -1,6 +1,6 @@
 from random import randint
 
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin, BaseDetailView
 from django.db.models import Q
 from django import http
@@ -129,7 +129,7 @@ class TagListView(AjaxListView):
 		return context
 
 
-# LIST VIEWS
+# ADMIN
 
 class AdminView(LoginRequiredMixin, TemplateView):
 	template_name = 'threads/admin/admin.html'
@@ -141,9 +141,17 @@ class ThreadListView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super(ThreadListView, self).get_context_data(**kwargs)
-		context['objects'] = Thread.objects.filter(published=True)
-		context['unpublished_objects'] = Thread.objects.filter(published=False)
-		context['obj_title'] = 'Thread List'
+
+		audio_type = ThreadType.objects.get(slug='audio')
+		video_type = ThreadType.objects.get(slug='video')
+		talk_type = ThreadType.objects.get(slug='talk')
+		review_type = ThreadType.objects.get(slug='review')
+
+		context['audio_threads'] = Thread.objects.filter(thread_type=audio_type)
+		context['video_threads'] = Thread.objects.filter(thread_type=video_type)
+		context['talk_threads'] = Thread.objects.filter(thread_type=talk_type)
+		context['review_threads'] = Thread.objects.filter(thread_type=review_type)
+
 		return context
 
 class ThreadTypeListView(TemplateView):
@@ -174,25 +182,27 @@ class ThreadCreateView(LoginRequiredMixin, CreateView):
 		else:
 			return ['threads/admin/thread_form.html']
 
+class ThreadUpdateView(LoginRequiredMixin, UpdateView):
+	model = Thread
+	success_url = '/admin/'
+	template_name =  'threads/admin/thread_form.html'
+
+
+class ThreadDeleteView(LoginRequiredMixin, DeleteView):
+	model = Thread
+	template_name = 'threads/admin/thread_delete_form.html'
+	success_url = '/threads/list/thread/'
+
 
 class ThreadTypeCreateView(LoginRequiredMixin, CreateView):
 	model = ThreadType
 	template_name = 'threads/admin/threadtype_form.html'
 	success_url = '/admin/'
 
+
 class ThreadTypeUpdateView(LoginRequiredMixin, UpdateView):
 	model = ThreadType
 	template_name = 'threads/admin/threadtype_form.html'
 	success_url = '/admin/'
-
-
-class ThreadUpdateView(LoginRequiredMixin, UpdateView):
-	model = Thread
-	success_url = '/admin/'
-
-	def get_template_names(self, **kwargs):
-		context = super(ThreadUpdateView, self).get_context_data(**kwargs)
-		return ['threads/admin/thread_form.html']
-
 
 

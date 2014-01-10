@@ -1753,6 +1753,16 @@ footer p {
 .admin .fold-unfold {
   display: none;
 }
+.admin .thread-list-anchor {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+.admin .thread-list-anchor:hover {
+  text-decoration: underline;
+}
+.admin .thread-list-ul {
+  display: none;
+}
 .admin table {
   font-size: 18px;
 }

@@ -9,7 +9,6 @@
 <div class="admin">
 	<div class="admin-header">
 		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
-		<h1>EDIT {{form_title|upper}}</h1>
 	</div>
 	<form enctype="multipart/form-data" method="POST">
 		<div class="form-errors">
@@ -17,8 +16,10 @@
 		</div>
 		{% csrf_token %}
 		{{form.errors}}
+		<p><a href="/threads/list/thread/">Go back to thread list</a></p>
+		<h2>Delete {{object.title}}?</h2>
 		{{form.as_p}}
-		<p><input type="submit" value="SUBMIT"></p>
+		<p><input type="submit" value="Delete"></p>
 	</form>
 </div>
 
