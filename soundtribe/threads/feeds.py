@@ -11,7 +11,7 @@ class RssFeed(Feed):
 	description = 'Latest News from Sound Tribe LC'
 
 	def items(self):
-		return Thread.objects.order_by('-created')[:10]
+		return Thread.objects.filter(published=True).order_by('-created')[:10]
 
 	def item_title(self, item):
 		return item.title
