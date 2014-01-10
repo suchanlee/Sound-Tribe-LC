@@ -1,22 +1,51 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block title %}Admin Thread List{% endblock %}
+
+{% block styles %}
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 
-<h1>{{obj_title}}</h1>
+<div class="admin">
+	<div class="admin-header">
+		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
+	</div>
 
-<h2>Published</h2>
-<ul>
-	{% for obj in objects %}
-	<li><a href="/threads/update/{{obj.id}}/">{{obj.title}}</a></li>
-	{% endfor %}
-</ul>
+	<h1>Threads</h1>
 
-<h2>Unpublished</h2>
-<ul>
-	{% for obj in unpublished_objects %}
-	<li><a href="/threads/update/{{obj.id}}/">{{obj.title}}</a></li>
-	{% endfor %}
-</ul>
+	<h3><a href="#" class="thread-list-anchor">Audio Threads <i class="fa fa-caret-down"></i></a></h3>
+	<ul class="thread-list-ul" id="thread-list-audio">
+		{% for obj in audio_threads %}
+		<li><a href="/threads/update/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}>{{obj.title}}</a> <a href="/threads/delete/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}><i class="fa fa-trash-o"></i></a></li>
+		{% endfor %}
+	</ul>
+
+	<h3><a href="#" class="thread-list-anchor">Video Threads <i class="fa fa-caret-down"></i></a></h3>
+	<ul class="thread-list-ul" id="thread-list-video">
+		{% for obj in video_threads %}
+		<li><a href="/threads/update/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}>{{obj.title}}</a> <a href="/threads/delete/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}><i class="fa fa-trash-o"></i></a></li>
+		{% endfor %}
+	</ul>
+
+	<h3><a href="#" class="thread-list-anchor">Talk Threads <i class="fa fa-caret-down"></i></a></h3>
+	<ul class="thread-list-ul" id="thread-list-talk">
+		{% for obj in talk_threads %}
+		<li><a href="/threads/update/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}>{{obj.title}}</a> <a href="/threads/delete/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}><i class="fa fa-trash-o"></i></a></li>
+		{% endfor %}
+	</ul>
+
+	<h3><a href="#" class="thread-list-anchor">Review Threads <i class="fa fa-caret-down"></i></a></h3>
+	<ul class="thread-list-ul" id="thread-list-review">
+		{% for obj in review_threads %}
+		<li><a href="/threads/update/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}>{{obj.title}}</a> <a href="/threads/delete/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}><i class="fa fa-trash-o"></i></a></li>
+		{% endfor %}
+	</ul>
+
+</div>
+
+<script src="{% static "js/main.js" %}"></script>
 
 {% endblock %}

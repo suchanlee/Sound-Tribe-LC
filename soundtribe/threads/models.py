@@ -109,7 +109,6 @@ class ThreadType(models.Model):
 	title = models.CharField(max_length=100)
 	slug = models.SlugField(blank=True, db_index=True)
 
-
 	class Meta:
 		ordering = ['slug']
 
@@ -121,7 +120,8 @@ class ThreadType(models.Model):
 		If the post has not yet been saved
 		create a slug from the title and save it
 		'''
-		self.slug = slugify(self.title)
+		if not self.slug:
+			self.slug = slugify(self.title)
 
 		super(ThreadType, self).save(*args, **kwargs)
 

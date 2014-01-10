@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-from threads.views import HomeView, ThreadCreateView, ThreadTypeCreateView, ThreadView, ThreadUpdateView, ThreadListView, TagListView, CategoryView, CategoryThreadView, ThreadTypeListView, ThreadTypeUpdateView
+from threads.views import HomeView, ThreadCreateView, ThreadTypeCreateView, ThreadView, ThreadUpdateView, ThreadListView, TagListView, CategoryView, CategoryThreadView, ThreadTypeListView, ThreadTypeUpdateView, ThreadDeleteView
 from threads.api import thread_likes_increment, thread_fb_shared, thread_twtr_shared
 
 urlpatterns = patterns('',
@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^create/types/$', ThreadTypeCreateView.as_view(), name='type_create_view'),
     url(r'^create/interview/$', ThreadCreateView.as_view(), name='interview_create_view'),
     url(r'^create/thread/$', ThreadCreateView.as_view(), name='thread_create_view'),
+    url(r'^delete/(?P<pk>\d+)/$', ThreadDeleteView.as_view(), name='thread_delete_view'),
     url(r'^list/interview/$', ThreadListView.as_view(), name='interview_list_view'),
     url(r'^list/thread/$', ThreadListView.as_view(), name='thread_list_view'),
     url(r'^list/types/$', ThreadTypeListView.as_view(), name='type_list_view'),
