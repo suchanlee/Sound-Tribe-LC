@@ -6,21 +6,20 @@ from django.core.urlresolvers import reverse
 URL = 'http://soundtribelc.com/'
 
 class RssFeed(Feed):
-	title = 'SoundTribe threads RSS feed'
+	title = 'Sound Tribe LC RSS Feed'
 	link = '/threads/'
-	description = 'Latest news from SoundTribe'
+	description = 'Latest News from Sound Tribe LC'
 
 	def items(self):
-		return Thread.objects.order_by('-created')
+		return Thread.objects.order_by('-created')[:10]
 
 	def item_title(self, item):
 		return item.title
 
 	def item_description(self, item):
-		return '<p>' + item.content.split('<p>')[1].strip('\r\n')
+		return item.content
 
 	def item_link(self, item):
-		# return URL + 'threads/' + item.pk + '/' + item.slug + '/'	
 		return reverse('thread_detail_view', args=[item.pk, item.slug])
 	
 	def item_author_name(self, item):
