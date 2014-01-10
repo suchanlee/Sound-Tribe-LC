@@ -19,7 +19,7 @@ class RssFeed(Feed):
 	def item_description(self, item):
 		image = URL + 'media/' + item.main_image.name
 
-		ret = '<img src=' + image + '>' + item.content
+		ret = '<img src="' + image + '">' + item.content
 		
 		return ret
 
