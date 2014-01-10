@@ -236,6 +236,7 @@ $('.thread-list-anchor').click(function() {
         i.removeClass('fa-caret-up');
         i.addClass('fa-caret-down');
     }
+    return false;
 });
 
 
