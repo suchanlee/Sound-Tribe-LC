@@ -863,7 +863,7 @@ header #header-menu #menu-social li .share-facebook:hover {
 .thread-subscribe input[type="email"] {
   font-size: 17px;
   height: 25px;
-  width: 220px;
+  width: 100%;
   border: none;
   border: 1px solid #ddd;
   border-radius: 0;
