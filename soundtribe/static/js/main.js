@@ -196,7 +196,6 @@ function incrFacebookShareCount() {
     });
 }
 
-// $('body').on('click', 'a.share-twitter', function() {
 function incrTwitterShareCount() {
     var curElement = $(this);
     $.ajax({

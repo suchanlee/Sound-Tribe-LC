@@ -744,18 +744,33 @@ header #header-menu #menu-social li .share-facebook:hover {
 .thread-details .thread-content blockquote {
   font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1.4em;
-  line-height: 1.15em;
+  font-weight: 600;
+  line-height: 1.3em;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-left: 65px;
-  margin-right: 65px;
+  margin-left: 55px;
+  margin-right: 55px;
+  color: #828282;
 }
 .thread-details .thread-content b {
   font-weight: 700;
 }
+.thread-details .thread-content h1 {
+  line-height: 1.15em;
+}
+.thread-details .thread-content h2 {
+  line-height: 1.2em;
+}
 .thread-details .thread-content h3 {
   margin-top: 35px;
   line-height: 1.4em;
+}
+.thread-details .thread-content h4 {
+  line-height: 1.3em;
+  color: #5a5a5a;
+  font-weight: 600;
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1.3em;
 }
 .thread-details .thread-tags {
   margin-top: 35px;
