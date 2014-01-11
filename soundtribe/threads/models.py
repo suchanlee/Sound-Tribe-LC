@@ -18,7 +18,7 @@ class ThreadModel(models.Model):
 	'''
 	thread_type = models.ForeignKey('ThreadType')
 	title = models.CharField(max_length=200)
-	slug = models.SlugField(blank=True, db_index=True)
+	slug = models.SlugField(blank=True, db_index=True, max_length=200)
 	subtitle = models.CharField(max_length=200, blank=True)
 	author = models.ForeignKey(User)
 	main_image = models.FileField(upload_to='thread_main_images')
