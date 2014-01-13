@@ -174,6 +174,7 @@ class ThreadCreateView(LoginRequiredMixin, CreateView):
 		initial = initial.copy()
 		initial['views'] = 0
 		initial['likes'] = 0
+		initial['author'] = self.request.user
 		return initial
 
 	def get_template_names(self):
