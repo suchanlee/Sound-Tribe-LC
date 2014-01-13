@@ -7,63 +7,86 @@
 <link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">
 {% endblock %}
 
+{% block outer-content %}
+	{% include "details_nav.html" %}
+{% endblock %}
+
 {% block content %}
-<div class="admin">
-	<div class="admin-header">
-		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
-		<h1>CREATE THREAD</h1>
+
+<div id="admin-thread-form">
+
+<form enctype="multipart/form-data" method="POST">
+	{% csrf_token %}
+	<div class="form-errors">
+		{{form.errors}}
 	</div>
-	<form enctype="multipart/form-data" method="POST">
-		{% csrf_token %}
-		<div class="form-errors">
-			{{form.errors}}
-		</div>
-		<table>
-			<tr><td class="form-label">Use as slideshow?</td><td>{{form.slideshow}}</td></tr>
-			<tr><td class="form-label">Thread Type:</td><td>{{form.thread_type}}</td></tr>
-			<tr><td class="form-label">Author:</td> <td>{{form.author}}</td></tr>
-			<tr><td class="form-label">Main Image:</td> <td>{{form.main_image}}</td></tr>
-			<tr><td class="form-label">Artist Name:</td> <td>{{form.artist_name}}</td></tr>
-			<tr><td class="form-label">Artist Website:</td> <td>{{form.website}}</td></tr>
-			<tr><td class="form-label">Title:</td> <td>{{form.title}}</td></tr>
-			<tr><td class="form-label">Subtitle:</td> <td>{{form.subtitle}}</td></tr>
-		</table>
-		<p class="form-label">Content</p>
-		{{form.content}}
-		<table>
-		<tr><td class="form-label">Tags <span>separate with commas</span>: </td><td>{{form.tags}}</td></tr>
-		<tr><td class="form-label">Published: </td><td>{{form.published}}</td></tr>
-		<tr><td class="form-label">Date: </td><td>{{form.created}}</td></tr>
-		</table>
-		<div style="display: none">
+
+<div class="admin-thread-main-image">
+	<p>Main Image: {{form.main_image}}</p>
+	{% if thread.main_image %}
+	<img id="thread-main-image-upload" src="{{MEDIA_URL}}{{thread.main_image}}" alt="thread main image">
+	{% else %}
+	<img id="thread-main-image-upload" src="">
+	{% endif %}
+</div>
+<div class="thread-details">
+	<div class="thread-info">
+
+		{# title #}
+		<h1 id="thread-details-form-title">{{form.title}}</h1>
+
+		{# subtitle #}
+		<h3 id="thread-details-form-subtitle">{{form.subtitle}}</h3>
+
+		{# author/date/time #}
+		<p>{{form.thread_type}}</a> + {{form.created}} + by {{request.user.get_full_name|title}}</p>
+
+		{# hidden fields #}
+		<div class="hidden">
 			{{form.likes}}
 			{{form.views}}
+			{{form.author}}
 		</div>
 
-		<a href="#" class="fold-unfold-anchor" style="margin-top: 30px; margin-bottom: 30px; display: block;">If thread type is interview</a>
-		<div class="fold-unfold">
-			<h3>If this is an interview thread, please input the following information before submission.</h3>
-			<p class="form-label">Artist Occupation</p>
-			{{form.artist_occupation}}
-			<p class="form-label">Artist Description</p>
-			{{form.artist_description}}
-			<p class="form-label">Artist Genre</p>
-			{{form.artist_genre}}
-			<p class="form-label">Artist Facebook</p>
-			{{form.facebook}}
-			<p class="form-label">Artist Bandcamp</p>
-			{{form.bandcamp}}
-			<p class="form-label">Artist Soundcloud</p>
-			{{form.soundcloud}}
-			<p class="form-label">Artist YouTube</p>
-			{{form.youtube}}
-		</div>
+		{# interview artist info #}
+		<p style="text-align: center; font-weight: 400;">
+			<a href="#" class="fold-unfold-anchor" style="text-decoration: underline; margin-top: 30px; margin-bottom: 30px;">IF INTERVIEW</a>
+		</p>
 
-		<p><input type="submit" value="SUBMIT"></p>
-	</form>
+			<div class="thread-artist-info admin-thread-artist-info fold-unfold hidden">
+
+				<p>{{form.artist_name}} + {{form.artist_genre}} + {{form.artist_occupation}}</p>
+				<p id="admin-thread-artist-sns">
+					{{form.website}} + {{form.twitter}} + {{form.facebook}} +
+					{{form.soundcloud}} + {{form.bandcamp}} + {{form.youtube}}
+				</p>
+				<p id="admin-thread-artist-description">{{form.artist_description}}</p>
+			</div>
+
+		{# content #}
+		<p id="admin-form-content">{{form.content}}</p>
+
+		{# tags #}
+		<p id="admin-form-tags">{{form.tags}}</p>
+
+		{# misc #}
+		<div id="admin-thread-form-misc">
+			<table>
+				<tr><td class="form-label">Use as slideshow?</td><td>{{form.slideshow}}</td></tr>
+				<tr><td class="form-label">Published: </td><td>{{form.published}}</td></tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="thread-artist-info">
+		<p><a id="admin-thread-artist-info" style="text-decoration: underline;">Find out more about {{form.artist_name}} here: {{form.website}}</a></p>
+	</div>
+
+	<p><input type="submit" value="SUBMIT"></p>
+
+</form>
 
 	<script src="{% static "js/main.js" %}"></script>
-
 </div>
 
 {% endblock %}

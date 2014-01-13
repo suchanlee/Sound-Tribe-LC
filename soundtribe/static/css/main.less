@@ -1872,9 +1872,10 @@ footer {
 		}
 	}
 	.form-label {
-		text-transform: capitalize;
 		margin-bottom: 10px;
 		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: 700px;
 	}
 	.form-errors {
 		color: @warning-red;
@@ -1910,10 +1911,134 @@ footer {
 				font-size: 18px;
 				padding: 2px 5px 2px 5px;
 			}
-			// text-align: right;
 		}
 
 	}
+}
+
+.hidden {
+	display: none;
+}
+
+#admin-thread-form {
+
+	font-family: @sans-serif;
+
+	// p {
+	// 	font-weight: 600;
+	// 	text-transform: uppercase;
+	// 	color: @light-black;
+	// }
+
+	.admin-thread-main-image {
+		margin: 0 auto;
+		padding-top: 120px;
+		text-align: center;
+		max-width: 720px;
+		img {
+			width: 100%;
+			max-width: 720px;
+		}
+	}
+
+	.thread-details {
+		#thread-details-form-title {
+			margin-top: 30px;
+			margin-bottom: 0px;
+			input[type="text"] {
+				font-family: @sans-serif;
+				color: @black;
+				border: none;
+				font-size: 1em;
+				line-height: 0.95em;
+				margin-top: 0px;
+				margin-bottom: 0px;
+				font-weight: 600;
+				width: 100%;
+			}
+		}
+		#thread-details-form-subtitle {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			input[type="text"] {
+				border: none;
+				color: @lighter-black;
+				font-family: @sans-serif;
+				font-weight: 300;
+				margin-bottom: 0px;
+				margin-top: 0px;
+				font-size: 1em;
+				width: 100%;
+			}
+		}
+		#admin-form-content {
+			margin-top: 40px;
+			.redactor_box {
+				height: 500px;
+				.redactor_frame {
+					height: 425px;
+				}
+			}
+		}
+		#admin-form-tags {
+			margin-top: 30px;
+			input {
+				font-family: @sans-serif;
+				color: @light-black;
+				font-size: 0.85em;
+				text-transform: uppercase;
+				padding-left: 5px;
+				height: 30px;
+				width: 100%;
+				border: none;
+			}
+		}
+		.admin-thread-artist-info {
+			#id_artist_name, #id_artist_genre, #id_artist_occupation {
+				color: @light-black;
+				font-weight: 600;
+				font-size: 1em;
+				text-align: center;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				width: 175px;
+				border: none;
+				border-bottom: 1px solid @lightest-black;
+			}
+		}
+		#admin-thread-artist-sns {
+			margin-top: 30px;
+			input[type="text"] {
+				width: 120px;
+				border: none;
+				border-bottom: 1px solid @lightest-black;
+			}
+		}
+		#admin-thread-artist-description {
+			margin-top: 30px;
+			width: 88%;
+			margin: 0 auto;
+			margin-top: 30px;
+			textarea {
+				width: 100%;
+				font-family: @sans-serif;
+				color: @black;
+				font-size: 1em;
+			}
+		}
+	}
+
+	#admin-thread-form-misc {
+		table {
+			color: @lighter-black;
+			text-transform: uppercase;
+			font-weight: 600;
+			.form-label {
+				padding-right: 30px;
+			}
+		}
+	}
+
 }
 
 

@@ -1752,9 +1752,10 @@ footer p {
   font-size: 40px;
 }
 .admin .form-label {
-  text-transform: capitalize;
   margin-bottom: 10px;
   font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700px;
 }
 .admin .form-errors {
   color: #8f0000;
@@ -1791,6 +1792,113 @@ footer p {
   height: 30px;
   font-size: 18px;
   padding: 2px 5px 2px 5px;
+}
+.hidden {
+  display: none;
+}
+#admin-thread-form {
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#admin-thread-form .admin-thread-main-image {
+  margin: 0 auto;
+  padding-top: 120px;
+  text-align: center;
+  max-width: 720px;
+}
+#admin-thread-form .admin-thread-main-image img {
+  width: 100%;
+  max-width: 720px;
+}
+#admin-thread-form .thread-details #thread-details-form-title {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+#admin-thread-form .thread-details #thread-details-form-title input[type="text"] {
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #3c3c3c;
+  border: none;
+  font-size: 1em;
+  line-height: 0.95em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
+  width: 100%;
+}
+#admin-thread-form .thread-details #thread-details-form-subtitle {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#admin-thread-form .thread-details #thread-details-form-subtitle input[type="text"] {
+  border: none;
+  color: #6e6e6e;
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 1em;
+  width: 100%;
+}
+#admin-thread-form .thread-details #admin-form-content {
+  margin-top: 40px;
+}
+#admin-thread-form .thread-details #admin-form-content .redactor_box {
+  height: 500px;
+}
+#admin-thread-form .thread-details #admin-form-content .redactor_box .redactor_frame {
+  height: 425px;
+}
+#admin-thread-form .thread-details #admin-form-tags {
+  margin-top: 30px;
+}
+#admin-thread-form .thread-details #admin-form-tags input {
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #5a5a5a;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  padding-left: 5px;
+  height: 30px;
+  width: 100%;
+  border: none;
+}
+#admin-thread-form .thread-details .admin-thread-artist-info #id_artist_name,
+#admin-thread-form .thread-details .admin-thread-artist-info #id_artist_genre,
+#admin-thread-form .thread-details .admin-thread-artist-info #id_artist_occupation {
+  color: #5a5a5a;
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 175px;
+  border: none;
+  border-bottom: 1px solid #828282;
+}
+#admin-thread-form .thread-details #admin-thread-artist-sns {
+  margin-top: 30px;
+}
+#admin-thread-form .thread-details #admin-thread-artist-sns input[type="text"] {
+  width: 120px;
+  border: none;
+  border-bottom: 1px solid #828282;
+}
+#admin-thread-form .thread-details #admin-thread-artist-description {
+  width: 88%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+#admin-thread-form .thread-details #admin-thread-artist-description textarea {
+  width: 100%;
+  font-family: "freight-sans-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #3c3c3c;
+  font-size: 1em;
+}
+#admin-thread-form #admin-thread-form-misc table {
+  color: #6e6e6e;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#admin-thread-form #admin-thread-form-misc table .form-label {
+  padding-right: 30px;
 }
 #csrf-token {
   display: none;

@@ -4,6 +4,7 @@ $(function($) {
     setSplashElemDim();
     setSubscriptionVar(false);
     $('.thread-anchors').addClass('anchor');
+    initAdmin();
 });
 
 $(window).resize(function() {
@@ -108,6 +109,7 @@ $('.subscribe-submit').click(function() {
 
 $('.fold-unfold-anchor').click(function() {
     $('.fold-unfold').toggle();
+    return false;
 });
 
 $('#icon-search').click(function() {
@@ -172,6 +174,10 @@ $('body').on('click', 'a.thread-like-button', function() {
     } else {
         console.log('you have already liked this thread');
     }
+});
+
+$("#id_main_image").change(function() {
+    readURL(this);
 });
 
 function shareOnTwitter(link) {
@@ -262,6 +268,40 @@ function headerToggle() {
     header.animate({
         'top': sign + navH,
     }, 'slow');
+}
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            $('#thread-main-image-upload').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function initAdmin() {
+    $('#id_title').attr('placeholder', 'Title');
+    $('#id_subtitle').attr('placeholder', 'Subtitle');
+    $('#id_tags').attr('placeholder', 'Tags (Separate with commas)');
+    $('#id_artist_name').attr('placeholder', 'Artist name');
+    $('#id_website').attr('placeholder', 'Artist website');
+    $('#id_artist_genre').attr('placeholder', 'Genre');
+    $('#id_artist_occupation').attr('placeholder', 'Occupation');
+    $('#id_twitter').attr('placeholder', 'Twitter');
+    $('#id_facebook').attr('placeholder', 'Facebook');
+    $('#id_soundcloud').attr('placeholder', 'Soundcloud');
+    $('#id_bandcamp').attr('placeholder', 'Bandcamp');
+    $('#id_youtube').attr('placeholder', 'YouTube');
+    $('#id_artist_description').attr('placeholder', 'Artist description');
+    $('iframe.redactor_frame').css('height', '425');
+    if ($('#id_created').val() == '') {
+        var today = new Date();
+        var date = today.getFullYear() + '-' + today.getMonth() + 1 + '-' + today.getDate()
+        $('#id_created').val(date);
+    }
 }
 
 $(window).scroll(function() {
