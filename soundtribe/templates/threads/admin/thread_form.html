@@ -39,13 +39,12 @@
 		<h3 id="thread-details-form-subtitle">{{form.subtitle}}</h3>
 
 		{# author/date/time #}
-		<p>{{form.thread_type}}</a> + {{form.created}} + by {{request.user.get_full_name|title}}</p>
+		<p>{{form.thread_type}}</a> + {{form.created}} + by {{form.author}}</p>
 
 		{# hidden fields #}
 		<div class="hidden">
 			{{form.likes}}
 			{{form.views}}
-			{{form.author}}
 		</div>
 
 		{# interview artist info #}
