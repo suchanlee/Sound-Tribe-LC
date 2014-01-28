@@ -1,17 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-
 {% block content %}
 
 {% include "music/music_nav.html" %}
 
-<h1>Artist List</h1>
+<h1>{{notice.date}}</h1>
 
 <ul>
-	{% for artist in artists %}
-	<li><a href="/music/artist/{{artist.id}}/">{{artist.name}}</a></li>
-	{% endfor %}
+	<li>{{notice.category}}</li>
+	<li>{{notice.content}}</li>
 </ul>
 
 {% endblock %}

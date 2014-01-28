@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+{% include "music/music_nav.html" %}
+
+<h1>Notice List</h1>
+
+<ul>
+	{% for notice in notices %}
+	<li><a href="/music/notice/{{notice.id}}/">{{notice.date}}  | {{notice.category}}  |  {{notice.content}}</a></li>
+	{% endfor %}
+</ul>
+
+{% endblock %}
