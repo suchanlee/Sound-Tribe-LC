@@ -1,0 +1,26 @@
+{% extends "base_music.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<link rel='stylesheet' href="{% static 'css/jquery.swipeshow.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+{# {% include "music/music_nav.html" %} #}
+
+<div id="home-notice-list">
+	<h2>NOTICES</h2>
+	{% if notices %}
+		{# <ul> #}
+			{% for notice in notices %}
+				<a href="/music/notice/{{notice.id}}/">{{ notice.date }} | {{ notice.category }} | {{  notice.content }} </a><br>
+			{% endfor %}
+		{# </ul> #}
+	{% else %}
+		<p>No notices for now.</p>
+	{% endif %}
+</div>
+
+{% endblock %}

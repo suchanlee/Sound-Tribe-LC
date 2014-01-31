@@ -1,0 +1,62 @@
+body {
+  margin: 0 0 0 0;
+  text-rendering: optimizelegibility;
+}
+#container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  -moz-box-shadow: 0 0 10px #000000;
+  -webkit-box-shadow: 0 0 10px #000000;
+  box-shadow: 0 0 10px #000000;
+}
+.artist-image {
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.artist-image .artist-caption {
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.artist-image .artist-caption a {
+  text-decoration: none;
+  opacity: 0.9;
+  font-family: "brandon-grotesque", sans-serif;
+}
+.artist-image .artist-caption a:hover {
+  color: #ccc;
+}
+.artist-image .artist-caption p {
+  font-size: 3em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.artist-detail {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  height: 60%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#artist-content {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+#artist-content #artist-name {
+  font-size: 3em;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+#home-notice-list {
+  font-family: "brandon-grotesque", sans-serif;
+}
+#home-notice-list a {
+  text-decoration: none;
+}

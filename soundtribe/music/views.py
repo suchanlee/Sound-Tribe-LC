@@ -1,6 +1,7 @@
 from django.views.generic import DetailView, ListView, CreateView, UpdateView
 from django.shortcuts import render
 
+from music.image_processor import colors
 from music.models import Artist, Notice
 
 
@@ -21,12 +22,10 @@ class ArtistCreateView(CreateView):
 	template_name = 'music/admin/artist_form.html'
 	success_url = '/admin/'
 
-
 class ArtistUpdateView(UpdateView):
 	model = Artist
 	template_name = 'music/admin/artist_form.html'
 	success_url = '/admin/'
-
 
 class ArtistUpdateListView(ListView):
 	model = Artist
@@ -42,7 +41,7 @@ def music_contact_view(request):
 def music_home(request):
 	notices = Notice.objects.all()
 	artists = Artist.objects.all()
-	return render(request, 'music/public/artist_home.html', {'notices': notices, 'slideshow': artists})
+	return render(request, 'music/public/music_home.html', {'notices': notices, 'slideshow': artists})
 
 class NoticeCreateView(CreateView):
 	model = Notice
