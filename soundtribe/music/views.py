@@ -1,4 +1,4 @@
-from django.views.generic import DetailView, ListView, CreateView, UpdateView
+from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
 from django.shortcuts import render
 
 from music.image_processor import colors
@@ -32,6 +32,18 @@ class ArtistUpdateListView(ListView):
 	template_name = 'music/admin/artist_list.html'
 	context_object_name = 'artists'
 
+class ArtistDeleteView(DeleteView):
+	model = Artist
+	template_name = 'music/admin/artist_delete.html'
+	success_url = '/admin/'
+
+class ArtistDeleteListView(ListView):
+	model = Artist
+	template_name = 'music/admin/artist_list_delete.html'
+	context_object_name = 'artists'
+
+
+
 def music_about_view(request):
 	return render(request, 'music/public/artist_about.html')
 
@@ -41,7 +53,7 @@ def music_contact_view(request):
 def music_home(request):
 	notices = Notice.objects.all()
 	artists = Artist.objects.all()
-	return render(request, 'music/public/music_home.html', {'notices': notices, 'slideshow': artists})
+	return render(request, 'music/public/music_home.html', {'notices': notices, 'artists': artists})
 
 class NoticeCreateView(CreateView):
 	model = Notice

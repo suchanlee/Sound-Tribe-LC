@@ -5,7 +5,6 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="{% static "css/music.css" %}">
-	{# <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}"> #}
 	<title>{% block title %}{% endblock %}</title>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	{% block styles %}{% endblock %}
@@ -17,6 +16,7 @@
 	<div id="container">
 	{% block content %}{% endblock %}
 	</div>
+	{% include "footer_music.html" %}
 	{% block js %}
 	{% endblock %}
 </body>

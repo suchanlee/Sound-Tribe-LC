@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, url
 
 from music.views import ArtistListView, ArtistUpdateListView, ArtistDetailView, ArtistUpdateView, ArtistCreateView, music_contact_view, music_about_view, music_home, NoticeCreateView, NoticeUpdateListView, NoticeUpdateview, NoticeListView, NoticeDetailView
+from music.views import ArtistDeleteView, ArtistDeleteListView
 
 urlpatterns = patterns('',
     url(r'^$', music_home),
@@ -20,5 +21,7 @@ urlpatterns = patterns('',
     url(r'^artist/create/$', ArtistCreateView.as_view(), name='artist_create_view'),
     url(r'^artist/update/$', ArtistUpdateListView.as_view(), name='artist_update_list_view'),
     url(r'^artist/update/(?P<pk>\d+)/$', ArtistUpdateView.as_view(), name='artist_update_view'),
+    url(r'^artist/delete/$', ArtistDeleteListView.as_view(), name='artist_delete_list_view'),
+    url(r'^artist/delete/(?P<pk>\d+)/$', ArtistDeleteView.as_view(), name='artist_delete_view'),
     
 )

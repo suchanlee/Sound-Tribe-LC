@@ -1,26 +1,26 @@
-{% extends "base_music.html" %}
+{% extends "base_music_home.html" %}
 {% load staticfiles %}
-
-{% block styles %}
-<link rel='stylesheet' href="{% static 'css/jquery.swipeshow.css' %}">
-{% endblock %}
 
 
 {% block content %}
 
-{# {% include "music/music_nav.html" %} #}
+{% include "music/music_nav.html" %}
 
-<div id="home-notice-list">
-	<h2>NOTICES</h2>
-	{% if notices %}
-		{# <ul> #}
+{% for artist in artists %}
+<div id="home-artist-pic" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');"></div>
+{% endfor %}
+
+<div class="container">
+	<div id="home-notice-list">
+		<h2>NOTICES</h2>
+		{% if notices %}
 			{% for notice in notices %}
 				<a href="/music/notice/{{notice.id}}/">{{ notice.date }} | {{ notice.category }} | {{  notice.content }} </a><br>
 			{% endfor %}
-		{# </ul> #}
-	{% else %}
-		<p>No notices for now.</p>
-	{% endif %}
+		{% else %}
+			<p>No notices for now.</p>
+		{% endif %}
+	</div>
 </div>
 
 {% endblock %}

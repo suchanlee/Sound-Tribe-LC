@@ -1,20 +1,27 @@
 {% extends "base_music.html" %}
 {% load staticfiles %}
 
+{% block styles %}
+<style>
+	#footer{
+		position: relative;
+	}
+</style>
+{% endblock %}
 
 {% block content %}
 
-{# {% include "music/music_nav.html" %} #}
+{% include "music/music_nav.html" %}
 
 {# <ul> #}
 	{% for artist in artists %}
 		<div class="artist-image" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');">
 			<a href="/music/artist/{{artist.id}}"></a>
 			<div class="artist-caption">
-				<p><a style="color: {{artist.sub_color}}; background-color: {{artist.dominant_color}}" 
-					href="/music/artist/{{artist.id}}">[{{artist.genre|upper}}]<br>{{artist.name|upper}}</a></p>
+				<a style="color: {{artist.sub_color}}; background-color: {{artist.dominant_color}};" href="/music/artist/{{artist.id}}">{{artist.name}} | {{artist.genre}}</a>
 			</div>
 		</div>
 	{% endfor %}
 {# </ul> #}
+
 {% endblock %}

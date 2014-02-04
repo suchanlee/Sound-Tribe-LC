@@ -1,12 +1,40 @@
 {% extends "base_music.html" %}
 {% load staticfiles %}
 
+{% block styles %}
+
+{% if artist.isSquare %}
+<style>
+	.artist-detail-image {
+		position: relative;
+		background-size: contain;
+		top: 30px;
+	}
+
+	#artist-name {
+		padding-top: 60px;
+	}
+</style>
+{% else %}
+<style>
+	.artist-detail-image{
+		background-size: cover;
+		background-position: center center;
+	}
+</style>
+{% endif %}
+
+{% endblock %}
+
+
+
+
 {% block content %}
 
 {% include "music/music_nav.html" %}
 
-<div style="background-color: {{artist.dominant_color}}; color: {{artist.sub_color}};">
-	<div class="artist-detail" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');"></div>
+<div style="background-color: {{artist.sub_color}}; color: {{artist.dominant_color}};">
+	<div class="artist-detail-image" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');"></div>
 	<div id="artist-content">
 		<p id="artist-name">{{artist.name}}</p>
 		{{artist.description}}

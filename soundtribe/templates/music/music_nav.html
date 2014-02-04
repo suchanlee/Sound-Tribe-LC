@@ -1,47 +1,14 @@
 {% load staticfiles %}
 
 <header>
-	<nav id="header-menu">
-		<div id="header-logo">
-			<a href="/music/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
-		</div>
-		<button id="nav-bar-toggle">
-			<span class="nav-bar-toggle-bars"></span>
-			<span class="nav-bar-toggle-bars"></span>
-			<span class="nav-bar-toggle-bars"></span>
-		</button>
-		<div id="header-nav">
-			<ul id="menu-social">
-				<li><a class="share-facebook" href="{{facebook.url}}"></a><br></li><li><a class="share-twitter" href="{{twitter.url}}"></a></li>
-			</ul>
-			{% if searchform %}
-			<form action="/search/" method="get">
-				{{searchform.q}}
-				{# <input type="submit" value="Search"> #}
-			</form>
-			{% elif form %}
-			<form action="/search/" method="get">
-				{{form.q}}
-				{# <input type="submit" value="Search"> #}
-			</form>
-			{% endif %}
-			<ul id="menu-threads">
-				<li class="header-menu-submenu-anchor">
-					<a href="/">MAIN PAGE</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/music/artist/">ARTISTS</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/music/notice/">NOTICES</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/music/about/">ABOUT</a>
-				</li>
-				<li class="header-menu-submenu-anchor">
-					<a href="/music/contact/">CONTACT</a>
-				</li>
-			</ul>
+	<nav id="navbar">	
+		<a href="/music/"><div id="nav-logo"></div></a>
+		<div id="nav-menus">
+			<a href="/">MAIN PAGE</a>
+			<a href="/music/artist/">ARTISTS</a>
+			<a href="/music/notice/">NOTICES</a>
+			<a href="/music/about/">ABOUT</a>
+			<a href="/music/contact/">CONTACT</a>
 		</div>
 	</nav>
 </header>
