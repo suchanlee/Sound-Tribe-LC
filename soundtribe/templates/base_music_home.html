@@ -1,0 +1,24 @@
+
+<html>
+{% load staticfiles %}
+<head>
+	<script type="text/javascript" src="//use.typekit.net/yyr6mym.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="{% static "css/music.css" %}">
+	<title>{% block title %}{% endblock %}</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	{% block styles %}{% endblock %}
+	{% block meta %}{% endblock %}
+</head>
+<body>
+	{% block outer-content %}
+	{% endblock %}
+	<div id="container-home">
+	{% block content %}{% endblock %}
+	</div>
+	{% include "footer_music.html" %}
+	{% block js %}
+	{% endblock %}
+</body>
+</html>
