@@ -15,9 +15,6 @@ body {
   max-width: 960px;
   margin: 0 auto;
   position: relative;
-  -moz-box-shadow: 0 0 10px #000000;
-  -webkit-box-shadow: 0 0 10px #000000;
-  box-shadow: 0 0 10px #000000;
   margin-bottom: 30px;
 }
 #container-home {
@@ -35,13 +32,9 @@ header {
   opacity: 0.8;
   width: 100%;
   left: 0;
-  text-align: center;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
-  -moz-box-shadow: 0 0 10px #000000;
-  -webkit-box-shadow: 0px 0px 10px #000000;
-  box-shadow: 0 0 10px #000000;
   font-family: "brandon-grotesque", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 #navbar div {
@@ -50,7 +43,7 @@ header {
 #navbar a {
   text-decoration: none;
   color: white;
-  margin-left: 8px;
+  margin-left: 30px;
 }
 #navbar #nav-logo {
   background-image: url("../img/logo_invert.png");
@@ -64,6 +57,8 @@ header {
   position: relative;
   display: inline-block;
   margin-top: 5px;
+  position: absolute;
+  right: 30px;
 }
 #footer {
   bottom: 0;
@@ -102,9 +97,6 @@ header {
   background-repeat: no-repeat;
   display: inline-block;
   background-position: center center;
-  -moz-box-shadow: 0 0 10px #000000;
-  -webkit-box-shadow: 0 0 10px #000000;
-  box-shadow: 0 0 10px #000000;
   margin-bottom: 20px;
   float: left;
 }
