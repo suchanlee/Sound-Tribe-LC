@@ -1,15 +1,37 @@
 {% extends "base_music.html" %}
 {% load staticfiles %}
 
+{% block styles %}
+<style>
+	#container{
+		padding-top: 40px;
+	}
+
+	#footer{
+		position: relative;
+	}
+</style>
+{% endblock %}
+
 {% block content %}
 
 {% include "music/music_nav.html" %}
 
-<h1>{{notice.date}}</h1>
+{% if notice.image %}
+<div id="notice-detail-image" style="background-image:url('{{MEDIA_URL}}{{notice.image}}');"></div>
+{% endif %}
 
-<ul>
-	<li>{{notice.category}}</li>
-	<li>{{notice.content}}</li>
+<ul id="notice-detail">
+	<li id="notice-detail-when">{{notice.date | date:"F j, Y"}}</li>
+	<li id="notice-detail-who">{{notice.artist.all.0}}</li>
+	<li id="notice-detail-what">{{notice.category}}</li>
+
+
+	{% if notice.long_content %}
+	<li id="notice-detail-content">{{notice.long_content}}</li>
+	{% else %}
+	<li id="notice-detail-content">{{notice.content}}</li>
+	{% endif %}
+
 </ul>
-
 {% endblock %}

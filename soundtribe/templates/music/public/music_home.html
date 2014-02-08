@@ -2,24 +2,52 @@
 {% load staticfiles %}
 
 
+{% block styles %}
+<style>
+	::selection {
+		background: #333333; /* Safari */
+	}
+	::-moz-selection {
+		background: #333333; /* Firefox */
+	}
+	#footer{
+		position: relative;
+	}
+</style>
+{% endblock %}
+
 {% block content %}
 
 {% include "music/music_nav.html" %}
 
 {% for artist in artists %}
-<div id="home-artist-pic" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');"></div>
+<div id="home-artist-container">
+	<div id="home-artist-pic" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');"></div>
+</div>
 {% endfor %}
 
-<div class="container">
+<div id="container-home">
 	<div id="home-notice-list">
-		<h2>NOTICES</h2>
-		{% if notices %}
+		<h2>SOUNDTRIBE LC NEWS</h2>
+		
+
+		{% if notices %}	
+			<table id="notice-table" width="100%">
 			{% for notice in notices %}
-				<a href="/music/notice/{{notice.id}}/">{{ notice.date }} | {{ notice.category }} | {{  notice.content }} </a><br>
+					<tr id="notice-item">
+						<td id="notice-date">{{ notice.date|date:"m/d/Y" }}</td>
+						<td id="notice-category">{{ notice.category }}</td>
+						<td id="notice-artist">{{ notice.artist.all.0 }}</td>
+						<td width="99%"><a href="/music/notice/{{notice.id}}/">{{  notice.content }}</a></td>
+					</tr>
 			{% endfor %}
+			</table>
+
 		{% else %}
 			<p>No notices for now.</p>
 		{% endif %}
+
+		
 	</div>
 </div>
 

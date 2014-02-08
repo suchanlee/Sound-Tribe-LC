@@ -2,27 +2,32 @@
 {% load staticfiles %}
 
 {% block styles %}
-
-{% if artist.isSquare %}
 <style>
+{% if artist.isSquare %}
 	.artist-detail-image {
 		position: relative;
 		background-size: contain;
-		top: 30px;
+		top: 50px;
 	}
 
 	#artist-name {
 		padding-top: 60px;
 	}
-</style>
 {% else %}
-<style>
 	.artist-detail-image{
 		background-size: cover;
 		background-position: center center;
 	}
-</style>
 {% endif %}
+	.follow-artist {
+		color: {{artist.dominant_color}};
+	}
+
+	#footer{
+		position: relative;
+	}
+
+</style>
 
 {% endblock %}
 
@@ -37,8 +42,39 @@
 	<div class="artist-detail-image" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');"></div>
 	<div id="artist-content">
 		<p id="artist-name">{{artist.name}}</p>
-		{{artist.description}}
-		{{artist.website}}
+		<p id="artist-description">{{artist.description}}</p>
+		
+		{% if artist.website or artist.facebook or artist.twitter or artist.tumblr or artist.bandcamp or artist.soundcloud or artist.youtube %}
+		<p id="follow">Follow {{artist.name}}:</p>
+		{% endif %}
+	
+		{% if artist.website %}
+		<a href={{artist.website}} id="follow-artist">Website</a>
+		{% endif %}
+	
+		{% if artist.facebook %}
+		<a href={{artist.facebook}} id="follow-artist" class="socialico facebook">f</a>
+		{% endif %}
+
+		{% if artist.twitter %}
+		<a href={{artist.twitter}} id="follow-artist" class="socialico twitter">t</a>
+		{% endif %}
+
+		{% if artist.tumblr %}
+		<a href={{artist.tumblr}} id="follow-artist" class="socialico tumblr">r</a>
+		{% endif %}
+
+		{% if artist.bandcamp %}
+		<a href={{artist.bandcamp}} id="follow-artist" class="socialico bandcamp">b</a>
+		{% endif %}
+
+		{% if artist.soundcloud %}
+		<a href={{artist.soundcloud}} id="follow-artist">Soundcloud</a>
+		{% endif %}
+
+		{% if artist.youtube %}
+		<a href={{artist.youtube}} id="follow-artist">Youtube</a>
+		{% endif %}
 	</div>	
 </div>
 

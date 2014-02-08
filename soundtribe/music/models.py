@@ -24,6 +24,9 @@ class Artist(models.Model):
 	class Meta:
 		ordering = ['?']
 
+	def __unicode__(self):
+		return self.name
+
 	def save(self, *args, **kwargs):
 		if self.image:
 			try:
@@ -50,8 +53,11 @@ class Notice(models.Model):
 	date = models.DateField(default=time.strftime("%Y-%m-%d"))
 	category = models.CharField(max_length=20, blank=False)
 	content = models.CharField(max_length=200, blank=False)
+	long_content = models.TextField(blank=True)
+	artist = models.ManyToManyField(Artist, null=True)
+	image = models.FileField(upload_to='music/artist/notice_imgs/', null=True, blank=True)
 
 	# Add relation to Artist model
 
 	class Meta:
-		ordering = ['date']
+		ordering = ['-date']

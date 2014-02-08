@@ -9,6 +9,16 @@
 @sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @adelle: "adelle";
 
+@font-face{
+	font-family: socialico;
+	src: url("../fonts/Socialico.otf") format("opentype");
+}
+
+.socialico {
+	font-family: socialico;
+	font-size: 2em;
+}
+
 body {
 	margin: 0 0 0 0;
 	text-rendering: optimizelegibility;
@@ -31,6 +41,17 @@ body {
 	-moz-box-shadow:  0 0 10px #000000;
 	-webkit-box-shadow:  0 0 10px #000000;
 	box-shadow:  0 0 10px #000000;
+
+	margin-bottom: 30px;
+}
+
+#container-home {
+	width: 700px;
+	margin: 0 auto;
+
+	// -moz-box-shadow:  0 0 3px #000000;
+	// -webkit-box-shadow:  0 0 3px #000000;
+	// box-shadow:  0 0 3px #000000;
 }
 
 // Navigation bar
@@ -92,14 +113,31 @@ header{
 // Footer
 #footer{
 	bottom: 0;
-	position: absolute;
+	position: relative;
 	z-index: 10;
 	width: 100%;
 	left:0;
 	text-align: center;
 
-	line-height: 10px;
-	margin-top: 20px;
+	// line-height: 10px;
+	// margin-top: 20px;
+
+	#follow{
+		line-height: 0px;
+		font-size: 2em;
+		// h3{
+		// 	margin-bottom: 0;
+		// 	padding-bottom: 0;
+		// }
+		a{
+			color: grey;
+			text-decoration: none;
+		}
+		p{
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
 
 	li{
 		display: inline-block;
@@ -114,27 +152,117 @@ header{
 
 
 // Homepage
+#home-artist-container{
+	width: 100%;
+}
+
 #home-artist-pic{
 	height: 500px;
-	width: 12.5%;
+	width: 25%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	display: inline-block;
 	background-position: center center;
 
+	-moz-box-shadow:  0 0 10px #000000;
+	-webkit-box-shadow:  0 0 10px #000000;
+	box-shadow:  0 0 10px #000000;
+
+	margin-bottom: 20px;
+
 	float: left;
-	clear: none;
 }
 
 #home-notice-list{
 	font-family: @brandon;
+	// margin-top: 30px;
+	
+	h2 {
+		color: #727575;
+		margin-bottom: 0;
+		padding-bottom: 0;
+		font-size: 2em;
+	}
+
 	a{
 		text-decoration: none;
-		// text-color: 
+		color: grey;
+	}
+
+	#notice-table {
+		margin-bottom: 50px;
+
+		#notice-item{
+			line-height: 3em;
+		}
+
+		border-collapse: collapse;
+		td{
+			border-top: 1px solid grey;
+			border-bottom: 1px solid grey;
+		}
+
+		#notice-date{
+			white-space: nowrap;
+		}
+		#notice-category{
+			white-space: nowrap;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		#notice-artist{
+			white-space: nowrap;
+			padding-right: 20px;
+		}
+		#notice-content{
+			white-space: nowrap;
+		}
 	}
 }
 // End of homepage
 
+// Notice detail view
+#notice-detail-image{
+		// position: relative;
+
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+
+		width: 100%;
+		height: 400px;
+		// margin: 0 auto;
+		
+		padding-top: 40px;
+		margin-bottom: 30px;
+	}
+
+#notice-detail{
+	// margin-top: 50px;
+
+	li{
+		padding: 0;
+		list-style-type: none;
+	}
+
+	#notice-detail-when{
+		font-size: 2.5em;
+		margin-bottom: 10px;
+	}
+	#notice-detail-who{
+		font-size: 2em;
+	}
+	#notice-detail-what{
+		font-size: 1.5em;
+		color: grey;
+	}
+	#notice-detail-content{
+		margin-top: 40px;
+	}
+	
+	padding-bottom: 50px;
+}
+// End of notice detail
 
 // Artist list view
 .artist-image {
@@ -198,8 +326,55 @@ header{
 
 	#artist-name{
 		font-size: 3em;
-		margin-top: 0px;
+		margin-top: 30px;
 		margin-bottom: 0em;
+	}
+
+	#artist-description{
+		padding-bottom: 50px;
+	}
+	
+	#follow{
+		font-size: 2em;
+		margin-top: 20px;
+		margin-bottom:0px;
+	}
+
+	#follow-artist{
+		text-decoration: none;
+		display: inline-block;
+		margin-right: 10px;
+		color: white;
 	}
 }
 // End of artist detail view
+
+// About
+#about{
+	padding-top: 50px;
+	padding-bottom: 100px;
+
+	margin: 0 auto;
+	text-align: center;
+	width: 60%;
+
+	h1{
+		margin-bottom: 50px;
+	}
+}
+// End of About
+
+// Contact
+#contact{
+	padding-top: 50px;
+	padding-bottom: 100px;
+
+	margin: 0 auto;
+	text-align: center;
+	width: 60%;
+
+	h1{
+		margin-bottom: 50px;
+	}
+}
+// End of Contact

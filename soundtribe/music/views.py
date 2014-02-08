@@ -52,7 +52,7 @@ def music_contact_view(request):
 
 def music_home(request):
 	notices = Notice.objects.all()
-	artists = Artist.objects.all()
+	artists = Artist.objects.all()[0:4]
 	return render(request, 'music/public/music_home.html', {'notices': notices, 'artists': artists})
 
 class NoticeCreateView(CreateView):
