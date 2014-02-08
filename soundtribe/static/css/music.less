@@ -183,40 +183,39 @@ header{
 		padding-bottom: 0;
 		font-size: 2em;
 	}
+}
 
+#notice-table {
+	margin-bottom: 50px;
+
+	#notice-item{
+		line-height: 3em;
+	}
+
+	border-collapse: collapse;
+	td{
+		border-top: 1px solid grey;
+		border-bottom: 1px solid grey;
+	}
+
+	#notice-date{
+		white-space: nowrap;
+	}
+	#notice-category{
+		white-space: nowrap;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#notice-artist{
+		white-space: nowrap;
+		padding-right: 20px;
+	}
+	#notice-content{
+		white-space: nowrap;
+	}
 	a{
 		text-decoration: none;
 		color: grey;
-	}
-
-	#notice-table {
-		margin-bottom: 50px;
-
-		#notice-item{
-			line-height: 3em;
-		}
-
-		border-collapse: collapse;
-		td{
-			border-top: 1px solid grey;
-			border-bottom: 1px solid grey;
-		}
-
-		#notice-date{
-			white-space: nowrap;
-		}
-		#notice-category{
-			white-space: nowrap;
-			padding-left: 20px;
-			padding-right: 20px;
-		}
-		#notice-artist{
-			white-space: nowrap;
-			padding-right: 20px;
-		}
-		#notice-content{
-			white-space: nowrap;
-		}
 	}
 }
 // End of homepage
@@ -322,6 +321,7 @@ header{
 	font-family: @brandon;
 	poistion: relative;
 	top:100px;
+	padding-bottom: 20px;
 	// height: 100%;
 
 	#artist-name{
@@ -345,6 +345,10 @@ header{
 		display: inline-block;
 		margin-right: 10px;
 		color: white;
+	}
+
+	h3{
+		margin-bottom: 0px;
 	}
 }
 // End of artist detail view

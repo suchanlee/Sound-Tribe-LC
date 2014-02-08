@@ -23,10 +23,15 @@
 		color: {{artist.dominant_color}};
 	}
 
-	#footer{
-		position: relative;
+	#notice-item {
+		line-height: 1em;
 	}
 
+	#notice-table td{
+		color: {{ artist.dominant_color }};
+		border-top: 1px solid {{artist.dominant_color}};
+		border-bottom: 1px solid {{artist.dominant_color}};
+	}
 </style>
 
 {% endblock %}
@@ -44,6 +49,20 @@
 		<p id="artist-name">{{artist.name}}</p>
 		<p id="artist-description">{{artist.description}}</p>
 		
+		<h3>RECENT NEWS</h3>
+		<table id="notice-table" width="100%">
+			{% for notice in notices %}
+				{% if notice.artist.all.0 == artist %}
+					<tr id="notice-item">
+						<td id="notice-date">{{ notice.date|date:"m/d/Y" }}</td>
+						<td id="notice-category">{{ notice.category }}</td>
+						<td id="notice-artist">{{ notice.artist.all.0 }}</td>
+						<td width="99%"><a href="/music/notice/{{notice.id}}/">{{  notice.content }}</a></td>
+					</tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+
 		{% if artist.website or artist.facebook or artist.twitter or artist.tumblr or artist.bandcamp or artist.soundcloud or artist.youtube %}
 		<p id="follow">Follow {{artist.name}}:</p>
 		{% endif %}

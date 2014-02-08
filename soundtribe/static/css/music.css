@@ -117,35 +117,35 @@ header {
   padding-bottom: 0;
   font-size: 2em;
 }
-#home-notice-list a {
-  text-decoration: none;
-  color: grey;
-}
-#home-notice-list #notice-table {
+#notice-table {
   margin-bottom: 50px;
   border-collapse: collapse;
 }
-#home-notice-list #notice-table #notice-item {
+#notice-table #notice-item {
   line-height: 3em;
 }
-#home-notice-list #notice-table td {
+#notice-table td {
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
 }
-#home-notice-list #notice-table #notice-date {
+#notice-table #notice-date {
   white-space: nowrap;
 }
-#home-notice-list #notice-table #notice-category {
+#notice-table #notice-category {
   white-space: nowrap;
   padding-left: 20px;
   padding-right: 20px;
 }
-#home-notice-list #notice-table #notice-artist {
+#notice-table #notice-artist {
   white-space: nowrap;
   padding-right: 20px;
 }
-#home-notice-list #notice-table #notice-content {
+#notice-table #notice-content {
   white-space: nowrap;
+}
+#notice-table a {
+  text-decoration: none;
+  color: grey;
 }
 #notice-detail-image {
   background-repeat: no-repeat;
@@ -218,6 +218,7 @@ header {
   font-family: "brandon-grotesque", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   poistion: relative;
   top: 100px;
+  padding-bottom: 20px;
 }
 #artist-content #artist-name {
   font-size: 3em;
@@ -237,6 +238,9 @@ header {
   display: inline-block;
   margin-right: 10px;
   color: white;
+}
+#artist-content h3 {
+  margin-bottom: 0px;
 }
 #about {
   padding-top: 50px;

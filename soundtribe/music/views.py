@@ -14,8 +14,13 @@ class ArtistListView(ListView):
 class ArtistDetailView(DetailView):
 	model = Artist
 	template_name = 'music/public/artist_detail.html'
-	context_object_name = 'artist'
+	# context_object_name = 'artist'
 
+	def get_context_data(self, **kwargs):
+		context = super(ArtistDetailView, self).get_context_data(**kwargs)
+		
+		context['notices'] = Notice.objects.all()
+		return context
 
 class ArtistCreateView(CreateView):
 	model = Artist
