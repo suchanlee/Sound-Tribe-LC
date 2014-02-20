@@ -146,11 +146,13 @@ class ThreadListView(TemplateView):
 		video_type = ThreadType.objects.get(slug='video')
 		talk_type = ThreadType.objects.get(slug='talk')
 		review_type = ThreadType.objects.get(slug='review')
+		event_type = ThreadType.objects.get(slug='event')
 
 		context['audio_threads'] = Thread.objects.filter(thread_type=audio_type)
 		context['video_threads'] = Thread.objects.filter(thread_type=video_type)
 		context['talk_threads'] = Thread.objects.filter(thread_type=talk_type)
 		context['review_threads'] = Thread.objects.filter(thread_type=review_type)
+		context['event_threads'] = Thread.objects.filter(thread_type=event_type)
 
 		return context
 

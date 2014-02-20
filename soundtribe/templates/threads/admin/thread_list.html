@@ -43,6 +43,12 @@
 		<li><a href="/threads/update/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}>{{obj.title}}</a> <a href="/threads/delete/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}><i class="fa fa-trash-o"></i></a></li>
 		{% endfor %}
 	</ul>
+	<h3><a href="#" class="thread-list-anchor">Event Threads <i class="fa fa-caret-down"></i></a></h3>
+	<ul class="thread-list-ul" id="thread-list-event">
+		{% for obj in event_threads %}
+		<li><a href="/threads/update/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}>{{obj.title}}</a> <a href="/threads/delete/{{obj.id}}/" {% if not obj.published %}style="color: gray;"{% endif %}><i class="fa fa-trash-o"></i></a></li>
+		{% endfor %}
+	</ul>
 
 </div>
 
