@@ -9,6 +9,10 @@
 </style>
 {% endblock %}
 
+{% block title %}
+SoundTribe Artists
+{% endblock %}
+
 {% block content %}
 
 {% include "music/music_nav.html" %}
@@ -16,7 +20,7 @@
 {# <ul> #}
 	{% for artist in artists %}
 		<div class="artist-image" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');">
-			<a href="/music/artist/{{artist.id}}"></a>
+			<a href="/music/artist/{{artist.id}}" id="artist-link"></a>
 			<div class="artist-caption">
 				<a style="color: {{artist.sub_color}}; background-color: {{artist.dominant_color}};" href="/music/artist/{{artist.id}}">{{artist.name}} | {{artist.genre}}</a>
 			</div>
