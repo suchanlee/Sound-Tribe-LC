@@ -16,6 +16,10 @@
 </style>
 {% endblock %}
 
+{% block title %}
+SoundTribe Music
+{% endblock %}
+
 {% block content %}
 
 {% include "music/music_nav.html" %}
@@ -37,7 +41,9 @@
 					<tr id="notice-item">
 						<td id="notice-date">{{ notice.date|date:"m/d/Y" }}</td>
 						<td id="notice-category">{{ notice.category }}</td>
-						<td id="notice-artist">{{ notice.artist.all.0 }}</td>
+						<td id="notice-artist">
+							<a style="color:#61615C;" href="/music/artist/{{notice.artist.all.0.id}}">{{ notice.artist.all.0 }}</a>
+						</td>
 						<td width="99%"><a href="/music/notice/{{notice.id}}/">{{  notice.content }}</a></td>
 					</tr>
 			{% endfor %}

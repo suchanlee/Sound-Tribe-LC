@@ -3,7 +3,7 @@
 
 {% block styles %}
 <style>
-	#container{
+	#notice-detail-image{
 		padding-top: 40px;
 	}
 
@@ -11,6 +11,10 @@
 		position: relative;
 	}
 </style>
+{% endblock %}
+
+{% block title %}
+{{ notice.artist.all.0 }} {{ notice.category }}
 {% endblock %}
 
 {% block content %}

@@ -36,7 +36,9 @@
 
 {% endblock %}
 
-
+{% block title %}
+{{ artist.name }}
+{% endblock %}
 
 
 {% block content %}
@@ -45,7 +47,7 @@
 
 {# <div style="background-color: {{artist.sub_color}}; color: {{artist.dominant_color}};"> #}
 	<div class="artist-detail-image" style="background-image:url('{{MEDIA_URL}}{{artist.image}}');"></div>
-	<div id="artist-content">
+	<div id="artist-content" class="artist-inline">
 		<p id="artist-name">{{artist.name}}</p>
 		<p id="artist-description">{{artist.description}}</p>
 		
@@ -63,8 +65,14 @@
 			{% endfor %}
 		</table>
 
+		
+	</div>
+	<div id="artist-discography" class="artist-inline">
+		<h4>DISCOGRAPHY</h4>
+		"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe
+
 		{% if artist.website or artist.facebook or artist.twitter or artist.tumblr or artist.bandcamp or artist.soundcloud or artist.youtube %}
-		<p id="follow">Follow {{artist.name}}:</p>
+		<h4>FOLLOW {{artist.name | upper}}</h4>
 		{% endif %}
 	
 		{% if artist.website %}
@@ -94,7 +102,7 @@
 		{% if artist.youtube %}
 		<a href={{artist.youtube}} id="follow-artist">Youtube</a>
 		{% endif %}
-	</div>	
+	</div>
 {# </div> #}
 
 {% endblock %}
