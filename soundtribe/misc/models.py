@@ -50,6 +50,7 @@ class MonthlyPlaylist(models.Model):
 		Get and save the embed code
 		'''
 		if (self.current_url != self.url):
+			pdb.set_trace()
 			client = sc.Client(client_id='7b049100ad8da6c3ef9767248ddf7c0a') # move client_id out later
 			try:
 				embed_info = client.get('/oembed', url=self.url, maxheight='400', color='6E6E6E')

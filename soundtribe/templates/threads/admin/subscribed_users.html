@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Thread Form {% if object %}- {{object.title}}{% endif %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "redactor/css/redactor.css" %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="admin">
+	<div class="admin-header">
+		<a href="/admin/"><img src="{% static "img/logo.png" %}" alt="soundtribe lc logo"></a>
+		<h1>ADMIN PANEL</h1>
+	</div>
+	<h2>Subscribed Users</h2>
+	<ul>
+		{% for s in subscriptions %}
+		<li>{{s.email}}</li>
+		{% endfor %}
+	</ul>
+</div>
+
+{% endblock %}

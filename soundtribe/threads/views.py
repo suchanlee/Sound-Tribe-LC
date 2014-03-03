@@ -15,7 +15,7 @@ from haystack.forms import ModelSearchForm
 
 from threads.models import Thread, ThreadType
 from misc.models import Facebook, Twitter, Tumblr, About, Contact
-from misc.models import Talkbox, MonthlyPlaylist, Listen
+from misc.models import Talkbox, MonthlyPlaylist, Listen, Subscription
 from core.helpers import is_interview_path
 
 import pdb
@@ -133,6 +133,15 @@ class TagListView(AjaxListView):
 
 class AdminView(LoginRequiredMixin, TemplateView):
 	template_name = 'threads/admin/admin.html'
+
+class SubscribedUsersView(LoginRequiredMixin, TemplateView):
+	template_name = 'threads/admin/subscribed_users.html'
+
+	def get_context_data(self, **kwargs):
+		context = {
+			'subscriptions': Subscription.objects.all(),
+		}
+		return context
 
 
 class ThreadListView(TemplateView):
