@@ -18,30 +18,7 @@ SoundTribe News
 {% include "music/music_nav.html" %}
 
 <div id="container-home">
-	<div id="home-notice-list">
-		<br>
-		<h2>SOUNDTRIBE LC NEWS</h2>
-
-		{% if notices %}	
-			<table id="notice-table" width="100%">
-			{% for notice in notices %}
-					<tr id="notice-item">
-						<td id="notice-date">{{ notice.date|date:"m/d/Y" }}</td>
-						<td id="notice-category">{{ notice.category }}</td>
-						<td id="notice-artist">
-							<a style="color:#61615C;" href="/music/artist/{{notice.artist.all.0.id}}">{{ notice.artist.all.0 }}</a>
-						</td>
-						<td width="99%"><a href="/music/notice/{{notice.id}}/">{{  notice.content }}</a></td>
-					</tr>
-			{% endfor %}
-			</table>
-
-		{% else %}
-			<p>No notices for now.</p>
-		{% endif %}
-
-		<br>
-	</div>
+	{% include "music/music_notices.html" %}
 </div>
 
 {% endblock %}

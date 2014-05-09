@@ -45,6 +45,9 @@ header {
   color: white;
   margin-left: 20px;
 }
+#navbar a:hover {
+  color: #70030b;
+}
 #navbar #nav-logo {
   background-image: url("../img/logo_invert.png");
   height: 40px;
@@ -139,6 +142,9 @@ header {
 #notice-table a {
   text-decoration: none;
   color: grey;
+}
+#notice-table a:hover {
+  color: #AB323A;
 }
 #notice-detail-image {
   position: relative;
